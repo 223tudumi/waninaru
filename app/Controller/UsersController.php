@@ -4,7 +4,7 @@ class UsersController extends AppController{
 	public $helpers = array('Html' , 'Form');
 	
 	public function admin_index(){
-		$this->set('users' , $this->User->find('all',array('conditions' => array('User.dalete_flag ' => '0'))));
+		$this->set('users' , $this->User->find('all'));
 	}
 	
 	public function admin_userDetail($id = null){

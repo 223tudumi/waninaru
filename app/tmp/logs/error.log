@@ -1495,3 +1495,84 @@ Stack Trace:
 #3 /Library/WebServer/Documents/waninaru/lib/Cake/Core/App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2013-10-09 15:51:16 Error: [CacheException] Cache engine default is not properly configured.
+Stack Trace:
+#0 /Library/WebServer/Documents/waninaru/lib/Cake/Cache/Cache.php(136): Cache::_buildEngine('default')
+#1 /Library/WebServer/Documents/waninaru/app/Config/bootstrap.php(28): Cache::config('default', Array)
+#2 /Library/WebServer/Documents/waninaru/lib/Cake/Core/Configure.php(94): include('/Library/WebSer...')
+#3 /Library/WebServer/Documents/waninaru/lib/Cake/bootstrap.php(171): Configure::bootstrap(true)
+#4 /Library/WebServer/Documents/waninaru/app/webroot/index.php(92): include('/Library/WebSer...')
+#5 {main}
+2013-10-09 15:51:40 Error: Fatal Error (1): Call to undefined function ife() in [/Library/WebServer/Documents/waninaru/app/Model/Behavior/SoftDeletableBehavior.php, line 48]
+2013-10-09 15:51:40 Error: [FatalErrorException] Call to undefined function ife()
+Request URL: /waninaru/admin/users
+Stack Trace:
+#0 /Library/WebServer/Documents/waninaru/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/Library/WebSer...', 48)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/Library/WebSer...', 48, Array)
+#2 /Library/WebServer/Documents/waninaru/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/Library/WebSer...', 48, Array)
+#3 /Library/WebServer/Documents/waninaru/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-10-11 10:25:44 Error: [MissingBehaviorException] Behavior class SoftDeletableBehavior could not be found.
+Exception Attributes: array (
+  'class' => 'SoftDeletableBehavior',
+  'plugin' => false,
+)
+Request URL: /waninaru/admin/users
+Stack Trace:
+#0 /Library/WebServer/Documents/waninaru/lib/Cake/Model/BehaviorCollection.php(68): BehaviorCollection->load('SoftDeletable', Array)
+#1 /Library/WebServer/Documents/waninaru/lib/Cake/Model/Model.php(748): BehaviorCollection->init('User', Array)
+#2 [internal function]: Model->__construct(Array)
+#3 /Library/WebServer/Documents/waninaru/lib/Cake/Utility/ClassRegistry.php(168): ReflectionClass->newInstance(Array)
+#4 /Library/WebServer/Documents/waninaru/lib/Cake/Controller/Controller.php(738): ClassRegistry::init(Array)
+#5 /Library/WebServer/Documents/waninaru/lib/Cake/Controller/Controller.php(367): Controller->loadModel('User')
+#6 /Library/WebServer/Documents/waninaru/lib/Cake/Controller/Controller.php(405): Controller->__isset('User')
+#7 /Library/WebServer/Documents/waninaru/app/Controller/UsersController.php(7): Controller->__get('User')
+#8 [internal function]: UsersController->admin_index()
+#9 /Library/WebServer/Documents/waninaru/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#10 /Library/WebServer/Documents/waninaru/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 /Library/WebServer/Documents/waninaru/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#12 /Library/WebServer/Documents/waninaru/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2013-10-11 10:27:01 Error: [MissingBehaviorException] Behavior class SoftDeletableBehavior could not be found.
+Exception Attributes: array (
+  'class' => 'SoftDeletableBehavior',
+  'plugin' => false,
+)
+Request URL: /waninaru/admin/users
+Stack Trace:
+#0 /Library/WebServer/Documents/waninaru/lib/Cake/Model/BehaviorCollection.php(68): BehaviorCollection->load('SoftDeletable', Array)
+#1 /Library/WebServer/Documents/waninaru/lib/Cake/Model/Model.php(748): BehaviorCollection->init('User', Array)
+#2 [internal function]: Model->__construct(Array)
+#3 /Library/WebServer/Documents/waninaru/lib/Cake/Utility/ClassRegistry.php(168): ReflectionClass->newInstance(Array)
+#4 /Library/WebServer/Documents/waninaru/lib/Cake/Controller/Controller.php(738): ClassRegistry::init(Array)
+#5 /Library/WebServer/Documents/waninaru/lib/Cake/Controller/Controller.php(367): Controller->loadModel('User')
+#6 /Library/WebServer/Documents/waninaru/lib/Cake/Controller/Controller.php(405): Controller->__isset('User')
+#7 /Library/WebServer/Documents/waninaru/app/Controller/UsersController.php(7): Controller->__get('User')
+#8 [internal function]: UsersController->admin_index()
+#9 /Library/WebServer/Documents/waninaru/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#10 /Library/WebServer/Documents/waninaru/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 /Library/WebServer/Documents/waninaru/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#12 /Library/WebServer/Documents/waninaru/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2013-10-11 10:27:34 Error: [MissingBehaviorException] Behavior class SoftDeletableBehavior could not be found.
+Exception Attributes: array (
+  'class' => 'SoftDeletableBehavior',
+  'plugin' => false,
+)
+Request URL: /waninaru/admin/users
+Stack Trace:
+#0 /Library/WebServer/Documents/waninaru/lib/Cake/Model/BehaviorCollection.php(68): BehaviorCollection->load('SoftDeletable', Array)
+#1 /Library/WebServer/Documents/waninaru/lib/Cake/Model/Model.php(748): BehaviorCollection->init('User', Array)
+#2 [internal function]: Model->__construct(Array)
+#3 /Library/WebServer/Documents/waninaru/lib/Cake/Utility/ClassRegistry.php(168): ReflectionClass->newInstance(Array)
+#4 /Library/WebServer/Documents/waninaru/lib/Cake/Controller/Controller.php(738): ClassRegistry::init(Array)
+#5 /Library/WebServer/Documents/waninaru/lib/Cake/Controller/Controller.php(367): Controller->loadModel('User')
+#6 /Library/WebServer/Documents/waninaru/lib/Cake/Controller/Controller.php(405): Controller->__isset('User')
+#7 /Library/WebServer/Documents/waninaru/app/Controller/UsersController.php(7): Controller->__get('User')
+#8 [internal function]: UsersController->admin_index()
+#9 /Library/WebServer/Documents/waninaru/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#10 /Library/WebServer/Documents/waninaru/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 /Library/WebServer/Documents/waninaru/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#12 /Library/WebServer/Documents/waninaru/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}

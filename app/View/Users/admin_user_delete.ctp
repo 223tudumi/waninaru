@@ -1,5 +1,9 @@
 <h2>ユーザ削除確認画面 - <?php echo h($user['User']['user_name']); ?></h2>
-<?php echo $this->Form->create('Get'); ?>
+<div>
+	<?php echo $this->Html->link('ユーザ検索一覧' , array('controller'=>'users' , 'action'=>'admin_index') ) ?>
+	<?php echo $this->Html->link('ユーザ新規登録' , array('controller'=>'users' , 'action'=>'admin_userRegist') ) ?>
+</div>
+<?php echo $this->Form->create('Post'); ?>
 <div>
 <table>
 	<tr>

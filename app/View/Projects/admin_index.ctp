@@ -19,8 +19,8 @@
 			<td>
 			
 			<?php
-			foreach ($project['Producer'] as $producer){
-				echo h($producer['user_id']);
+			foreach ($project['projectUser'] as $producer){
+				echo h($producer['real_name']);
 			}
 			?>
 			</td>

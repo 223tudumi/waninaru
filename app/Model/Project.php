@@ -2,11 +2,20 @@
 
 class Project extends AppModel {
 	public $name = 'Project';
-	public $hasMany = array(
-		'Producer' => array(
-			'className' => 'Producer',
+	public $hasAndBelongsToMany = array(
+		'projectUser' => array(
+			'className' => 'User',
+			'joinTabel' => 'projects_users',
 			'foreignKey' => 'project_id',
-			'dependent' => 'true'
+			'unique'                 => true,
+			'conditions'             => '',
+			'fields'                 => '',
+			'order'                  => '',
+			'limit'                  => '',
+			'offset'                 => '',
+			'finderQuery'            => '',
+			'deleteQuery'            => '',
+			'insertQuery'            => ''
 		)
 	);
 	

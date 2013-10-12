@@ -1,21 +1,19 @@
 <?php
 class ProjectsController extends AppController{
-	var $uses = array('Project','Producer','User');
+	var $uses = array('Project','User','ProjectsUser');
 	public $helpers = array('Html' , 'Form');
 	
 	public function admin_index(){
-		$this->set('projects' , $this->Project->find('all',array('recursive' => 2)));
-		
+		$this->set('projects' , $this->Project->find('all'));
 	}
 	
 	public function admin_projectRegist($user_id = null){
-		$this->request->data['Producer']['user_id'] = $user_id;
-		$this->User->id = $user_id;
-		$this->set('user',$this->User->read());
+		$this->request->data['ProjectsUser']['user_id'] = $user_id;
 		if($this->request->isPost()){
-			$this->request->data['Producer']['user_id'] = $user_id;
-			if($this->Project->saveAll($this->request->data)){
-				$this->Session->setFlash('成功したよ!!!');
+			if($this->Project->saveALL($this->data)){
+				$this->request->data['ProjectsUser']['project_id'] = $this->Project->id;
+				$this->ProjectsUser->save($this->data);
+				$this->redirect(array('action'=>'admin_index'));
 			} else {
 				$this->Session->setFlash('失敗したよ!!!');
 			}

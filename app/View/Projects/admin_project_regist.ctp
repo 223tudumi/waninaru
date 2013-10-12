@@ -5,10 +5,7 @@
 	<?php echo $this->Html->link('企画検索一覧' , array('controller'=>'projects' , 'action'=>'admin_index') ) ?>
 </div>
 <?php echo $this->Form->create('Post'); ?>
-	<div class="input text">
-		<label>企画者名</label>
-		<?php echo h($user['User']['real_name']); ?>
-	</div>
+	<?php echo $this->Form->input('ProjectsUser.user_id', array('type' => 'text','label' => '企画者No.')); ?>
 	<?php echo $this->Form->input('Project.project_name', array('type' => 'text','label' => '企画名')); ?>
 	<?php echo $this->Form->input('Project.active_date', array('label' => '実施日')); ?>
 	<?php echo $this->Form->input('Project.recrouit_date', array('label' => '募集期限')); ?>

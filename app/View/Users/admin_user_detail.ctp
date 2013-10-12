@@ -34,4 +34,5 @@
 </div>
 <?php echo $this->Form->button('戻る',array('onclick' => " location.href = '/waninaru/admin/users' ")); ?>
 <?php echo $this->Form->button('更新',array('onclick' => " location.href = '/waninaru/admin/users/userUpdate/".$user['User']['id']."'" )); ?>
+<?php echo $this->Form->button('企画投稿',array('onclick' => " location.href = '/waninaru/admin/projects/projectRegist/".$user['User']['id']."'" )); ?>
 <?php echo $this->Form->button('削除',array('onclick' => " location.href = '/waninaru/admin/users/userDelete/".$user['User']['id']."'" )); ?>

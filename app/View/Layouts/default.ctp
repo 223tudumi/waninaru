@@ -22,7 +22,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 <!DOCTYPE html>
 <html>
 <head>
-	<?php echo $this->Html->charset(); ?>
+	<?php echo $this->Html->charset('utf-8'); ?>
 	<title>
 		<?php echo $cakeDescription ?>:
 		<?php echo $title_for_layout; ?>
@@ -36,7 +36,6 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 <body>
 	<div id="container">

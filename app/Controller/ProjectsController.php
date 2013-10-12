@@ -7,6 +7,11 @@ class ProjectsController extends AppController{
 		$this->set('projects' , $this->Project->find('all'));
 	}
 	
+	public function admin_projectDetail($id = null){
+		$this->Project->id = $id;
+		$this->set('project',$this->Project->read());
+	}
+	
 	public function admin_projectRegist($user_id = null){
 		$this->request->data['ProjectsUser']['user_id'] = $user_id;
 		if($this->request->isPost()){

@@ -1,8 +1,5 @@
 <h2>ユーザ詳細画面 - <?php echo h($user['User']['user_name']); ?></h2>
-<div>
-	<?php echo $this->Html->link('ユーザ検索一覧' , array('controller'=>'users' , 'action'=>'admin_index') ) ?>
-	<?php echo $this->Html->link('ユーザ新規登録' , array('controller'=>'users' , 'action'=>'admin_userRegist') ) ?>
-</div>
+<?php echo $this->element('admin_menu'); ?>
 <div>
 <table>
 	<tr>
@@ -30,6 +27,13 @@
 		<th>企画名</th>
 		<th>詳細</th>
 	</tr>
+	<?php foreach ($user['userProject'] as $project) : ?>
+	<tr>
+		<td><?php echo h($project['id']); ?></td>
+		<td><?php echo h($project['project_name']); ?></td>
+		<td><?php echo $this->Html->link('詳細','/admin/projects/projectDetail/'.$project['id']); ?></td>
+	</tr>
+	<?php endforeach; ?>
 </table>
 </div>
 <?php echo $this->Form->button('戻る',array('onclick' => " location.href = '/waninaru/admin/users' ")); ?>

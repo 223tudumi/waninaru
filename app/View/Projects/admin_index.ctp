@@ -1,4 +1,4 @@
-<h2>ユーザ検索一覧画面</h2>
+<h2>企画検索一覧画面</h2>
 <div>
 	<?php echo $this->Html->link('ユーザ検索一覧' , array('controller'=>'users' , 'action'=>'admin_index') ) ?>
 	<?php echo $this->Html->link('ユーザ新規登録' , array('controller'=>'users' , 'action'=>'admin_userRegist') ) ?>
@@ -16,14 +16,7 @@
 		<tr>
 			<td><?php echo h($project['Project']['id']); ?></td>
 			<td><?php echo h($project['Project']['project_name']); ?></td>
-			<td>
-			
-			<?php
-			foreach ($project['projectUser'] as $producer){
-				echo h($producer['real_name']);
-			}
-			?>
-			</td>
+			<td><?php foreach ($project['projectUser'] as $producer){ echo h($producer['real_name']); } ?></td>
 			<td><?php echo h($project['Project']['active_date']); ?></td>
 			<td></td>
 		</tr>

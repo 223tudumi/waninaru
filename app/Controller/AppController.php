@@ -32,4 +32,11 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+	function beforeFilter() {
+		parent::beforeFilter();
+		$this->header("Content-type: text/html; charset=utf-8");
+		if(isset($this->params['url'])) {
+			array_walk_recursive($this->params['url'],'&$val, $key','$val = mb_convert_encoding($val, "UTF-8", "auto");');
+		}
+	}
 }

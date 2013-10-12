@@ -1,0 +1,11 @@
+【一つのコントローラで複数のデータベースを使うとき】
+http://www.pg-memo.com/blog/?p=333
+
+【複数のデータベースをひもづけるとき（リレーション、アソシエーション）】
+http://book.cakephp.org/2.0/ja/models/associations-linking-models-together.html
+
+【アソシエーションで繋いだテーブルのうち、孫以降まで取得したいとき】
+http://satussy.blogspot.jp/2011/11/cakephp_30.html
+
+【Error: Cannot use string offset as an array 】
+http://neoinspire.net/archives/152#.UlfwgCS9tNU

@@ -15,7 +15,15 @@ class ProjectsController extends AppController{
 	public function admin_projectRegist($user_id = null){
 		$this->request->data['ProjectsUser']['user_id'] = $user_id;
 		if($this->request->isPost()){
-			if($this->Project->saveALL($this->data)){
+			$tmpName = $this->request->data['Project']['image_file_name']['tmp_name'];
+			$this->request->data['Project']['image_file_name'] = "temp";
+			if($this->Project->save($this->data)){
+				$imageName = $this->Project->id. '-' . date('YmdHis') . '.jpg';
+				$fileName = APP.'webroot/img/projects/'.$imageName;
+				move_uploaded_file($tmpName, $fileName);
+				$this->request->data['Project']['image_file_name'] = $imageName;
+				$this->Project->save($this->data);
+				
 				$this->request->data['ProjectsUser']['project_id'] = $this->Project->id;
 				$this->ProjectsUser->save($this->data);
 				$this->redirect(array('action'=>'admin_index'));

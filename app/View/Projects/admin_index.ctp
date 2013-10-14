@@ -18,7 +18,7 @@
 			<td><?php echo h($project['Project']['project_name']); ?></td>
 			<td><?php foreach ($project['projectUser'] as $producer){ echo h($producer['real_name']); } ?></td>
 			<td><?php echo h($project['Project']['active_date']); ?></td>
-			<td></td>
+			<td><?php echo $this->Html->link('詳細','/admin/projects/projectDetail/'.$project['Project']['id']); ?></td>
 		</tr>
 	<?php endforeach; ?>
 </table>

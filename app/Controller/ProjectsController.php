@@ -1,10 +1,25 @@
 <?php
 class ProjectsController extends AppController{
 	var $uses = array('Project','User','ProjectsUser');
+	var $paginate = array(
+			'limit' => 20,
+			'order' => array(
+					'Project.id' => 'desc'
+			),
+	);
 	public $helpers = array('Html' , 'Form');
 	
 	public function admin_index(){
-		$this->set('projects' , $this->Project->find('all'));
+		$this->set('projects' , $this->paginate('Project'));
+	}
+	
+	public function admin_projectDelete($id = null){
+		$this->Project->id = $id;
+		$this->set('project',$this->Project->read());
+		if($this->request->isPost()){
+			$this->Project->delete($this->request->data($this->Project->id),true);
+			$this->redirect(array('action'=>'admin_index'));
+		}
 	}
 	
 	public function admin_projectDetail($id = null){

@@ -39,3 +39,5 @@
 	</tr>
 </table>
 </div>
+<?php echo $this->Form->button('戻る',array('onclick' => " location.href = '/waninaru/admin/projects' ")); ?>
+<?php echo $this->Form->button('削除',array('onclick' => " location.href = '/waninaru/admin/projects/projectDelete/".$project['Project']['id']."'" )); ?>

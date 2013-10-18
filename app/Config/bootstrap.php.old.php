@@ -108,8 +108,10 @@ CakeLog::config('error', array(
 	'file' => 'error',
 ));
 
-// プラグインのロード設定
-CakePlugin::load('Migrations');
-
 // 配列もOK
-CakePlugin::load(array('DebugKit', 'Migrations'));
+CakePlugin::load('DebugKit');
+CakePlugin::load('xform');
+CakePlugin::load('Migrations');
+CakePlugin::loadAll();
+CakePlugin::load('Xform');
+?>

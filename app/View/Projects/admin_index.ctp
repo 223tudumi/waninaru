@@ -22,3 +22,6 @@
 		</tr>
 	<?php endforeach; ?>
 </table>
+<?php
+	echo $this->paginator->numbers();
+?>

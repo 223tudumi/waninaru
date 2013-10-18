@@ -15,7 +15,8 @@ class AppSchema extends CakeSchema {
 		'comment_text' => array('type' => 'text', 'null' => false, 'default' => null, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
 		'created' => array('type' => 'datetime', 'null' => true, 'default' => null),
 		'modified' => array('type' => 'datetime', 'null' => true, 'default' => null),
-		'dalete_flag' => array('type' => 'integer', 'null' => true, 'default' => '0'),
+		'deleted' => array('type' => 'integer', 'null' => true, 'default' => '0' , 'length' => 1),
+		'deleted_date' => array('type' => 'datetime', 'null' => true, 'default' => null),
 		'indexes' => array(
 			'PRIMARY' => array('column' => 'id', 'unique' => 1)
 		),
@@ -28,20 +29,22 @@ class AppSchema extends CakeSchema {
 		'user_id' => array('type' => 'integer', 'null' => false, 'default' => null),
 		'created' => array('type' => 'datetime', 'null' => true, 'default' => null),
 		'modified' => array('type' => 'datetime', 'null' => true, 'default' => null),
-		'dalete_flag' => array('type' => 'integer', 'null' => true, 'default' => '0'),
+		'deleted' => array('type' => 'integer', 'null' => true, 'default' => '0' , 'length' => 1),
+		'deleted_date' => array('type' => 'datetime', 'null' => true, 'default' => null),
 		'indexes' => array(
 			'PRIMARY' => array('column' => 'id', 'unique' => 1)
 		),
 		'tableParameters' => array('charset' => 'latin1', 'collate' => 'latin1_swedish_ci', 'engine' => 'InnoDB')
 	);
 
-	public $producers = array(
+	public $projects_users = array(
 		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'key' => 'primary'),
 		'project_id' => array('type' => 'integer', 'null' => false, 'default' => null),
 		'user_id' => array('type' => 'integer', 'null' => false, 'default' => null),
 		'created' => array('type' => 'datetime', 'null' => true, 'default' => null),
 		'modified' => array('type' => 'datetime', 'null' => true, 'default' => null),
-		'dalete_flag' => array('type' => 'integer', 'null' => true, 'default' => '0'),
+		'deleted' => array('type' => 'integer', 'null' => true, 'default' => '0' , 'length' => 1),
+		'deleted_date' => array('type' => 'datetime', 'null' => true, 'default' => null),
 		'indexes' => array(
 			'PRIMARY' => array('column' => 'id', 'unique' => 1)
 		),
@@ -59,7 +62,8 @@ class AppSchema extends CakeSchema {
 		'people_maxnum' => array('type' => 'integer', 'null' => false, 'default' => null),
 		'created' => array('type' => 'datetime', 'null' => true, 'default' => null),
 		'modified' => array('type' => 'datetime', 'null' => true, 'default' => null),
-		'dalete_flag' => array('type' => 'integer', 'null' => true, 'default' => '0'),
+		'deleted' => array('type' => 'integer', 'null' => true, 'default' => '0' , 'length' => 1),
+		'deleted_date' => array('type' => 'datetime', 'null' => true, 'default' => null),
 		'indexes' => array(
 			'PRIMARY' => array('column' => 'id', 'unique' => 1)
 		),
@@ -72,7 +76,8 @@ class AppSchema extends CakeSchema {
 		'tag_text' => array('type' => 'string', 'null' => false, 'default' => null, 'length' => 64, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
 		'created' => array('type' => 'datetime', 'null' => true, 'default' => null),
 		'modified' => array('type' => 'datetime', 'null' => true, 'default' => null),
-		'dalete_flag' => array('type' => 'integer', 'null' => true, 'default' => '0'),
+		'deleted' => array('type' => 'integer', 'null' => true, 'default' => '0' , 'length' => 1),
+		'deleted_date' => array('type' => 'datetime', 'null' => true, 'default' => null),
 		'indexes' => array(
 			'PRIMARY' => array('column' => 'id', 'unique' => 1)
 		),

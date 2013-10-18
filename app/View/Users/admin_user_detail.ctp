@@ -1,5 +1,9 @@
 <h2>ユーザ詳細画面 - <?php echo h($user['User']['user_name']); ?></h2>
 <div>
+	<?php echo $this->Html->link('ユーザ検索一覧' , array('controller'=>'users' , 'action'=>'admin_index') ) ?>
+	<?php echo $this->Html->link('ユーザ新規登録' , array('controller'=>'users' , 'action'=>'admin_userRegist') ) ?>
+</div>
+<div>
 <table>
 	<tr>
 		<th>ID</th>
@@ -29,4 +33,6 @@
 </table>
 </div>
 <?php echo $this->Form->button('戻る',array('onclick' => " location.href = '/waninaru/admin/users' ")); ?>
+<?php echo $this->Form->button('更新',array('onclick' => " location.href = '/waninaru/admin/users/userUpdate/".$user['User']['id']."'" )); ?>
+<?php echo $this->Form->button('企画投稿',array('onclick' => " location.href = '/waninaru/admin/projects/projectRegist/".$user['User']['id']."'" )); ?>
 <?php echo $this->Form->button('削除',array('onclick' => " location.href = '/waninaru/admin/users/userDelete/".$user['User']['id']."'" )); ?>

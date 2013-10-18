@@ -7,18 +7,25 @@
 <table>
 	<tr>
 		<th>ID</th>
-		<th>学籍番号</th>
-		<th>本名</th>
-		<th>ユーザ名</th>
+		<th>企画名</th>
+		<th>投稿者名</th>
+		<th>実施日</th>
 		<th>詳細</th>
 	</tr>
-	<?php foreach ($users as $user) : ?>
+	<?php foreach ($projects as $project) : ?>
 		<tr>
-			<td><?php echo h($user['User']['id']); ?></td>
-			<td><?php echo h($user['User']['student_number']); ?></td>
-			<td><?php echo h($user['User']['real_name']); ?></td>
-			<td><?php echo h($user['User']['user_name']); ?></td>
-			<td><?php echo $this->Html->link('詳細','/admin/users/userDetail/'.$user['User']['id']); ?></td>
+			<td><?php echo h($project['Project']['id']); ?></td>
+			<td><?php echo h($project['Project']['project_name']); ?></td>
+			<td>
+			
+			<?php
+			foreach ($project['projectUser'] as $producer){
+				echo h($producer['real_name']);
+			}
+			?>
+			</td>
+			<td><?php echo h($project['Project']['active_date']); ?></td>
+			<td></td>
 		</tr>
 	<?php endforeach; ?>
 </table>

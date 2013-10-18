@@ -1,5 +1,4 @@
 <?php
-
 class UsersController extends AppController{
 	public $helpers = array('Html' , 'Form');
 	
@@ -25,8 +24,18 @@ class UsersController extends AppController{
 	public function admin_userDelete($id){
 		$this->User->id = $id;
 		$this->set('user',$this->User->read());
+		if($this->request->isPost()){
+			$this->User->delete($this->request->data($this->User->id));
+			$this->redirect(array('action'=>'admin_index'));
+		}
+	}
+	
+	public function admin_userUpdate($id){
+		$this->User->id = $id;
 		if($this->request->isGet()){
-			if($this->User->delete($this->request->data($this->User->id))){
+			$this->request->data=$this->User->read();
+		}else{
+			if($this->User->save($this->request->data)){
 				$this->redirect(array('action'=>'admin_index'));
 			} else {
 				$this->Session->setFlash('失敗したよ!!!');

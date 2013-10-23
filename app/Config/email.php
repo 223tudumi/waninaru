@@ -38,8 +38,9 @@
 class EmailConfig {
 
 	public $default = array(
-		'transport' => 'Mail',
-		'from' => 'you@localhost',
+		'transport' => 'Smtp',
+		'from' => 'kuripro2013@gmail.com',
+		'host' => 'ssl://smtp.gmail.com',
 		//'charset' => 'utf-8',
 		//'headerCharset' => 'utf-8',
 	);
@@ -90,9 +91,33 @@ class EmailConfig {
 	);
 	
 	public $inquiry = array(
-			'transport' => 'Mail',
-			'from' => array ( 'hogehoge@xxxxxx.com' => 'お問い合わせ' ),
-			'to'   => array ( 'ne230212@senshu-u.jp' ),
+		'from' => array('kuripro2013@gmail.com'=>'Waninaru運営'),
+		'sender' => null,
+		'to' => null,
+		'cc' => null,
+		'bcc' => null,
+		'replyTo' => null,
+		'readReceipt' => null,
+		'returnPath' => null,
+		'messageId' => true,
+		'subject' => null,
+		'message' => null,
+		'headers' => null,
+		'viewRender' => null,
+		'template' => false,
+		'layout' => false,
+		'viewVars' => null,
+		'attachments' => null,
+		'emailFormat' => null,
+		'transport' => 'Smtp',
+		'host' => 'ssl://smtp.gmail.com',
+		'port' => 465,
+		'timeout' => 30,
+		'username' => 'kuripro2013@gmail.com',
+		'password' => 'bananawani',
+		'client' => null,
+		'log' => false,
+		//'charset' => 'utf-8',
+		//'headerCharset' => 'utf-8',
 	);
-	
 }

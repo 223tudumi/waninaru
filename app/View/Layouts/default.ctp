@@ -10,6 +10,11 @@
 		echo $this->Html->css('common');
 		echo $this->Html->css('skin');
 		echo $this->Html->css('kkk');
+		echo $this->Html->css('contact');
+		echo $this->Html->css('detail');
+		echo $this->Html->css('rule');
+		echo $this->Html->css('top');
+		echo $this->Html->css('bak_top');
 		echo $this->Html->script(array('jquery','jquery.jcarousel','smoothScroll'));
 		echo $this->fetch('meta');
 		echo $this->fetch('css');

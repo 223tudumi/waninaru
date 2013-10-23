@@ -11,6 +11,7 @@
 【メールアドレス】
 ne<?php echo $mail; ?>@senshu-u.jp
 【種別】
+<?php echo $category; ?>
 
 【本文】
 <?php echo $body; ?>

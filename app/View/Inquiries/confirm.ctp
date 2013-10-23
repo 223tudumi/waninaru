@@ -15,7 +15,7 @@
 			</dl></li>
 			<li><dl class="clearfix">
 				<dt>項目</dt>
-				<dd><?php echo h($inquiry['category']); ?></dd>
+				<dd><?php echo h($inquiry['category']); ?><?php echo $this->Form->hidden('category',array('value'=>$inquiry['category'])); ?></dd>
 			</dl></li>
 			<li><dl class="clearfix">
 				<dt>お問い合わせ内容</dt>

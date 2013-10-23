@@ -9,6 +9,16 @@ class InquiriesController extends AppController {
 			if($this->request->data['Inquiry']['hidden']=='confirm'){
 				switch($this->request->data['Inquiry']['category']){
 					case 0:
+						$this->request->data['Inquiry']['category']='企画について';
+						break;
+					case 1:
+						$this->request->data['Inquiry']['category']='アカウントについて';
+						break;
+					case 2:
+						$this->request->data['Inquiry']['category']='サイトについて';
+						break;
+					case 3:
+						$this->request->data['Inquiry']['category']='その他';
 						break;
 				}
 				$this->set('inquiry',$this->request->data['Inquiry']);

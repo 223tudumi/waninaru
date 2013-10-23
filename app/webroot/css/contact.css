@@ -1,0 +1,107 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* ========================
+	rule style
+======================== */
+
+div#contact_container {
+  width: 960px;
+}
+
+div#contact_container h2 {
+  width: 960px;
+  height: 42px;
+  padding: 0 0 20px 0;
+  font-size: 25px;
+  background: transparent url(../img/common/icon_flower.png) no-repeat top left;
+}
+
+div#contact_container h2 span {
+  width: 905px;
+  padding: 13px 0 0 0;
+  margin: 0 0 0 55px;
+  display: block;
+}
+
+div#flow_image_area {
+  width: 960px;
+  padding: 30px 0 0 0;
+  margin: 0 0 0 130px;
+}
+
+div#form_main_area {
+  width: 960px;
+}
+
+div#form_main_area ul {
+  width: 960px;
+  padding: 40px 0 20px 0;
+}
+
+div#form_main_area ul li {
+  width: 800px;
+  margin: 0 0 0 80px;
+  padding: 25px 0;
+  background: transparent url(../img/inquiry/contact_line.gif) repeat-x bottom left;
+}
+
+div#form_main_area ul li dl {
+  width: 750px;
+  margin: 0 0 0 25px;
+}
+
+div#form_main_area ul li dl dt {
+  width: 200px;
+  float: left;
+  font-weight: bold;
+}
+
+div#form_main_area ul li dl dd {
+  width: 530px;
+  float: right;
+}
+
+div#form_main_area ul li dl dd span {
+  margin: 0 3px;
+}
+
+input.mid_width {
+  width: 120px;
+  height: 20px;
+}
+
+textarea.mid_textarea {
+  width: 400px;
+  height: 120px;
+}
+
+div#form_btn_area {
+  width: 960px;
+  padding: 20px 0 30px 0;
+  text-align: center;
+}
+
+
+
+
+div#complete_area {
+  width: 960px;
+  padding: 30px 0 50px 0;
+}
+
+div#complete_area p#submit01 {
+  width: 960px;
+  padding: 0 0 20px 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #509f3f;
+  line-height: 1.5em;
+  text-align: center;
+}
+
+div#complete_area p#submit02 {
+  width: 960px;
+  line-height: 1.5em;
+  text-align: center;
+}

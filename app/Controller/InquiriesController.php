@@ -28,11 +28,19 @@ class InquiriesController extends AppController {
 				$email = new CakeEmail ();
 				$email->config ( 'inquiry' );
 				$email->to('ne'.$this->request->data['Inquiry']['mail'].'@senshu-u.jp');
-				$email->subject($this->data['Inquiry']['name'].'様【Waninaru】登録申請を受付ました。');
+				$email->subject($this->data['Inquiry']['name'].'様【Waninaru】お問い合わせを受付ました。');
 				$email->emailFormat('text');
-				$email->template('inquiry');
+				$email->template('inquiryConfirm');
 				$email->viewVars($this->request->data['Inquiry']);
-				if ( $email -> send ('test') ) {
+				if ( $email -> send () ) {
+					$email = new CakeEmail ();
+					$email->config ( 'inquiry' );
+					$email->to('kuripro2013@gmail.com');
+					$email->subject('システム管理者【Waninaru】お問い合わせを受付ました。');
+					$email->emailFormat('text');
+					$email->template('inquiry');
+					$email->viewVars($this->request->data['Inquiry']);
+					$email -> send ();
 					$this->render("complete");
 				} else {
 					$this -> Session -> setFlash ( 'お問い合わせに失敗しました' );

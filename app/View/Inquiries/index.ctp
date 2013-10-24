@@ -11,7 +11,7 @@
 			</dl></li>
 			<li><dl class="clearfix">
 				<dt>メールアドレス</dt>
-				<dd><span>ne</span><?php echo $this->Form->input('Inquiry.mail',array('class'=>'mid_width','type'=>'text'));?><span>@senshu-u.jp</span></dd>
+				<dd><span>ne</span><?php echo $this->Form->input('Inquiry.mail',array('class'=>'mid_width','type'=>'text','maxlength'=>'6'));?><span>@senshu-u.jp</span></dd>
 			</dl></li>
 			<li><dl class="clearfix">
 				<dt>項目</dt>

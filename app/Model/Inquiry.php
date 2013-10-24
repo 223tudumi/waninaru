@@ -4,7 +4,12 @@ class Inquiry extends AppModel {
 	public $validate = array(
 			'name' => array ( 'rule' => 'notEmpty' ),
 			'body'  => array ( 'rule' => 'notEmpty' ),
-			'mail'  => array ( 'rule' => 'notEmpty' ),
+			'mail'  => array (
+					'numeric' => array(
+							'rule' => 'numeric',
+							'allowEmpty' => false
+					),
+			),
 			'category'	=> array('rule' => 'notEmpty'),
 			'mode' => array(),
 	);

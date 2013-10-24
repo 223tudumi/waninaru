@@ -44,15 +44,13 @@ $(function(){
 </script>
 	<div id="main_wrapp">
 		<div id="main_inner">
-			<?php echo $this->element('header'); ?>
-		<!-- メインコンテンツ開始  -->
-		<div id="content">
-			<?php echo $this->Session->flash(); ?>
-			<?php echo $this->fetch('content'); ?>
-		</div>
-		<!-- メインコンテンツ終了  -->
+		<?php echo $this->element('header'); ?>
 		</div><!-- end main_inner -->
 	</div><!-- end main_wrapp -->
+	<!-- メインコンテンツ開始  -->
+	<?php echo $this->Session->flash(); ?>
+	<?php echo $this->fetch('content'); ?>
+	<!-- メインコンテンツ終了  -->
 	<div id="footer_top_wrapp">
 		<div id="footer_top_inner">
 			<p><a href="#main_wrapp" title="Page top"><?php echo $this->Html->image('common/pagetop.png',array('alt'=>'Page top'));?></a></p>

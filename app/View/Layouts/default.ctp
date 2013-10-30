@@ -55,7 +55,7 @@ $(function(){
 	</div><!-- end main_wrapp -->
 	<div id="footer_top_wrapp">
 		<div id="footer_top_inner">
-			<p><a href="#main_wrapp" title="Page top"><?php echo $this->Html->image('common/pagetop.png',array('alt'=>'Page top'));?></a></p>
+			<p><a href="#main_wrapp" title="Page top"><?php echo $this->Html->image('common/pagetop_off.png',array('alt'=>'Page top'));?></a></p>
 		</div><!-- end footer_top_inner -->
 	</div><!-- end footer_top_wrapp -->
 <?php echo $this->element('footer'); ?>

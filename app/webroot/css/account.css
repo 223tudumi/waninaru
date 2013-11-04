@@ -1,0 +1,310 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* ========================
+  account style
+======================== */
+
+div#account_container {
+  width: 960px;
+  text-align:center;
+}
+
+div#account_container h1 {
+  width: 960px;
+  height: 10px;
+  padding: 0 0 20px 0;
+  font-size: 40px;
+}
+
+
+div#account_container h2 {
+  width: 960px;
+  height: 42px;
+  padding: 0 0 20px 0;
+  font-size: 25px;
+  background: transparent url(../img/common/icon_flower.png) no-repeat 30% 0%;
+}
+
+div#account_container h2 span {
+  width: 905px;
+  padding: 13px 0 0 0;
+  margin: 0 0 0 55px;
+  display: block;
+}
+
+div.account_form {
+  width: 960px;
+  height: 42px;
+  padding: 0 0 20px 0;
+  font-size: 20px;
+  margin: 0 auto;
+}
+
+
+div.supplement /*補足*/{
+  width: 960px;
+  padding: 0 0 20px 0;
+  font-size: 15px;
+  line-height: 180%;
+}
+
+div.square_text{
+  border-style: solid ;
+  border-width: 1px;
+  padding: 10px 5px 10px 20px;
+  font-size: 15px;
+  width: 350px;
+  text-align:center;
+}
+
+/* ========================
+  font color
+======================== */
+
+
+
+/* ========================
+  butten style
+======================== */
+
+div.contents1{
+  padding: 20px 0 20px 0;
+}
+
+div.contents1 .btn {
+    display:block;
+    width:200px;
+    padding:35px 40px;
+    margin: 0 auto;
+    line-height: 120%;
+
+
+    /* 角丸  */
+    -webkit-border-radius:5px;
+       -moz-border-radius:5px;
+         -o-border-radius:5px;
+            border-radius:5px;
+
+    /* 影 */
+    -webkit-box-shadow: 0px 0px 6px 0px #93847c;
+       -moz-box-shadow: 0px 0px 6px 0px #93847c;
+         -o-box-shadow: 0px 0px 6px 0px #93847c;
+            box-shadow: 0px 0px 6px 0px #93847c;
+
+    color:#FFF;
+    font-size: 33px;
+    font-weight:bold;
+    text-align:center;
+    text-decoration:none;
+}
+
+
+div.contents1 .blue {
+  background: #5b97e5;
+}
+div.contents1 .blue:hover {
+  background: #5b97ff;
+}
+
+/* ========================
+  butten2 style
+======================== */
+
+div.contents2{
+  padding: 40px 45px 20px 190px;
+}
+
+div.contents2 .btn {
+    display:block;
+    width:200px;
+    padding:25px 30px;
+    margin: 0 auto;
+    line-height: 120%;
+
+
+    /* 角丸  */
+    -webkit-border-radius:5px;
+       -moz-border-radius:5px;
+         -o-border-radius:5px;
+            border-radius:5px;
+
+    /* 影 */
+    -webkit-box-shadow: 0px 0px 6px 0px #93847c;
+       -moz-box-shadow: 0px 0px 6px 0px #93847c;
+         -o-box-shadow: 0px 0px 6px 0px #93847c;
+            box-shadow: 0px 0px 6px 0px #93847c;
+
+    color:#FFF;
+    font-size: 33px;
+    font-weight:bold;
+    text-align:center;
+    text-decoration:none;
+}
+
+
+div.contents2 .blue {
+  background: #5b97e5;
+}
+div.contents2 .blue:hover {
+  background: #5b97ff;
+}
+
+/* ========================
+  butten3 style
+======================== */
+
+div.contents3{
+  padding: 40px 45px 20px 0px;
+}
+
+div.contents3 .btn {
+    display:block;
+    width:100px;
+    padding:25px 30px;
+    margin: 0 auto;
+    line-height: 120%;
+
+
+    /* 角丸  */
+    -webkit-border-radius:5px;
+       -moz-border-radius:5px;
+         -o-border-radius:5px;
+            border-radius:5px;
+
+    /* 影 */
+    -webkit-box-shadow: 0px 0px 6px 0px #93847c;
+       -moz-box-shadow: 0px 0px 6px 0px #93847c;
+         -o-box-shadow: 0px 0px 6px 0px #93847c;
+            box-shadow: 0px 0px 6px 0px #93847c;
+
+    color:#FFF;
+    font-size: 33px;
+    font-weight:bold;
+    text-align:center;
+    text-decoration:none;
+}
+
+
+div.contents3 .red {
+  background: #ff4444;
+}
+div.contents3 .red:hover {
+  background: #ff5555;
+}
+
+
+/* ========================
+  butten4 style
+======================== */
+
+div.contents4{
+  padding: 20px 0 20px 0;
+}
+
+div.contents4 .btn {
+    display:block;
+    width:200px;
+    padding:25px 30px;
+    margin: 0 auto;
+    line-height: 120%;
+
+
+    /* 角丸  */
+    -webkit-border-radius:5px;
+       -moz-border-radius:5px;
+         -o-border-radius:5px;
+            border-radius:5px;
+
+    /* 影 */
+    -webkit-box-shadow: 0px 0px 6px 0px #93847c;
+       -moz-box-shadow: 0px 0px 6px 0px #93847c;
+         -o-box-shadow: 0px 0px 6px 0px #93847c;
+            box-shadow: 0px 0px 6px 0px #93847c;
+
+    color:#FFF;
+    font-size: 33px;
+    font-weight:bold;
+    text-align:center;
+    text-decoration:none;
+}
+
+
+div.contents4 .green {
+  background: #94dd83;
+}
+div.contents4 .green:hover {
+  background: #94ee83;
+}
+
+
+
+
+
+
+
+
+
+/*まず、フォーム全体の囲み罫や背景などを指定*/
+form#formstyle {
+width: 700px;
+padding: 10px 10px 10px 10px;
+margin-bottom: 15px;
+border: 1px solid #ccc;
+color: #666;
+background: #F3F5F8;
+margin: 0 auto;
+}
+/*リスト要素<ul>を初期化*/
+form#formstyle ul {
+padding:0;
+margin:0;
+}
+
+form#formstyle ul li:first-child {
+border-top:none;
+}
+
+/* span要素をブロック化しフロートでフォーム部品と横に並べる*/
+form#formstyle ul li span {
+width: 20em;
+margin:0 auto;
+display:block;
+float:left;
+}
+
+/*疑似要素「:after」で、 li要素の直後でフロートをクリア*/
+form#formstyle ul li:after {
+content:".";
+display:block;
+height:0;
+visibility:hidden;
+clear:both; /*←フロートをクリア*/
+}
+
+/* テキスト入力部分の見た目を統一する */
+form#formstyle ul li label .txtfiled {
+width:100px;
+/*テキストエリア内にシャドウをつける*/
+background: #fff;
+-webkit-box-shadow: 2px 3px 5px -2px #CCC inset;
+-moz-box-shadow: 2px 3px 5px -2px #CCC inset;
+box-shadow: 2px 3px 5px -2px #CCC inset;
+
+}
+
+ul{
+line-height:40px;
+margin-left:0px;
+margin-bottom:5px;
+}
+
+
+
+div.float1 {
+  float: left;
+}
+
+div.float2 {
+  float: right;
+}

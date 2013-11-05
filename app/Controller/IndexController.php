@@ -2,6 +2,15 @@
 class IndexController extends AppController{
 	var $uses = array('Project','User','ProjectsUser');
 	public $helpers = array('Html' , 'Form');
+	public $components = Array(
+			'Session',
+			'Auth' => Array(
+					'loginRedirect' => Array('controller'  => 'index', 'action' => 'index'),
+					'logoutRedirect' => Array('controller' => 'index', 'action' => 'index'),
+					'authenticate' => Array('Form' => Array('fields' => Array('username' => 'student_number','password'=>'user_password')))
+			)
+	);
+	
 	public function index(){
 		$today = date("y/m/d Ah:i");
 		$this->set('news',$this->Project->find('all' , array(
@@ -11,6 +20,13 @@ class IndexController extends AppController{
 		)
 		)
 		);
+	}
+	
+	/**
+	 * ログアウト処理
+	 */
+	public function logout() {
+		$this->redirect($this->Auth->logout());
 	}
 }
 ?>

@@ -2,6 +2,14 @@
 App::uses('CakeEmail', 'Network/Email' );
 class InquiriesController extends AppController {
 	public $helpers = array ( 'Html','Form');
+	public $components = Array(
+			'Session',
+			'Auth' => Array(
+					'loginRedirect' => Array('controller'  => 'index', 'action' => 'index'),
+					'logoutRedirect' => Array('controller' => 'index', 'action' => 'index'),
+					'authenticate' => Array('Form' => Array('fields' => Array('username' => 'student_number','password'=>'user_password')))
+			)
+	);
 	
 	public function index() {
 		if(empty($this->request->data)){
@@ -47,6 +55,13 @@ class InquiriesController extends AppController {
 				}
 			}	
 		}
+	}
+	
+	/**
+	 * ログアウト処理
+	 */
+	public function logout() {
+		$this->redirect($this->Auth->logout());
 	}
 }
 ?>

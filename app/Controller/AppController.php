@@ -54,7 +54,7 @@ class AppController extends Controller {
 		//静的コンテンツ
 		$this->Auth->allow(array('controller' => 'abouts', 'action' => 'index'));
 		$this->Auth->allow(array('controller' => 'inquiries', 'action' => 'index'));
-		$this->Auth->allow(array('controller' => 'rules', 'action' => 'index','login'));
+		$this->Auth->allow(array('controller' => 'rules', 'action' => 'index'));
 		$this->Auth->allow(array('controller' => 'index', 'action' => 'index'));
 	}
 	

@@ -5,7 +5,7 @@ class UsersController extends AppController{
 			'Session',
 			'Auth' => Array(
 					'loginRedirect' => Array('controller'  => 'index', 'action' => 'index'),
-					'logoutRedirect' => Array('controller' => 'abouts', 'action' => 'index'),
+					'logoutRedirect' => Array('controller' => 'index', 'action' => 'index'),
 					'authenticate' => Array('Form' => Array('fields' => Array('username' => 'student_number','password'=>'user_password')))
 			)
 	);
@@ -64,13 +64,14 @@ class UsersController extends AppController{
 		$this->autoRender = false;
 		if ($this->request->isPost()) {
 			if ($this->Auth->login()) {
-				$this->set('userSession',$this->Auth->user());
 				$this->redirect($this->Auth->redirect());
+				$this->Session->setFlash($userSession);
 			} else {
 				$this->Session->setFlash(__('Invalid username or password, try again'));
 			}
 		}
 	}
+	
 	/**
 	 * ログアウト処理
 	 */

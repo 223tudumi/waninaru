@@ -27,6 +27,7 @@
    				<span id="login_right">
    				<?php echo $this->Form->submit('../img/common/login_btn.jpg',array('type'=>'submit','width'=>'90','name'=>'mode','alt'=>'ログイン'));?></span>
    			</li>
+   			<?php echo $this->Session->flash('auth');?>
    		</ul>
     <?php echo $this->Form->end(); ?>
    	<p id="make_area"><?php echo $this->Html->image('common/login_make_off.jpg',array('url'=>array('controller'=>'user_temps','action'=>'account_entry'),'alt'=>'アカウントを作成する','title'=>'アカウントを作成する'));?></p>

@@ -15,19 +15,19 @@
 <div id="modalbox">
 	<?php echo $this->Html->image('common/close.png',array('alt'=>'x','width'=>'30','id'=>'close'));?>
 	<p><?php echo $this->Html->image('common/login_title.jpg',array('alt'=>'アカウントをお持ちの方はこちら'));?></p>
-	<?php echo $this->Form->create('User',array('inputDefaults' => array('label' => false,'div' => false))); ?>
+	<?php echo $this->Form->create('User',array('inputDefaults' => array('label' => false,'div' => false),'type'=>'POST','action'=>'login')); ?>
 		<ul id="login_form">
 			<li>
 				<span class="sub_title padding_layout">メールアドレス</span>
-				<?php echo $this->Form->input('User.student_number', array('type' => 'text','class'=>'tipped','id'=>'user')); ?>
+				<?php echo $this->Form->input('student_number', array('type' => 'text','class'=>'tipped','id'=>'user')); ?>
 			</li>
 			<li class="clearfix">
 				<span class="sub_title pd_5">パスワード</span>
-   				<span id="login_left"><?php echo $this->Form->input('User.user_password', array('type' => 'password','name'=>'password','id'=>'password')); ?></span>
+   				<span id="login_left"><?php echo $this->Form->input('user_password', array('type' => 'password','id'=>'password')); ?></span>
    				<span id="login_right">
    				<?php echo $this->Form->submit('../img/common/login_btn.jpg',array('type'=>'submit','width'=>'90','name'=>'mode','alt'=>'ログイン'));?></span>
    			</li>
    		</ul>
     <?php echo $this->Form->end(); ?>
-   	<p id="make_area"><?php echo $this->Html->image('common/login_make_off.jpg',array('url'=>array('controller'=>'#','action'=>'#'),'alt'=>'アカウントを作成する','title'=>'アカウントを作成する'));?></p>
+   	<p id="make_area"><?php echo $this->Html->image('common/login_make_off.jpg',array('url'=>array('controller'=>'user_temps','action'=>'account_entry'),'alt'=>'アカウントを作成する','title'=>'アカウントを作成する'));?></p>
 </div>

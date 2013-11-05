@@ -3,7 +3,7 @@
 		<div id="title" class="clearfix">
 			<h1>ユーザ新規登録入力</h1>
 		</div>
-		<?php echo $this->Form->create('Post'); ?>
+		<?php echo $this->Form->create('Post',array('inputDefaults' => array('label' => false,'div' => false))); ?>
 			<?php echo $this->element('admin_user_form'); ?>
 			<div id="btn_area" class="clearfix">
 				<div id="btn1">

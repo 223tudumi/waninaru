@@ -22,4 +22,11 @@ class User extends AppModel {
 	public $actsAs = array(
 			'SoftDelete'
 	);
+	
+	public function beforeSave() {
+		if (isset($this->data[$this->alias]['user_password'])) {
+			$this->data[$this->alias]['user_password'] = AuthComponent::password($this->data[$this->alias]['user_password']);
+		}
+		return true;
+	}
 }

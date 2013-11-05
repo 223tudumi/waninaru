@@ -34,14 +34,19 @@ App::uses('Controller', 'Controller');
 class AppController extends Controller {
 	public $components = array(
 			'Session',
-			'Auth' );
+			'Auth'
+	);
 	
 	function beforeFilter() {
-		parent::beforeFilter();
+		$this->Auth->userModel = 'User';
+		
 		$this->header("Content-type: text/html; charset=utf-8");
 		if(isset($this->params['url'])) {
 			array_walk_recursive($this->params['url'],'&$val, $key','$val = mb_convert_encoding($val, "UTF-8", "auto");');
 		}
+		$this->set('userSession',$this->Auth->user());
+		
+		$this->Auth->loginError = 'ユーザ名もしくはパスワードに誤りがあります';
 		
 		/**
 		 * ログイン不用なページの処理
@@ -49,10 +54,8 @@ class AppController extends Controller {
 		//静的コンテンツ
 		$this->Auth->allow(array('controller' => 'abouts', 'action' => 'index'));
 		$this->Auth->allow(array('controller' => 'inquiries', 'action' => 'index'));
-		$this->Auth->allow(array('controller' => 'rules', 'action' => 'index'));
-		//TOP
+		$this->Auth->allow(array('controller' => 'rules', 'action' => 'index','login'));
 		$this->Auth->allow(array('controller' => 'index', 'action' => 'index'));
-		
 	}
 	
 }

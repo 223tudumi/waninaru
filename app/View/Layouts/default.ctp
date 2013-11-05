@@ -7,15 +7,7 @@
 	<meta name="description" content="専修大学ネットワーク情報学部 栗芝プロジェクト2013が提案するサービスです。" />
 	<?php
 		echo $this->Html->charset('utf-8');
-		echo $this->Html->css('common');
-		echo $this->Html->css('skin');
-		echo $this->Html->css('kkk');
-		echo $this->Html->css('contact');
-		echo $this->Html->css('detail');
-		echo $this->Html->css('rule');
-		echo $this->Html->css('top');
-		echo $this->Html->css('bak_top');
-		echo $this->Html->css('about');
+		echo $this->Html->css(array('common','skin','kkk','contact','detail','rule','top','bak_top','about','account'));
 		echo $this->Html->script(array('jquery','jquery.jcarousel','smoothScroll','jquery.formtips'));
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
@@ -24,27 +16,16 @@
 	<title>Waninaru - 学生同士がスキルを共有して、アイディアを実現できるサービス | TOP</title>
 </head>
 <body>
-<script type="text/javascript">
-$(function() {
-    jQuery('.list').jcarousel({
-    	wrap: 'circular'
-    });
-});
-</script>
-<script type="text/javascript">
-$(function(){
-     $('a img').hover(function(){
-        $(this).attr('src', $(this).attr('src').replace('_off', '_on'));
-          }, function(){
-             if (!$(this).hasClass('currentPage')) {
-             $(this).attr('src', $(this).attr('src').replace('_on', '_off'));
-        }
-   });
-});
-</script>
+<?php echo $this->element('body_script'); ?>
 	<div id="main_wrapp">
 		<div id="main_inner">
-			<?php echo $this->element('header_out'); ?>
+			<?php
+			if($userSession==null){
+				echo $this->element('header_out');
+			}else{
+				echo $this->element('header_in');
+			}
+			?>
 		<!-- メインコンテンツ開始  -->
 		<div id="content">
 			<?php echo $this->Session->flash(); ?>

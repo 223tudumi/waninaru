@@ -16,7 +16,7 @@
 		echo $this->Html->css('top');
 		echo $this->Html->css('bak_top');
 		echo $this->Html->css('about');
-		echo $this->Html->script(array('jquery','jquery.jcarousel','smoothScroll'));
+		echo $this->Html->script(array('jquery','jquery.jcarousel','smoothScroll','jquery.formtips'));
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
@@ -44,7 +44,7 @@ $(function(){
 </script>
 	<div id="main_wrapp">
 		<div id="main_inner">
-		<?php echo $this->element('header'); ?>
+		<?php echo $this->element('header_out'); ?>
 		</div><!-- end main_inner -->
 	</div><!-- end main_wrapp -->
 	<!-- メインコンテンツ開始  -->

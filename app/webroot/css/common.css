@@ -162,18 +162,104 @@ div#header_navi_container ul li {
   float: left;
 }
 
+/* ========================
+  modal style
+======================== */
+
+#showoverlay{
+  padding: 0;
+}
+
+#modalbox {
+    display:none;
+    position:absolute;
+    z-index:1000;
+    width:400px;
+    padding:20px;
+    background:#ffffff;
+    border:5px solid #eee;
+}
+
+#overlay {
+    opacity:0;
+    filter: alpha(opacity=0);
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:900;
+    width:100%;
+    height:100%;
+    background:#000;
+}
+
+
+.sub_title {
+  width: 400px;
+  display: block;
+  font-weight: bold;
+}
+
+.padding_layout {
+  padding: 20px 0 5px 0;
+}
+
+#close {
+    position: absolute;
+    top:10px;
+    right:10px;
+    color:red;
+    text-decoration:none;
+}?
+
+ul#login_form {
+  width: 400px;
+}
+
+ul#login_form li {
+  width: 400px;
+  padding: 0 0 10px 0;
+}
+
+#user {
+  width: 400px;
+  height: 30px;
+  line-height: 30px;
+}
+
+#password {
+  width: 300px;
+  height: 30px;
+  line-height: 30px;
+}
+
+#login_left {
+  width: 300px;
+  float: left;
+  display: block;
+}
+
+#login_right {
+  width: 90px;
+  float: right;
+  display: block;
+}
+
+.tipped {
+  color: #cccccc;
+}
+
+p#make_area {
+  width: 400px;
+  padding: 20px 0 10px 0;
+  text-align: center;
+}
 
 
 
 
-
-
-
-
-
-
-
-
+/* ========================
+  footer style
+======================== */
 
 
 div#footer_top_wrapp {
@@ -254,13 +340,41 @@ div#copy_wrrap address {
 
 
 
+/* ========================
+  common style
+======================== */
 
+.pt_5 {
+  padding: 5px 0 0 0;
+}
 
+.pt_10 {
+  padding: 10px 0 0 0;
+}
 
+.pt_20 {
+  padding: 20px 0 0 0;
+}
 
+.pt_30 {
+  padding: 30px 0 0 0;
+}
 
+.pd_5 {
+  padding: 0 0 5px 0;
+}
 
+.pd_10 {
+  padding: 0 0 10px 0;
+}
 
+.pd_20 {
+  padding: 0 0 20px 0
+}
+
+.pd_30 {
+  padding: 0 0 30px 0
+}
 
 
 

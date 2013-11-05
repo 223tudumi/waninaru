@@ -14,7 +14,7 @@ div#contents01_wrrap {
   padding: 0;
   margin: 0;
   text-align: center;
-  background: transparent url(../images/about/contents01_back.jpg) repeat-x bottom left;
+  background: transparent url(../img/about/contents01_back.jpg) repeat-x bottom left;
 }
 
 div#contents01_inner {
@@ -94,7 +94,7 @@ div#contents03_wrrap {
   padding: 30px 0;
   margin: 0;
   text-align: center;
-  background: transparent url(../images/about/contents03_back.jpg) repeat-x bottom left;
+  background: transparent url(../img/about/contents03_back.jpg) repeat-x bottom left;
 }
 
 div#contents03_inner {
@@ -178,7 +178,7 @@ div#contents05_inner ul {
 div#contents05_inner ul li {
   width: 900px;
   padding: 20px 0;
-  background: transparent url(../images/about/list_line.gif) repeat-x bottom left;
+  background: transparent url(../img/about/list_line.gif) repeat-x bottom left;
 }
 
 div#contents05_inner ul li dl {

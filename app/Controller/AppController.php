@@ -32,11 +32,27 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+	public $components = array(
+			'Session',
+			'Auth' );
+	
 	function beforeFilter() {
 		parent::beforeFilter();
 		$this->header("Content-type: text/html; charset=utf-8");
 		if(isset($this->params['url'])) {
 			array_walk_recursive($this->params['url'],'&$val, $key','$val = mb_convert_encoding($val, "UTF-8", "auto");');
 		}
+		
+		/**
+		 * ログイン不用なページの処理
+		 */
+		//静的コンテンツ
+		$this->Auth->allow(array('controller' => 'abouts', 'action' => 'index'));
+		$this->Auth->allow(array('controller' => 'inquiries', 'action' => 'index'));
+		$this->Auth->allow(array('controller' => 'rules', 'action' => 'index'));
+		//TOP
+		$this->Auth->allow(array('controller' => 'index', 'action' => 'index'));
+		
 	}
+	
 }

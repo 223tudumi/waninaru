@@ -9,7 +9,7 @@
 			<li><?php echo $this->Html->link('利用規約' , array('controller'=>'rules' , 'action'=>'index') ) ?></li>
 		</ul>
 		<ul class="clearfix">
-			<li><a href="#" title="TOP">TOP</a></li>
+			<li><?php echo $this->Html->link('TOP' , array('controller'=>'index' , 'action'=>'index') ) ?></li>
 			<li class="f_line">|</li>
 			<li><a href="#" title="企画を検索する">企画を検索する</a></li>
 		</ul>

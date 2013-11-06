@@ -1,14 +1,11 @@
 <?php
 class AboutsController extends AppController{
 	var $uses = array();
-	public $components = Array(
-			'Session',
-			'Auth' => Array(
-					'loginRedirect' => Array('controller'  => 'index', 'action' => 'index'),
-					'logoutRedirect' => Array('controller' => 'index', 'action' => 'index'),
-					'authenticate' => Array('Form' => Array('fields' => Array('username' => 'student_number','password'=>'user_password')))
-			)
-	);
+	
+	public function beforeFilter(){
+		parent::beforeFilter();
+		$this->Auth->allow('index');
+	}
 	
 	function index(){
 		$this->layout = 'static';

@@ -1,18 +1,9 @@
 <?php
 class UsersController extends AppController{
 	public $helpers = array('Html' , 'Form');
-	public $components = Array(
-			'Session',
-			'Auth' => Array(
-					'loginRedirect' => Array('controller'  => 'index', 'action' => 'index'),
-					'logoutRedirect' => Array('controller' => 'index', 'action' => 'index'),
-					'authenticate' => Array('Form' => Array('fields' => Array('username' => 'student_number','password'=>'user_password')))
-			)
-	);
 	
 	public function beforeFilter(){
 		parent::beforeFilter();
-		$this->Auth->allow('admin_index','admin_userRegist','admin_userDetail');
 	}
 	
 	public function admin_index(){
@@ -57,17 +48,14 @@ class UsersController extends AppController{
 		}
 	}
 	
-	/**
+	/** 
 	 * ログイン処理
 	 */
 	public function login() {
-		$this->autoRender = false;
 		if ($this->request->isPost()) {
 			if ($this->Auth->login()) {
 				$this->redirect($this->Auth->redirect());
-				$this->Session->setFlash($userSession);
 			} else {
-				$this->Session->setFlash(__('Invalid username or password, try again'));
 			}
 		}
 	}

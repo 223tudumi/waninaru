@@ -19,7 +19,7 @@
 		<ul id="login_form">
 			<li>
 				<span class="sub_title padding_layout">メールアドレス</span>
-				<?php echo $this->Form->input('student_number', array('type' => 'text','class'=>'tipped','id'=>'user')); ?>
+				ne<?php echo $this->Form->input('student_number', array('type' => 'text','class'=>'tipped','id'=>'user','title'=>'000000')); ?>
 			</li>
 			<li class="clearfix">
 				<span class="sub_title pd_5">パスワード</span>

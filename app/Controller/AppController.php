@@ -34,28 +34,44 @@ App::uses('Controller', 'Controller');
 class AppController extends Controller {
 	public $components = array(
 			'Session',
-			'Auth'
+			'Auth' => array(
+					'loginAction' => array('controller' => 'users','action' => 'login'), //ログインを行なうaction
+					'loginRedirect' => array('controller' => 'index', 'action' => 'index'), //ログイン後のページ
+					'logoutRedirect' => array('controller' => 'index', 'action' => 'index'), //ログアウト後のページ
+					'authenticate' => array(
+							'Form' => array(
+									'userModel' => 'User', //ユーザー情報のモデル
+									'fields' => array('username' => 'student_number','password'=>'user_password')
+							)
+					)
+			)
 	);
 	
 	function beforeFilter() {
-		$this->Auth->userModel = 'User';
-		
 		$this->header("Content-type: text/html; charset=utf-8");
 		if(isset($this->params['url'])) {
 			array_walk_recursive($this->params['url'],'&$val, $key','$val = mb_convert_encoding($val, "UTF-8", "auto");');
 		}
+		if (!empty($this->params['prefix']) && in_array($this->params['prefix'], Configure::read('Routing.prefixes'))) {
+			$this->layout = $this->params['prefix'];
+			if ($this->params['prefix'] == 'admin') {
+				$this->Auth->authenticate = array(
+						'Form' => array(
+								'userModel' => 'Admin',
+								'fields' => array('username' => 'username','password'=>'password')
+						)
+				);
+				$this->Auth->loginAction = array('controller' => 'logins','action' => 'login', 'admin'=>true);
+				$this->Auth->loginRedirect = array('controller' => 'users', 'action' => 'index', 'admin'=>true);
+				$this->Auth->logoutRedirect = array('controller' => 'logins', 'action' => 'login', 'admin'=>true);
+				AuthComponent::$sessionKey = "Auth.Admin";
+			}else{
+				$this->Auth->userModel = 'User';
+				AuthComponent::$sessionKey = "Auth.User";
+				$this->Auth->loginError = 'ユーザ名もしくはパスワードに誤りがあります';
+			}
+		}
 		$this->set('userSession',$this->Auth->user());
-		
-		$this->Auth->loginError = 'ユーザ名もしくはパスワードに誤りがあります';
-		
-		/**
-		 * ログイン不用なページの処理
-		 */
-		//静的コンテンツ
-		$this->Auth->allow(array('controller' => 'abouts', 'action' => 'index'));
-		$this->Auth->allow(array('controller' => 'inquiries', 'action' => 'index'));
-		$this->Auth->allow(array('controller' => 'rules', 'action' => 'index'));
-		$this->Auth->allow(array('controller' => 'index', 'action' => 'index'));
 	}
 	
 }

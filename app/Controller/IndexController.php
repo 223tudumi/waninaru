@@ -2,14 +2,11 @@
 class IndexController extends AppController{
 	var $uses = array('Project','User','ProjectsUser');
 	public $helpers = array('Html' , 'Form');
-	public $components = Array(
-			'Session',
-			'Auth' => Array(
-					'loginRedirect' => Array('controller'  => 'index', 'action' => 'index'),
-					'logoutRedirect' => Array('controller' => 'index', 'action' => 'index'),
-					'authenticate' => Array('Form' => Array('fields' => Array('username' => 'student_number','password'=>'user_password')))
-			)
-	);
+	
+	public function beforeFilter(){
+		parent::beforeFilter();
+		$this->Auth->allow('index');
+	}
 	
 	public function index(){
 		$today = date("y/m/d Ah:i");

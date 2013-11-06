@@ -1,6 +1,6 @@
 <div id="footer_container_wrapp">
 	<div id="footer_container">
-		<?php echo $this->Html->image('common/footer_logo.png',array('url'=>array('controller'=>'#','action'=>'#'),'alt'=>'Waninaru','title'=>'Waninaru'));?>
+		<p><?php echo $this->Html->image('common/footer_logo.png',array('url'=>array('controller'=>'index','action'=>'index'),'alt'=>'Waninaru','title'=>'Waninaru'));?></p>
 		<ul class="clearfix">
 			<li><?php echo $this->Html->link('Waninaruとは' , array('controller'=>'abouts' , 'action'=>'index') ) ?></li>
 			<li class="f_line">|</li>

@@ -137,6 +137,7 @@ legend {
 div#header_container {
   width: 960px;
   padding: 50px 0 200px 0;
+  overflow: visible;
 }
 
 div#header_logo {
@@ -192,16 +193,15 @@ div#header_navi_container ul li {
     background:#000;
 }
 
-
 .sub_title {
-  width: 400px;
-  display: block;
   font-weight: bold;
 }
 
+/*
 .padding_layout {
   padding: 20px 0 5px 0;
 }
+*/
 
 #close {
     position: absolute;
@@ -209,53 +209,110 @@ div#header_navi_container ul li {
     right:10px;
     color:red;
     text-decoration:none;
-}?
-
-ul#login_form {
-  width: 400px;
+    cursor: pointer;
 }
 
-ul#login_form li {
+ul.login_form {
+  width: 400px;
+  padding: 20px 0 0 0;
+}
+
+ul.login_form li {
   width: 400px;
   padding: 0 0 10px 0;
 }
 
+/*
 #user {
-  width: 400px;
+  width: 300px;
+  height: 30px;
+  line-height: 30px;
+}
+*/
+
+.user {
+  width: 300px;
   height: 30px;
   line-height: 30px;
 }
 
+span.login_left {
+  width: 300px;
+  height: 30px;
+  line-height: 30px;
+  float: left;
+  display: block;
+}
+
+span.login_right {
+  width: 90px;
+  height: 30px;
+  padding: 0 0 10px 0;
+  line-height: 30px;
+  float: right;
+  display: block;
+}
+
+/*
 #password {
   width: 300px;
   height: 30px;
   line-height: 30px;
 }
+*/
 
-#login_left {
+.password {
   width: 300px;
-  float: left;
-  display: block;
-}
-
-#login_right {
-  width: 90px;
-  float: right;
-  display: block;
+  height: 30px;
+  line-height: 30px;
 }
 
 .tipped {
   color: #cccccc;
 }
 
-p#make_area {
-  width: 400px;
+p.make_area {
+  width: 289px;
+  margin: 0 0 0 55px;
   padding: 20px 0 10px 0;
+}
+
+/* ========================
+  error style
+======================== */
+
+div#error_container {
+  width: 960px;
+}
+
+div#error_text_container {
+  width: 960px;
   text-align: center;
 }
 
+div#error_container h2 {
+  width: 960px;
+  padding: 0 0 30px 0;
+}
 
+div#error_container h3 {
+  width: 960px;
+  padding: 0 0 20px 0;
+  font-weight: bold;
+  font-size: 13px;
+}
 
+div#login_again_container {
+  width: 500px;
+  margin: 0 0 0 230px;
+  padding: 50px 0;
+  border: 1px #94dd83 solid;
+}
+
+div#login_again_inner {
+  width: 400px;
+  margin: 0 0 0 50px;
+}
 
 /* ========================
   footer style

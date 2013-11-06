@@ -61,9 +61,9 @@ class AppController extends Controller {
 								'fields' => array('username' => 'username','password'=>'password')
 						)
 				);
-				$this->Auth->loginAction = array('controller' => 'logins','action' => 'login', 'admin'=>true);
+				$this->Auth->loginAction = array('controller' => 'admins','action' => 'login', 'admin'=>true);
 				$this->Auth->loginRedirect = array('controller' => 'users', 'action' => 'index', 'admin'=>true);
-				$this->Auth->logoutRedirect = array('controller' => 'logins', 'action' => 'login', 'admin'=>true);
+				$this->Auth->logoutRedirect = array('controller' => 'admins', 'action' => 'login', 'admin'=>true);
 				AuthComponent::$sessionKey = "Auth.Admin";
 			}else{
 				$this->Auth->userModel = 'User';

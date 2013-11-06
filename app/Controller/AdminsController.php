@@ -1,12 +1,12 @@
 <?php
 
 class AdminsController extends AppController{
-	var $uses = array('Login');
+	var $uses = array('Admin');
 	public $helpers = array('Html' , 'Form');
 	
 	public function beforeFilter(){
 		parent::beforeFilter();
-		$this->Auth->allow('admin_index','admin_regist');
+		//$this->Auth->allow('admin_index','admin_regist');
 	}
 	
 	public function admin_index(){
@@ -21,6 +21,26 @@ class AdminsController extends AppController{
 				$this->Session->setFlash('失敗したよ!!!');
 			}
 		}
+	}
+	
+	/**
+	 * ログイン処理
+	 */
+	public function admin_login(){
+		if ($this->request->isPost()) {
+			if ($this->Auth->login()) {
+				$this->redirect($this->Auth->redirect());
+			} else {
+			}
+		}
+	}
+	
+	/**
+	 * ログアウト処理
+	 */
+	public function admin_logout() {
+		$this->autoRender = false;
+		$this->redirect($this->Auth->logout());
 	}
 }
 

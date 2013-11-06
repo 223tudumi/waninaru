@@ -6,7 +6,7 @@
 				<?php echo $this->Html->link('企画検索一覧' , array('controller'=>'projects' , 'action'=>'admin_index') ) ?><br/>
 				<?php echo $this->Html->link('管理者検索一覧' , array('controller'=>'admins' , 'action'=>'admin_index') ) ?><br/>
 				<?php echo $this->Html->link('管理者新規登録' , array('controller'=>'admins' , 'action'=>'admin_regist') ) ?><br/>
-				<?php echo $this->Html->link('ログアウト' , array('controller'=>'logins' , 'action'=>'logout') ) ?><br/>
+				<?php echo $this->Html->link('ログアウト' , array('controller'=>'admins' , 'action'=>'logout') ) ?><br/>
 			</font>
 		</span>
 	</div>

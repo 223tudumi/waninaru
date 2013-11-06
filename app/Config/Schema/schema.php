@@ -7,6 +7,20 @@ class AppSchema extends CakeSchema {
 
 	public function after($event = array()) {
 	}
+	
+	public $admins = array(
+			'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'key' => 'primary'),
+			'username' => array('type' => 'string', 'null' => false, 'default' => null, 'length' => 128, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
+			'password' => array('type' => 'string', 'null' => false, 'default' => null, 'length' => 128, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
+			'created' => array('type' => 'datetime', 'null' => true, 'default' => null),
+			'modified' => array('type' => 'datetime', 'null' => true, 'default' => null),
+			'deleted' => array('type' => 'integer', 'null' => true, 'default' => '0' , 'length' => 1),
+			'deleted_date' => array('type' => 'datetime', 'null' => true, 'default' => null),
+			'indexes' => array(
+					'PRIMARY' => array('column' => 'id', 'unique' => 1)
+			),
+			'tableParameters' => array('charset' => 'latin1', 'collate' => 'latin1_swedish_ci', 'engine' => 'InnoDB')
+	);
 
 	public $comments = array(
 		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'key' => 'primary'),
@@ -99,6 +113,7 @@ class AppSchema extends CakeSchema {
 		),
 		'tableParameters' => array('charset' => 'latin1', 'collate' => 'latin1_swedish_ci', 'engine' => 'InnoDB')
 	);
+	
 	public $user_temps = array(
 			'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'key' => 'primary'),
 			'student_number' => array('type' => 'string', 'null' => false, 'default' => null, 'length' => 10, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),

@@ -68,8 +68,8 @@ class AppSchema extends CakeSchema {
 	public $projects = array(
 		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'key' => 'primary'),
 		'project_name' => array('type' => 'string', 'null' => false, 'default' => null, 'length' => 64, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
-		'active_date' => array('type' => 'date', 'null' => false, 'default' => null),
-		'recrouit_date' => array('type' => 'date', 'null' => false, 'default' => null),
+		'active_date' => array('type' => 'datetime', 'null' => false, 'default' => null),
+		'recrouit_date' => array('type' => 'datetime', 'null' => false, 'default' => null),
 		'active_place' => array('type' => 'string', 'null' => true, 'default' => null, 'length' => 64, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
 		'detail_text' => array('type' => 'text', 'null' => false, 'default' => null, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
 		'image_file_name' => array('type' => 'text', 'null' => false, 'default' => null, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),

@@ -6,7 +6,6 @@
 		<font size="3">
 			<TABLE width="100%" height="50" border="1">
 				<tr bgcolor="#e3f0fb">
-					<TH align="left">No.</TH>
 					<TH align="left">ID</TH>
 					<TH align="left">学籍番号</TH>
 					<TH align="left">本名</TH>
@@ -15,7 +14,6 @@
 				</TR>
 				<?php foreach ($users as $user) : ?>
 					<TR>
-						<TD align="left">1</TD>
 						<TD align="left"><?php echo h($user['User']['id']); ?></TD>
 						<TD align="left"><?php echo h($user['User']['student_number']); ?></TD>
 						<TD align="left"><?php echo h($user['User']['real_name']); ?></TD>

@@ -1,12 +1,19 @@
-<h2>企画新規登録入力画面</h2>
-<?php echo $this->element('admin_menu'); ?>
-<?php echo $this->Form->create('Post',array('enctype' => 'multipart/form-data')); ?>
-	<?php echo $this->Form->input('ProjectsUser.user_id', array('type' => 'text','label' => '企画者No.')); ?>
-	<?php echo $this->Form->input('Project.project_name', array('label' => '企画名')); ?>
-	<?php echo $this->Form->input('Project.active_date', array('label' => '実施日')); ?>
-	<?php echo $this->Form->input('Project.recrouit_date', array('label' => '募集期限')); ?>
-	<?php echo $this->Form->input('Project.active_place', array('label' => '実施場所')); ?>
-	<?php echo $this->Form->input('Project.people_maxnum', array('label' => '募集上限人数')); ?>
-	<?php echo $this->Form->input('Project.image_file_name', array('type' => 'file', 'label' => 'アイコン画像')); ?>
-	<?php echo $this->Form->input('Project.detail_text', array('label' => '詳細文')); ?>
-<?php echo $this->Form->end('登録'); ?>
+<div id="kousin_container" class="clearfix">
+	<div id ="g1">
+		<div id="title" class="clearfix">
+			<h1>企画新規登録</h1>
+		</div>
+		<?php echo $this->Form->create('Post',array('enctype' => 'multipart/form-data','inputDefaults' => array('label' => false,'div' => false))); ?>
+		<?php echo $this->element('admin_project_form'); ?>
+		<div id="btn_area" class="clearfix">
+			<div id="btn1">
+				<p><?php echo $this->Form->submit('../img/use/004.png',array('alt'=>'完了','border'=>'0'))?></p>
+			</div>
+			<div id="btn2">
+				<p><?php echo $this->Html->image('use/001.png',array('url'=>array('controller'=>'projects','action'=>'admin_index'),'alt'=>'戻る'));?></p>
+			</div>
+		</div>
+		<?php echo $this->Form->end(); ?>
+	</div>
+	<?php echo $this->element('admin_menu'); ?>
+</div>

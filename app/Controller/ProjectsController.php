@@ -1,85 +1,14 @@
 <?php
 class ProjectsController extends AppController{
-	var $uses = array('Project','User','ProjectsUser','Search','ProjectsComment');
-	var $paginate = array(
-			'limit' => 20,
-			'order' => array(
-					'Project.id' => 'desc'
-			),
-	);
+	var $uses = array('Project','User','ProjectsUser');
 	public $helpers = array('Html' , 'Form');
-	public $components = Array(
-			'Session',
-			'Auth' => Array(
-					'loginRedirect' => Array('controller'  => 'index', 'action' => 'index'),
-					'logoutRedirect' => Array('controller' => 'index', 'action' => 'index'),
-					'authenticate' => Array('Form' => Array('fields' => Array('username' => 'student_number','password'=>'user_password')))
-			)
-	);
+	
+	public function beforeFilter(){
+		parent::beforeFilter();
+	}
 	
 	public function index(){
-		$today = date("y/m/d Ah:i");
-		$this->set('news',$this->Project->find('all' , array(
-			'order'=>'Project.created',
-			'conditions'=>array('Project.created >=' => $today),
-			'limit'=>21,
-				)
-			)
-		);
 	}
-	
-	public function detail($id = null){
-		$this->Project->id = $id;
-		$this->set('kikaku',$this->Project->read());
-		$this->set('react',$this->Comment->read());
-		//タグを配列で取得
-		//以下コメント機能
-		$commentsno = count($react['Comment']);
-		if($_POST['submit']){
-				//書き込まれた内容をDBに保存
-				array(
-					[Comment]=> array(
-						[id] => '$commentno + 1',
-						[project_id] => '$kikaku[Project][id]',
-						[user_id] => '$kikaku[ProjectUser][user_name]',
-						[comment_text] => '',
-					)
-				);
-			}
-		}
-	
-	public function search(){
-		if(empty($this->request->data)){
-			$today = date("y/m/d Ah:i");
-			$this->set('searches',$this->Project->find('all' , array('order'=>'Project.created','conditions'=>array('Project.created >=' => $today),'limit'=>21,)));
-		}elseif(/**タグ検索かけられていたら **/aa){
-			$this->set('searches',$this->Project->find('all' , array(
-				'order' => 'Project.created',
-				'conditions' => array(
-					'Project.created' => 'between yyyy-mm-dd AND yyyy-mm-dd',//日付範囲指定
-					'$_POST<=' => '[tags]',//タグテーブルから取得？　また連結させなきゃか？	
-				)
-			)));
-		}else{
-			$this->set('searches',$this->Project->find('all' , array(
-					'order' => 'Project.created',
-					'conditions' => array(
-							'Project.created' => 'between yyyy-mm-dd AND yyyy-mm-dd',//日付範囲してい
-							'$_POST<=' => '[tags],[]',//etc...
-							))));
-		}
-		//ソートはif文の中に組み込む？
-		
-		//MODEL内で連結は出来ているので、残り人数の変数を用意しよう。
-		$max = array('PROJECTS.MAXNUM');//上限人数
-		$joiner = array(count('PROJECTS.USERS'));//参加人数
-		foreach($rest as $re){
-			$re = $max - $joiner;
-		}//$restに配列として残り人数を格納したつもり。
-		
-	}
-	
-
 	
 	public function admin_index(){
 		$this->set('projects' , $this->paginate('Project'));

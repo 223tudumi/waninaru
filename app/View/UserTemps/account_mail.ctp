@@ -1,23 +1,18 @@
-<!-- ƒƒCƒ“ƒRƒ“ƒeƒ“ƒc‚Í‚±‚±‚©‚ç•ÒW‚µ‚Ä‚­‚¾‚³‚¢IIII  -->
-
 <div id="account_container">
-@
-	<h1>‘—M‚ªŠ®—¹‚µ‚Ü‚µ‚½I</h1><br/>
+ã€€
+        <h1>é€ä¿¡ãŒå®Œäº†ã—ã¾ã—ãŸï¼</h1><br/>
 
-			<div class="supplement">
-				‚ ‚è‚ª‚Æ‚¤‚²‚´‚¢‚Ü‚·B“ü—Í‚³‚ê‚½ŠwÐ”Ô†ˆ¶‚Éƒ[ƒ‹‚ª‘—M‚³‚ê‚Ü‚µ‚½B<br />
-				‚²Šm”F‚ÌãAƒ[ƒ‹‚É‹LÚ‚³‚ê‚½URL‚©‚ç“o˜^‚ðs‚Á‚Ä‚­‚¾‚³‚¢B
-			</div><!-- end supplement -->
+                        <div class="supplement">
+                                ã‚ã‚ŠãŒã¨ã†ã”ã–ã„ã¾ã™ã€‚å…¥åŠ›ã•ã‚ŒãŸå­¦ç±ç•ªå·å®›ã«ãƒ¡ãƒ¼ãƒ«ãŒé€ä¿¡ã•ã‚Œã¾ã—ãŸã€‚<br />
+                                ã”ç¢ºèªã®ä¸Šã€ãƒ¡ãƒ¼ãƒ«ã«è¨˜è¼‰ã•ã‚ŒãŸURLã‹ã‚‰ç™»éŒ²ã‚’è¡Œã£ã¦ãã ã•ã„ã€‚
+                        </div><!-- end supplement -->
 
-		<div class="contents1">
-		    <div class="btn_base"><a href="http://mail.senshu-u.jp/" class="btn blue" name="Gmail" target="_blank" >êC‘åŠw<br />Gmail‚Ö</a></div>
-		</div><!-- end contents1 -->
-			<div class="supplement">
-				¦•ÊƒEƒBƒ“ƒhƒE‚ÅêC‘åŠw‚ÌGmail‚ðŠJ‚«‚Ü‚·B
-			</div><!-- end supplement -->
+                <div class="contents1">
+                    <div class="btn_base"><a href="http://mail.senshu-u.jp/" class="btn blue" name="Gmail" target="_blank" >å°‚ä¿®å¤§å­¦<br />Gmailã¸</a></div>
+                </div><!-- end contents1 -->
+                        <div class="supplement">
+                                â€»åˆ¥ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã§å°‚ä¿®å¤§å­¦ã®Gmailã‚’é–‹ãã¾ã™ã€‚
+                        </div><!-- end supplement -->
 
 
 </div><!-- end main_container -->
-
-
-<!-- •ÒW‚±‚±‚Ü‚Å  -->

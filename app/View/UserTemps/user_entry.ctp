@@ -1,57 +1,55 @@
-<!-- ƒƒCƒ“ƒRƒ“ƒeƒ“ƒc‚Í‚±‚±‚©‚ç•ÒW‚µ‚Ä‚­‚¾‚³‚¢IIII  -->
-
 <div id="account_container">
 <?php $this->Form->create(array('inputDefaults'=>array('label'=>false,'div'=>false))) ?>
 <FORM METHOD="POST">
-@
-	<h1>“ü—ÍŠm”F</h1><br/>
-	<div class="account_form">
-	ne<input type="text" disabled=hdisabledh name="ŠwÐ”Ô†" size= "7" value="<?php print $StudentNumber; ?>"@/>‚³‚ñ
-	</div><!-- end account_form -->
+ã€€
+        <h1>å…¥åŠ›ç¢ºèª</h1><br/>
+        <div class="account_form">
+        ne<input type="text" disabled=â€disabledâ€ name="å­¦ç±ç•ªå·" size= "7" value="<?php print $StudentNumber; ?>"ã€€/>ã•ã‚“
+        </div><!-- end account_form -->
 
 
-		<div class="account_form">
-		<form id="formstyle">@
-			<ul>
-			<li>
-				<label><span>œ‚¨–¼‘Oi–{–¼j<font color="#ff333">ƒ•K{„</font></span><input type="text" name="name" value="<?php print $RealName; ?>" disabled=hdisabledh /></label>
-			</li>
-			<li>
-				<label><span>œƒ†[ƒU[–¼ƒ”CˆÓ„</span><input type="text" name="username" value="<?php print $UserName; ?>" disabled=hdisabledh/></label>
-			</li>
-			<li>
-				<label><span>œƒpƒXƒ[ƒh<font color="#ff333">ƒ•K{„</span><input type="password" name="password" value="<?php print $Password; ?>" disabled=hdisabledh/></font></label>
-			</li>
+                <div class="account_form">
+                <form id="formstyle">ã€€
+                        <ul>
+                        <li>
+                                <label><span>â—ãŠåå‰ï¼ˆæœ¬åï¼‰<font color="#ff333">ï¼œå¿…é ˆï¼ž</font></span><input type="text" name="name" value="<?php print $RealName; ?>" disabled=â€disabledâ€ /></label>
+                        </li>
+                        <li>
+                                <label><span>â—ãƒ¦ãƒ¼ã‚¶ãƒ¼åï¼œä»»æ„ï¼ž</span><input type="text" name="username" value="<?php print $UserName; ?>" disabled=â€disabledâ€/></label>
+                        </li>
+                        <li>
+                                <label><span>â—ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰<font color="#ff333">ï¼œå¿…é ˆï¼ž</span><input type="password" name="password" value="<?php print $Password; ?>" disabled=â€disabledâ€/></font></label>
+                        </li>
 
 
-		</form>
+                </form>
 
-			<input type="checkbox" name="‹K–ñ" checked="checked" disabled="disabled"><a href="#"target="_blank">—˜—p‹K–ñ</a>‚É“¯ˆÓ‚·‚é
+                        <input type="checkbox" name="è¦ç´„" checked="checked" disabled="disabled"><a href="#"target="_blank">åˆ©ç”¨è¦ç´„</a>ã«åŒæ„ã™ã‚‹
 
-	<div class="clearfix">
-		<div class="float1">
-		<div class="contents2">
+        <div class="clearfix">
+                <div class="float1">
+                <div class="contents2">
 
-			
-			
-			<p><?php echo $this->Form->Submit('“o˜^', array('name'=>'submit', 'div'=>false, 'class'=>'btn blue')); ?><p>
+                        
+                        
+                        <p><?php echo $this->Form->Submit('ç™»éŒ²', array('name'=>'submit', 'div'=>false, 'class'=>'btn blue')); ?><p>
 
-			<p><?php echo $this->Form->Submit('C³', array('name'=>'stay_submit', 'div'=>false, 'class'=>'btn red')); ?><p>
-			
+                        <p><?php echo $this->Form->Submit('ä¿®æ­£', array('name'=>'stay_submit', 'div'=>false, 'class'=>'btn red')); ?><p>
+                        
 
-		    <div class="btn_base"><a href="./account_entry_complete.html" class="btn blue" name="“o˜^‚·‚é" position:relative; >“o˜^‚·‚é</a></div>
-		</div><!-- end contents1 -->
-		</div>
+                    <div class="btn_base"><a href="./account_entry_complete.html" class="btn blue" name="ç™»éŒ²ã™ã‚‹" position:relative; >ç™»éŒ²ã™ã‚‹</a></div>
+                </div><!-- end contents1 -->
+                </div>
 
-		<div class="float2">
-		<div class="contents3">
+                <div class="float2">
+                <div class="contents3">
 
 
-		    <div class="btn_base"><a href="./account_sign_up.html" class="btn red" name="C³" position:relative; >C³</a></div>
-		</div><!-- end contents -->
-	</div>
+                    <div class="btn_base"><a href="./account_sign_up.html" class="btn red" name="ä¿®æ­£" position:relative; >ä¿®æ­£</a></div>
+                </div><!-- end contents -->
+        </div>
 
-		</div>
+                </div>
 <?php $this->Form->end() ?>
 </div><!-- end account_form -->
 <br />
@@ -70,12 +68,3 @@
 <br />
 <br />
 <br />
-
-
-
-
-
-
-
-
-<!-- •ÒW‚±‚±‚Ü‚Å  -->

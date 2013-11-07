@@ -1,26 +1,21 @@
-<!-- ƒƒCƒ“ƒRƒ“ƒeƒ“ƒc‚Í‚±‚±‚©‚ç•ÒW‚µ‚Ä‚­‚¾‚³‚¢IIII  -->
-
 <div id="account_container">
 <?php $this->Form->create(array('inputDefaults'=>array('label'=>false,'div'=>false))) ?>
 <FORM METHOD="POST">
-@
-	<h1>“o˜^‚ªŠ®—¹‚µ‚Ü‚µ‚½I</h1><br/>
+ã€€
+        <h1>ç™»éŒ²ãŒå®Œäº†ã—ã¾ã—ãŸï¼</h1><br/>
 
-			<div class="supplement">
-				‚²“o˜^‚ ‚è‚ª‚Æ‚¤‚²‚´‚¢‚Ü‚·B
-			</div><!-- end supplement -->
+                        <div class="supplement">
+                                ã”ç™»éŒ²ã‚ã‚ŠãŒã¨ã†ã”ã–ã„ã¾ã™ã€‚
+                        </div><!-- end supplement -->
 
-		<div class="contents4">
+                <div class="contents4">
 
-			<p><?php echo $this->Form->button('Waninaru‚ð<br />Žg‚Á‚Ä‚Ý‚é' ,array('class'=>'btn green')); ?></p>
+                        <p><?php echo $this->Form->button('Waninaruã‚’<br />ä½¿ã£ã¦ã¿ã‚‹' ,array('class'=>'btn green')); ?></p>
 
-		    <div class="btn_base"><a href="./index.html" class="btn green" name="top"  >Waninaru‚ð<br />Žg‚Á‚Ä‚Ý‚é</a></div>
-		</div><!-- end contents4 -->
-			<div class="supplement">
-			</div><!-- end supplement -->
+                    <div class="btn_base"><a href="./index.html" class="btn green" name="top"  >Waninaruã‚’<br />ä½¿ã£ã¦ã¿ã‚‹</a></div>
+                </div><!-- end contents4 -->
+                        <div class="supplement">
+                        </div><!-- end supplement -->
 
 <?php $this->Form->end() ?>
 </div><!-- end main_container -->
-
-
-<!-- •ÒW‚±‚±‚Ü‚Å  -->

@@ -9,6 +9,7 @@
 		echo $this->Html->charset('utf-8');
 		echo $this->Html->css(array('common','skin','kkk','contact','detail','rule','top','bak_top','about','account'));
 		echo $this->Html->script(array('jquery','jquery.jcarousel','smoothScroll','jquery.formtips'));
+		echo $this->Html->meta('icon');
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');

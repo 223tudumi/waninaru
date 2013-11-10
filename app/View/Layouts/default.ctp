@@ -7,8 +7,9 @@
 	<meta name="description" content="専修大学ネットワーク情報学部 栗芝プロジェクト2013が提案するサービスです。" />
 	<?php
 		echo $this->Html->charset('utf-8');
-		echo $this->Html->css(array('common','skin','kkk','contact','detail','rule','top','bak_top','about','account'));
-		echo $this->Html->script(array('jquery','jquery.jcarousel','smoothScroll','jquery.formtips'));
+		echo $this->Html->css(array('common','skin','kkk','contact','detail','rule','top','bak_top','about','account','search'));
+		echo $this->Html->script(array('jquery','jquery.jcarousel','smoothScroll','jquery.formtips','jkl-calendar'));
+		echo $this->Html->meta('icon');
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');

@@ -4,10 +4,10 @@
 	</div><!-- end header_logo --> 
 	<div id="header_navi_container">
 		<ul class="clearfix">
-			<li><?php echo $this->Html->image('common/header_search_off.png',array('url'=>array('controller'=>'#','action'=>'#'),'alt'=>'企画を検索する','title'=>'企画を検索する'));?></li>
-			<li><?php echo $this->Html->image('common/header_activity_off.png',array('url'=>array('controller'=>'#','action'=>'#'),'alt'=>'アクティビティ','title'=>'アクティビティ'));?></li>
+			<li><?php echo $this->Html->image('common/header_search_off.png',array('url'=>array('controller'=>'projects','action'=>'search'),'alt'=>'企画を検索する','title'=>'企画を検索する'));?></li>
+			<li><?php echo $this->Html->image('common/header_activity_off.png',array('url'=>array('controller'=>'actibities','action'=>'index'),'alt'=>'アクティビティ','title'=>'アクティビティ'));?></li>
 			<li><?php echo $this->Html->image('common/header_mypage_off.png',array('url'=>array('controller'=>'#','action'=>'#'),'alt'=>'マイページ','title'=>'マイページ'));?></li>
-			<li><?php echo $this->Html->image('common/header_plan_off.png',array('url'=>array('controller'=>'#','action'=>'#'),'alt'=>'企画を立てる','title'=>'企画を立てる'));?></li>
+			<li><?php echo $this->Html->image('common/header_plan_off.png',array('url'=>array('controller'=>'projects','action'=>'regist'),'alt'=>'企画を立てる','title'=>'企画を立てる'));?></li>
 			<li><?php echo $this->Html->image('common/header_out_off.png',array('url'=>array('action'=>'logout'),'alt'=>'ログアウト','title'=>'ログアウト'));?></li>
 		</ul>
 	</div><!-- end header_navi_container -->

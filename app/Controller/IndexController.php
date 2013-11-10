@@ -12,7 +12,7 @@ class IndexController extends AppController{
 		$today = date("y/m/d Ah:i");
 		$this->set('news',$this->Project->find('all' , array(
 				'order'=>'Project.created',
-				'conditions'=>array('Project.created >=' => $today),
+				'conditions'=>array('Project.active_date >=' => $today),
 				'limit'=>21,
 		)
 		)

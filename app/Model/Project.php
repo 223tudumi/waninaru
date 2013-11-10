@@ -16,7 +16,23 @@ class Project extends AppModel {
 			'finderQuery'            => '',
 			'deleteQuery'            => '',
 			'insertQuery'            => ''
-		)
+		),
+		/**
+		'projectJoiner' => array(
+			'className' => 'Joiner',
+			'joinTabel' => 'joiners_projects',
+			'foreignKey' => 'project_id',
+			'unique'                 => true,
+			'conditions'             => '',
+			'fields'                 => '',
+			'order'                  => '',
+			'limit'                  => '',
+			'offset'                 => '',
+			'finderQuery'            => '',
+			'deleteQuery'            => '',
+			'insertQuery'            => ''
+		),
+		*/
 	);
 	
 	public $actsAs = array(

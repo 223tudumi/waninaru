@@ -11,7 +11,7 @@
 		<ul class="clearfix">
 			<li><?php echo $this->Html->link('TOP' , array('controller'=>'index' , 'action'=>'index') ,array('title'=>'Waninaru')) ?></li>
 			<li class="f_line">|</li>
-			<li><a href="#" title="企画を検索する">企画を検索する</a></li>
+			<li><?php echo $this->Html->link('企画を検索する' , array('controller'=>'projects' , 'action'=>'search') ,array('title'=>'企画を検索する')) ?></li>
 		</ul>
 	</div><!-- end footer_container -->
 </div><!-- end footer_container_wrapp -->

@@ -33,7 +33,7 @@ div.main_list_area {
 div#vacant_seats01 {
   width: 125px;
   height: 63px;
-  background: transparent url(../img/common/common/orenge.png) no-repeat top right;
+  background: transparent url(../img/common/orenge.png) no-repeat top right;
   position: absolute;
   top: 0;
   left: 180px;
@@ -43,7 +43,7 @@ div#vacant_seats01 {
 div#vacant_seats02 {
   width: 125px;
   height: 63px;
-  background: transparent url(../img/common/common/orenge.png) no-repeat top right;
+  background: transparent url(../img/common/orenge.png) no-repeat top right;
   position: absolute;
   top: 0;
   left: 480px;
@@ -53,7 +53,7 @@ div#vacant_seats02 {
 div#vacant_seats03 {
   width: 125px;
   height: 63px;
-  background: transparent url(../img/common/common/orenge.png) no-repeat top right;
+  background: transparent url(../img/common/orenge.png) no-repeat top right;
   position: absolute;
   top: 0;
   left: 780px;
@@ -117,7 +117,7 @@ div.main_list ul li {
   margin: 0 50px 0 0;
   overflow: hidden;
   float: left;
-  background: transparent url(../img/common/common/list_back.png);
+  background: transparent url(../img/common/list_back.png);
 }
 
 div.main_list ul li dl {

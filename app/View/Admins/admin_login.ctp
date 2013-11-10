@@ -8,4 +8,5 @@
     ?>
     </fieldset>
 <?php echo $this->Form->end(__('Login')); ?>
+<?php echo $this->Html->link('For users top', '/'); ?>
 </div>

@@ -1,4 +1,5 @@
 <html>
+<?php echo $this->Html->css(array('kkk'), null, array('inline'=>false)); ?>
 <head>
 </head>
 <body>

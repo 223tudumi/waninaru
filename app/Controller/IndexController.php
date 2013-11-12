@@ -23,6 +23,7 @@ class IndexController extends AppController{
 	 * ログアウト処理
 	 */
 	public function logout() {
+		$this->autoRender = false;
 		$this->redirect($this->Auth->logout());
 	}
 }

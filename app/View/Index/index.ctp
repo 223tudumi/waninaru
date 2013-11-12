@@ -1,3 +1,4 @@
+<?php echo $this->Html->css(array('top'), null, array('inline'=>false)); ?>
 <div id="main_container">
 <!--
 	<h2><span>おすすめ企画</span></h2>

@@ -37,19 +37,32 @@ class AppSchema extends CakeSchema {
 		'tableParameters' => array('charset' => 'latin1', 'collate' => 'latin1_swedish_ci', 'engine' => 'InnoDB')
 	);
 
-	public $joins = array(
+	public $joiners = array(
+			'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'key' => 'primary'),
+			'user_id' => array('type' => 'integer', 'null' => true, 'default' => null),
+			'created' => array('type' => 'datetime', 'null' => true, 'default' => null),
+			'modified' => array('type' => 'datetime', 'null' => true, 'default' => null),
+			'deleted' => array('type' => 'integer', 'null' => true, 'default' => '0' , 'length' => 1),
+			'deleted_date' => array('type' => 'datetime', 'null' => true, 'default' => null),
+			'indexes' => array(
+					'PRIMARY' => array('column' => 'id', 'unique' => 1)
+			),
+			'tableParameters' => array('charset' => 'latin1', 'collate' => 'latin1_swedish_ci', 'engine' => 'InnoDB')
+	);
+	
+	public $joiners_projects = array(
 		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'key' => 'primary'),
 		'project_id' => array('type' => 'integer', 'null' => false, 'default' => null),
-		'user_id' => array('type' => 'integer', 'null' => false, 'default' => null),
+		'joiner_id' => array('type' => 'integer', 'null' => false, 'default' => null),
 		'created' => array('type' => 'datetime', 'null' => true, 'default' => null),
 		'modified' => array('type' => 'datetime', 'null' => true, 'default' => null),
 		'deleted' => array('type' => 'integer', 'null' => true, 'default' => '0' , 'length' => 1),
 		'deleted_date' => array('type' => 'datetime', 'null' => true, 'default' => null),
 		'indexes' => array(
-			'PRIMARY' => array('column' => 'id', 'unique' => 1)
+				'PRIMARY' => array('column' => 'id', 'unique' => 1)
 		),
 		'tableParameters' => array('charset' => 'latin1', 'collate' => 'latin1_swedish_ci', 'engine' => 'InnoDB')
-	);
+		);
 
 	public $projects_users = array(
 		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'key' => 'primary'),

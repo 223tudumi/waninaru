@@ -17,7 +17,6 @@ class Project extends AppModel {
 			'deleteQuery'            => '',
 			'insertQuery'            => ''
 		),
-		/**
 		'projectJoiner' => array(
 			'className' => 'Joiner',
 			'joinTabel' => 'joiners_projects',
@@ -32,7 +31,6 @@ class Project extends AppModel {
 			'deleteQuery'            => '',
 			'insertQuery'            => ''
 		),
-		*/
 	);
 	
 	public $actsAs = array(

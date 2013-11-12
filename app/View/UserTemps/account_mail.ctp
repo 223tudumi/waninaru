@@ -1,3 +1,4 @@
+<?php echo $this->Html->css(array('account'), null, array('inline'=>false)); ?>
 <div id="account_container">
 　
         <h1>送信が完了しました！</h1><br/>

@@ -1,6 +1,6 @@
 <?php
 
-class Join extends AppModel {
+class JoinersProject extends AppModel {
 	public $actsAs = array(
 			'SoftDelete'
 	);

@@ -1,3 +1,4 @@
+<?php echo $this->Html->css('about', null, array('inline'=>false)); ?>
 <div id="contents_container">
 	<div id="contents01_wrrap">			
 		<div id="contents01_inner">

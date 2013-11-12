@@ -1,0 +1,1 @@
+<span style="color:red">※この機能は存在しません。</span>

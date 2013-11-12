@@ -1,3 +1,4 @@
+<?php echo $this->Html->css(array('contact'), null, array('inline'=>false)); ?>
 <div id="contact_container">
 	<h2><span>送信完了</span></h2>
 	<div id="flow_image_area">

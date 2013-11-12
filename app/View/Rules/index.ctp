@@ -1,3 +1,4 @@
+<?php echo $this->Html->css(array('rule'), null, array('inline'=>false)); ?>
 <div id="rule_container">
 
 

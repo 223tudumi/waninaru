@@ -1,3 +1,4 @@
+<?php echo $this->Html->css(array('kkk'), null, array('inline'=>false)); ?>
 <div id="use_container" class="clearfix">
 	<div id ="g1">
 		<div id="title" class="clearfix">
@@ -17,6 +18,9 @@
 			</div>
 			<div id="btn4">
 				<?php echo $this->Html->image('use/001.png',array('url'=>array('controller'=>'users','action'=>'admin_index'),'alt'=>'戻る'));?>
+			</div>
+			<div>
+				<?php echo $this->Html->link('企画参加','/admin/projects/projectJoinIn/'.$user['User']['id'],array()); ?>
 			</div>
 		</div>
 	</div>

@@ -1,13 +1,13 @@
 <?php
 
-class User extends AppModel {
-	var $uses = array('Joiner');
-	var $name = 'User' ;
+class Joiner extends AppModel {
+	var $name = 'Joiner' ;
+	
 	public $hasAndBelongsToMany = array(
-			'userProject' => array(
+			'joinerProject' => array(
 					'className' => 'Project',
-					'joinTabel' => 'projects_users',
-					'foreignKey' => 'user_id',
+					'joinTabel' => 'joiners_projects',
+					'foreignKey' => 'joiner_id',
 					'unique'                 => true,
 					'conditions'             => '',
 					'fields'                 => '',
@@ -20,16 +20,11 @@ class User extends AppModel {
 			)
 	);
 	
-	var $hasOne = 'Joiner';
+	
 	
 	public $actsAs = array(
 			'SoftDelete'
 	);
-	
-	public function beforeSave($options = array()) {
-		if (isset($this->data[$this->alias]['user_password'])) {
-			$this->data[$this->alias]['user_password'] = AuthComponent::password($this->data[$this->alias]['user_password']);
-		}
-		return true;
-	}
 }
+
+?>

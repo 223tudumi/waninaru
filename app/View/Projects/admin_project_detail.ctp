@@ -1,3 +1,4 @@
+<?php echo $this->Html->css(array('kkk'), null, array('inline'=>false)); ?>
 <h2>企画詳細画面 - <?php echo h($project['Project']['project_name']); ?></h2>
 <?php echo $this->element('admin_menu'); ?>
 <div>

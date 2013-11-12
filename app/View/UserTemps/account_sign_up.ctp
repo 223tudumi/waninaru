@@ -1,3 +1,4 @@
+<?php echo $this->Html->css(array('account'), null, array('inline'=>false)); ?>
 <div id="account_container">
 <?php $this->Form->create(array('inputDefaults'=>array('label'=>false,'div'=>false))) ?>
 <FORM METHOD="POST">
@@ -13,24 +14,22 @@
                 <form method="post" name="form">　
                         <ul>
                         <li>
-                                <label><span>●お名前（本名）<font color="#ff333">＜必須＞</font></span><input type="text" name="name" /></label>
+                                <label><span>お名前（本名）<font color="#ff333">＜必須＞</font></span><input type="text" name="name" /></label>
                         </li>
                         <li>
-                                <label><span>●ユーザー名＜任意＞</span><input type="text" name="username" /></label>
+                                <label><span>ユーザー名＜任意＞</span><input type="text" name="username" /></label>
                         </li>
                         <li>
-                                <label><span>●パスワード<font color="#ff333">＜必須＞</span><input type="password" name="password" /></font></label>
+                                <label><span>パスワード<font color="#ff333">＜必須＞</span><input type="password" name="password" /></font></label>
                         </li>
-                        <span>パスワードは半角英数かつ大文字英語を含めてください。</span>
                         <li>
-                                <label><span>●パスワード（確認）<font color="#ff333">＜必須＞</span><input type="password" name="password2" /></font></label>
+                                <label><span>パスワード（確認）<font color="#ff333">＜必須＞</span><input type="password" name="password2" /></font></label>
                         </li>
 
                 </form>
-                        <input type="checkbox" name="usecheck" ><?php echo $this->Html->link('利用規約' , array('controller'=>'rules' , 'action'=>'index') ) ?>に同意する
+                        <input type="checkbox" name="usecheck" ><a href="#" target="_blank">利用規約</a>に同意する
                 <div class="contents1">
                     <div class="btn_base">
-                            <!-- a href="./user_entry.html" class="btn blue" name="内容確認" position:relative; --><!-- 内容確認 --><!-- /a -->
                             <p><?php echo $this->Form->button('内容確認' ,array('class'=>'btn blue')); ?></p>
                     </div>
                     

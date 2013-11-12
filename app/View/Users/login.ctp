@@ -1,3 +1,4 @@
+<?php echo $this->Html->css(array('kkk'), null, array('inline'=>false)); ?>
 <div id="error_container">
 	<div id="error_text_container">
 		<h2><?php echo $this->Html->image('common/error_title.jpg',array('alt'=>'error!!'));?></h2>

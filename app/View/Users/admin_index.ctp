@@ -1,3 +1,4 @@
+<?php echo $this->Html->css(array('kkk'), null, array('inline'=>false)); ?>
 <div id="kkk_container" class="clearfix">
 	<div id="g1">
 		<div id="title" class="clearfix">

@@ -6,7 +6,7 @@ class AdminsController extends AppController{
 	
 	public function beforeFilter(){
 		parent::beforeFilter();
-		//$this->Auth->allow('admin_index','admin_regist');
+		$this->Auth->allow('admin_index','admin_regist');
 	}
 	
 	public function admin_index(){

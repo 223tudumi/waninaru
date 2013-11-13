@@ -21,7 +21,7 @@ class Project extends AppModel {
 			'className' => 'Joiner',
 			'joinTabel' => 'joiners_projects',
 			'foreignKey' => 'project_id',
-			'unique'                 => true,
+			'unique'                 => false,
 			'conditions'             => '',
 			'fields'                 => '',
 			'order'                  => '',
@@ -29,7 +29,8 @@ class Project extends AppModel {
 			'offset'                 => '',
 			'finderQuery'            => '',
 			'deleteQuery'            => '',
-			'insertQuery'            => ''
+			'insertQuery'            => '',
+			'with' => 'JoinersProject'
 		),
 	);
 	

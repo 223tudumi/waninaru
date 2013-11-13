@@ -1,6 +1,7 @@
 <!-- メインコンテンツはここから編集してください！！！！  -->
 <?php echo $this->Html->css(array('detail'), null, array('inline'=>false)); ?>
 
+
 <div id="top_detail_container" class="clearfix">
 	<ul id="number_area" class="clearfix">
 		<li class="clearfix">
@@ -25,10 +26,10 @@
 	</ul>
 	<div id="sns_area" class="clearfix">
 		<span id="twitter">
-			<a href="https://twitter.com/ne_Waninaru" class="twitter-follow-button" data-show-count="false" data-lang="ja" data-show-screen-name="false">@ne_Waninaruさんをフォロー</a>
+			<a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">ツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 		</span>
-		<span id="facebook">facebook</span>
+		<span id="facebook"></span>
 	</div><!-- end sns_area -->
 </div><!-- end top_detail_container -->
 
@@ -38,26 +39,31 @@
 	<div id="left_container">
 
 		<div id="image_area">
-			<?php echo $this->Html->image('projects/'.$kikaku['Project']['image_file_name'],array());?>
+			<?php echo $this->Html->image('projects/'.$kikaku['Project']['image_file_name'],array('width'=>'350','height'=>'350'));?>
 		</div><!-- end image_area -->
 
 		<div id="join_container">
 			<?php
 			$check=0;
+			print_r($temp);
 			foreach($kikaku['projectJoiner'] as $kkk){
 				if($kkk['user_id'] == $userSession['id']){
 					$check=1;
 					break;
 				}
 			}
-			
-			if($userSession!=null){
-				if($check == 0){
-					echo $this->Html->image('common/project/join_btn.jpg',array('url'=>array('controller'=>'projects','action'=>'join',$kikaku['Project']['id']),'alt'=>'参加する','width'=>'350'));
+			//if($kikaku['Project']['people_maxnum']>=$kikaku['projectJoiner']){
+				if($userSession!=null){
+					if($check == 0){
+						echo $this->Html->image('common/project/join_btn.jpg',array('url'=>array('controller'=>'projects','action'=>'join',$kikaku['Project']['id']),'alt'=>'参加する','width'=>'350'));
+					}else{
+						echo $this->Html->image('common/project/join_out_btn.jpeg',array('url'=>array('controller'=>'projects','action'=>'out',$kikaku['Project']['id']),'alt'=>'参加をやめる','width'=>'350'));
+					}
 				}else{
+					echo $this->Html->image('common/project/join_btn.jpg',array('url'=>array('controller'=>'user_temps','action'=>'account_entry'),'alt'=>'参加する','width'=>'350'));
 				}
-			}else{
-			}
+			//}
+			
 			?>
 			<p id="j_seat"><?php $rest = $kikaku['Project']['people_maxnum']-count($kikaku['projectJoiner']);
 			echo h($rest); ?><p>
@@ -133,7 +139,7 @@
 			<p><?php echo h($comment['Comment']['comment_text']); ?></p>
 			<dl class="clearfix">
 				<dt></dt>
-				<dd><?php echo h($comment['commentUser']['user_name']) ?></dd>
+				<dd></dd>
 			</dl>
 		</div><!-- comment_wrapp  -->
 		<span><?php echo $this->Html->image('common/project/comment_back_bottom.jpg'); ?></span>	

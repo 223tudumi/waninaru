@@ -13,7 +13,7 @@
                 <form id="formstyle">　
                         <ul>
                         <li>
-                                <label><span>お名前（本名）<font color="#ff333">＜必須＞</font></span><input type="text" name="name" value="<?php print $RealName; ?>" disabled=”disabled” /></label>
+                                <label><span>名前（本名）<font color="#ff333">＜必須＞</font></span><input type="text" name="name" value="<?php print $RealName; ?>" disabled=”disabled” /></label>
                         </li>
                         <li>
                                 <label><span>ユーザー名＜任意＞</span><input type="text" name="username" value="<?php print $UserName; ?>" disabled=”disabled”/></label>
@@ -34,17 +34,21 @@
                         
                         <p><?php echo $this->Form->Submit('登録', array('name'=>'submit', 'div'=>false, 'class'=>'btn blue')); ?><p>
 
-                        <p><?php echo $this->Form->Submit('修正', array('name'=>'stay_submit', 'div'=>false, 'class'=>'btn red')); ?><p>
+           
 
                         </div><!-- end contents1 -->
                 </div>
 
                 <div class="float2">
                 <div class="contents3">
+                
+                        <p><?php echo $this->Form->Submit('修正', array('name'=>'stay_submit', 'div'=>false, 'class'=>'btn red')); ?><p>
+                
                 </div><!-- end contents -->
         </div>
 
-                </div>
+         </div>
+         
 <?php $this->Form->end() ?>
 </div><!-- end account_form -->
 <br />

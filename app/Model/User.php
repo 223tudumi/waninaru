@@ -20,7 +20,9 @@ class User extends AppModel {
 			)
 	);
 	
-	var $hasOne = 'Joiner';
+	var $hasOne = array('Joiner');
+	
+	var $hasMany = array('Comment');
 	
 	public $actsAs = array(
 			'SoftDelete'

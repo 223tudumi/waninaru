@@ -14,7 +14,7 @@
                 <form method="post" name="form">　
                         <ul>
                         <li>
-                                <label><span>お名前（本名）<font color="#ff333">＜必須＞</font></span><input type="text" name="name" /></label>
+                                <label><span>名前（本名）<font color="#ff333">＜必須＞</font></span><input type="text" name="name" /></label>
                         </li>
                         <li>
                                 <label><span>ユーザー名＜任意＞</span><input type="text" name="username" /></label>
@@ -27,7 +27,7 @@
                         </li>
 
                 </form>
-                        <input type="checkbox" name="usecheck" ><a href="#" target="_blank">利用規約</a>に同意する
+                        <input type="checkbox" name="usecheck" ><?php echo $this->Html->link('利用規約',array('controller'=>'abouts' , 'action'=>'index')); ?>に同意する
                 <div class="contents1">
                     <div class="btn_base">
                             <p><?php echo $this->Form->button('内容確認' ,array('class'=>'btn blue')); ?></p>

@@ -25,7 +25,7 @@
 				<li>
 					<div class="background"><?php echo $this->Html->image('common/orange.png'); ?></div>
 					<div class="thumb">
-					<?php echo $this->Html->link($this->Html->image("projects/".$new['Project']['image_file_name']),'/projects/detail/'.$new['Project']['id'],array('escape'=>false)); ?></div>
+					<?php echo $this->Html->link($this->Html->image("projects/".$new['Project']['image_file_name'],array('height'=>'200')),'/projects/detail/'.$new['Project']['id'],array('escape'=>false)); ?></div>
 					<div class="text">残り席</div>
 					<div class="seat_number">
 						<?php
@@ -34,7 +34,7 @@
 						?>
 					</div>
 					<div class="title"><?php echo h($new['Project']['project_name']); ?></div>
-					<div class="date"><?php echo h($new['Project']['created']); ?></div>
+					<div class="date"><?php echo h($new['Project']['active_date']); ?> 開催!!</div>
 				</li>
 			<?php endforeach; ?>
 			</ul>

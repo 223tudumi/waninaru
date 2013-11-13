@@ -8,7 +8,7 @@ class Joiner extends AppModel {
 					'className' => 'Project',
 					'joinTabel' => 'joiners_projects',
 					'foreignKey' => 'joiner_id',
-					'unique'                 => true,
+					'unique'                 => false,
 					'conditions'             => '',
 					'fields'                 => '',
 					'order'                  => '',
@@ -16,15 +16,16 @@ class Joiner extends AppModel {
 					'offset'                 => '',
 					'finderQuery'            => '',
 					'deleteQuery'            => '',
-					'insertQuery'            => ''
+					'insertQuery'            => '',
+					'with' => 'JoinersProject'
 			)
 	);
-	
-	
 	
 	public $actsAs = array(
 			'SoftDelete'
 	);
+	
+	
 }
 
 ?>

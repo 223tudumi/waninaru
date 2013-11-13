@@ -13,7 +13,7 @@
 
                         <p><?php echo $this->Form->button('Waninaruを<br />使ってみる' ,array('class'=>'btn green')); ?></p>
 
-                    <div class="btn_base"><a href="./index.html" class="btn green" name="top"  >Waninaruを<br />使ってみる</a></div>
+                    <!--  <div class="btn_base"><a href="./index.html" class="btn green" name="top"  >Waninaruを<br />使ってみる</a></div>-->
                 </div><!-- end contents4 -->
                         <div class="supplement">
                         </div><!-- end supplement -->

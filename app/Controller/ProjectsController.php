@@ -13,11 +13,13 @@ class ProjectsController extends AppController{
 	}
 	
 	public function detail($id = null){
+		$userSession = $this->Auth->user();
 		$this->Project->id = $id;
 		$this->Comment->project_id=$id;
 		$this->set('kikaku',$this->Project->read());
 		$this->set('comments',$this->Comment->find('all', array(
-				'order'=>'Comment.id')));
+				'order'=>'Comment.id',
+				'conditions'=>array('Comment.project_id'=>$this->Project->id))));
 		//$this->set('tags',$this->Tag->read());
 		$this->Comment->user_id = $userSession['id'];
 		$this->set('commentnum',count($this->comments['Comment']));
@@ -79,7 +81,24 @@ class ProjectsController extends AppController{
 			}else{
 				$this->Session->setFlash('失敗したよ!!!');
 			}
+		}else{
 		}
+		$this->redirect(array('action'=>'detail',$project_id));
+	}
+	
+	public function out($project_id = null){
+		$userSession = $this->Auth->user();
+		
+		$this->Project->id = $project_id;
+		$kikaku = $this->Project->read();
+		$joiner = $this->Joiner->find(first,array('conditions'=>array('user_id'=>$userSession['id'])));
+		foreach($kikaku['projectJoiner'] as $kkk){
+			if($kkk['JoinersProject']['joiner_id']==$joiner['Joiner']['id']){
+				$this->JoinersProject->id = $kkk['JoinersProject']['id'];
+				$this->JoinersProject->delete();
+			}
+		}
+		
 		$this->redirect(array('action'=>'detail',$project_id));
 	}
 	

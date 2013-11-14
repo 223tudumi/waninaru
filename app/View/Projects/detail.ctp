@@ -52,7 +52,7 @@
 					break;
 				}
 			}
-			//if($kikaku['Project']['people_maxnum']>=$kikaku['projectJoiner']){
+			if($kikaku['Project']['people_maxnum']>count($kikaku['projectJoiner'])){
 				if($userSession!=null){
 					if($check == 0){
 						echo $this->Html->image('common/project/join_btn.jpg',array('url'=>array('controller'=>'projects','action'=>'join',$kikaku['Project']['id']),'alt'=>'参加する','width'=>'350'));
@@ -62,11 +62,12 @@
 				}else{
 					echo $this->Html->image('common/project/join_btn.jpg',array('url'=>array('controller'=>'user_temps','action'=>'account_entry'),'alt'=>'参加する','width'=>'350'));
 				}
-			//}
+			}
 			
 			?>
 			<p id="j_seat"><?php $rest = $kikaku['Project']['people_maxnum']-count($kikaku['projectJoiner']);
-			echo h($rest); ?><p>
+			echo h($rest);
+			?><p>
 			<p id="j_date"><?php echo h($kikaku['Project']['recrouit_date']); ?>まで<br />全<?php echo h($kikaku['Project']['people_maxnum']); ?>席<p>
 		</div><!-- end join_container -->
 

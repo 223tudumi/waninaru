@@ -27,7 +27,7 @@
                         </li>
 
                 </form>
-                        <input type="checkbox" name="usecheck" ><?php echo $this->Html->link('利用規約',array('controller'=>'abouts' , 'action'=>'index')); ?>に同意する
+                        <input type="checkbox" name="usecheck" ><?php echo $this->Html->link('利用規約',array('controller'=>'rules' , 'action'=>'index')); ?>に同意する
                 <div class="contents1">
                     <div class="btn_base">
                             <p><?php echo $this->Form->button('内容確認' ,array('class'=>'btn blue')); ?></p>

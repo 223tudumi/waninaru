@@ -22,7 +22,7 @@ class ProjectsController extends AppController{
 				'conditions'=>array('Comment.project_id'=>$this->Project->id))));
 		//$this->set('tags',$this->Tag->read());
 		$this->Comment->user_id = $userSession['id'];
-		$this->set('commentnum',count($this->comments['Comment']));
+		$this->set('commentnum',$this->Comment->find('count'));
 		
 		//以下コメント機能
 		if($this->request->isPOST()){
@@ -132,6 +132,33 @@ class ProjectsController extends AppController{
 				$this->request->data['Project']['image_file_name'] = $imageName;
 				$this->Project->save($this->data);
 				
+				$this->request->data['ProjectsUser']['project_id'] = $this->Project->id;
+				$this->ProjectsUser->save($this->data);
+				$this->redirect(array('action'=>'admin_index'));
+			} else {
+				$this->Session->setFlash('失敗したよ!!!');
+			}
+		}
+	}
+	
+	public function admin_projectUpdate($project_id = null){
+		$this->Project->id = $project_id;
+		if($this->request->isGet()){
+			$this->request->data=$this->Project->read();
+			$project = $this->Project->read();
+			foreach($project['projectUser'] as $projecter){
+				$this->request->data['ProjectsUser']['user_id'] =$projecter['id'];
+			}
+		}else{
+			$tmpName = $this->request->data['Project']['image_file_name']['tmp_name'];
+			$this->request->data['Project']['image_file_name'] = "temp";
+			if($this->Project->save($this->data)){
+				$imageName = $this->Project->id. '-' . date('YmdHis') . '.jpg';
+				$fileName = APP.'webroot/img/projects/'.$imageName;
+				move_uploaded_file($tmpName, $fileName);
+				$this->request->data['Project']['image_file_name'] = $imageName;
+				$this->Project->save($this->data);
+			
 				$this->request->data['ProjectsUser']['project_id'] = $this->Project->id;
 				$this->ProjectsUser->save($this->data);
 				$this->redirect(array('action'=>'admin_index'));

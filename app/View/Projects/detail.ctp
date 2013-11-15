@@ -88,8 +88,17 @@
 
 		<div id="planning_container">
 			
-			<p>企画者：<?php foreach ($kikaku['projectUser'] as $producer){ echo h($producer['real_name']); }?> </p>
-			<p><a href="#" onclick="fold('sub_fold'); return false;">企画者を全員表示</a><p>
+			<p>企画者：
+			<?php
+			foreach($kikaku['projectUser'] as $producer){
+				if($userSession!=null){
+					echo h($producer['real_name']);
+				} else {
+					echo h($producer['user_name']);
+				}
+			}
+			?> </p>
+			<!--  <p><a href="#" onclick="fold('sub_fold'); return false;">企画者を全員表示</a><p>  -->
 			<p id="sub_fold"> <br />
 		</div><!-- end planning_container -->
 
@@ -141,6 +150,7 @@
 			<dl class="clearfix">
 				<dt></dt>
 				<dd></dd>
+				<dd><?php echo $this->Html->link('削除',array('controller'=>'comments','action'=>'delete',$comment['Comment']['id'])); ?></dd>
 			</dl>
 		</div><!-- comment_wrapp  -->
 		<span><?php echo $this->Html->image('common/project/comment_back_bottom.jpg'); ?></span>	

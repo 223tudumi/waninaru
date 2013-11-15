@@ -24,7 +24,9 @@
 			</dl></li>
 		</ul></div><!-- form_main_area -->
 		<div id="form_btn_area">
-			<?php echo $this->Html->image('inquiry/form02_back.jpg',array('width'=>'170','onClick'=>'history.go(-1)','alt'=>'修正')); ?>&nbsp;&nbsp;<?php echo $this->Form->submit('inquiry/form02_submit.jpg',array('type'=>'submit','width'=>'270','name'=>'mode')); ?>
+			<?php echo $this->Html->image('inquiry/form02_back.jpg',array('width'=>'170','onClick'=>'history.go(-1)','alt'=>'修正')); ?>
+			&nbsp;&nbsp;
+			<?php echo $this->Form->submit('inquiry/form02_submit.jpg',array('type'=>'submit','width'=>'170','name'=>'mode')); ?>
 			<?php echo $this->Form->hidden('hidden',array('value'=>'complete')); ?>
 		</div><!-- end form_btn_area -->
 	<?php echo $this->Form->end(); ?>

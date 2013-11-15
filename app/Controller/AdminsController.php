@@ -29,7 +29,7 @@ class AdminsController extends AppController{
 	public function admin_login(){
 		if ($this->request->isPost()) {
 			if ($this->Auth->login()) {
-				$this->redirect($this->Auth->redirect());
+				$this->redirect($this->referer());
 			} else {
 			}
 		}

@@ -40,6 +40,6 @@
 	</tr>
 </table>
 </div>
-<?php echo $this->Form->button('戻る',array('onclick' => " location.href = '/waninaru/admin/projects' ")); ?>
-<?php echo $this->Form->button('更新',array('onclick' => " location.href = '/waninaru/admin/projects/projectUpdate/".$project['Project']['id']."'")); ?>
-<?php echo $this->Form->button('削除',array('onclick' => " location.href = '/waninaru/admin/projects/projectDelete/".$project['Project']['id']."'" )); ?>
+<?php echo $this->Form->button('戻る',array('onclick' => " location.href = '/admin/projects' ")); ?>
+<?php echo $this->Form->button('更新',array('onclick' => " location.href = '/admin/projects/projectUpdate/".$project['Project']['id']."'")); ?>
+<?php echo $this->Form->button('削除',array('onclick' => " location.href = '/admin/projects/projectDelete/".$project['Project']['id']."'" )); ?>

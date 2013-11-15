@@ -7,7 +7,6 @@ class ActibitiesController extends AppController{
 	}
 	
 	public function index(){
-		
 	}
 	
 	/**

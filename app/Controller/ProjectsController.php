@@ -22,7 +22,7 @@ class ProjectsController extends AppController{
 				'conditions'=>array('Comment.project_id'=>$this->Project->id))));
 		//$this->set('tags',$this->Tag->read());
 		$this->Comment->user_id = $userSession['id'];
-		$this->set('commentnum',$this->Comment->find('count'));
+		$this->set('commentnum',$this->Comment->find('count',array('conditions'=>array('Comment.project_id'=>$this->Project->id))));
 		
 		//以下コメント機能
 		if($this->request->isPOST()){
@@ -133,7 +133,7 @@ class ProjectsController extends AppController{
 				$this->Project->save($this->data);
 				
 				$this->request->data['ProjectsUser']['project_id'] = $this->Project->id;
-				$this->ProjectsUser->save($this->data);
+				//$this->ProjectsUser->save($this->data);
 				$this->redirect(array('action'=>'admin_index'));
 			} else {
 				$this->Session->setFlash('失敗したよ!!!');

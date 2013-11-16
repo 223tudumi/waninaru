@@ -1,8 +1,9 @@
 <?php
 
 class User extends AppModel {
-	var $uses = array('Joiner');
 	var $name = 'User' ;
+	var $primaryKey = 'id';
+	
 	public $hasAndBelongsToMany = array(
 			'userProject' => array(
 					'className' => 'Project',
@@ -22,7 +23,13 @@ class User extends AppModel {
 	
 	var $hasOne = array('Joiner');
 	
-	var $hasMany = array('Comment');
+	var $hasMany = array(
+		'Comment' => array(
+            'className'     => 'Comment',
+            'foreignKey'    => 'user_id',
+            'dependent'     => true
+        )
+	);
 	
 	public $actsAs = array(
 			'SoftDelete'

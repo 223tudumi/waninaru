@@ -1,13 +1,9 @@
 <?php
 
 class Comment extends AppModel {
-	public $belognsTo = array(
-			'User' => array(
-					'className'    => 'User',
-					'foreignKey' => 'id',
-					'dependent'    => true
-			)
-	);
+	var $name = 'Comment';
+	
+	var $belongsTo = array('User');
 	
 	
 	public $actsAs = array(

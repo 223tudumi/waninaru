@@ -16,16 +16,17 @@ class ProjectsController extends AppController{
 		$userSession = $this->Auth->user();
 		$this->Project->id = $id;
 		$this->Comment->project_id=$id;
+		$this->Comment->recursive = 2;
 		$this->set('kikaku',$this->Project->read());
 		$this->set('comments',$this->Comment->find('all', array(
 				'order'=>'Comment.id',
 				'conditions'=>array('Comment.project_id'=>$this->Project->id))));
 		//$this->set('tags',$this->Tag->read());
-		$this->Comment->user_id = $userSession['id'];
 		$this->set('commentnum',$this->Comment->find('count',array('conditions'=>array('Comment.project_id'=>$this->Project->id))));
 		
 		//以下コメント機能
 		if($this->request->isPOST()){
+			$this->Comment->user_id = $userSession['id'];
 			$this->request->data['Comment']['user_id'] = $this->Comment->user_id;
 			$this->request->data['Comment']['project_id'] = $this->Comment->project_id;
 			if($this->Comment->save($this->request->data)){
@@ -117,6 +118,7 @@ class ProjectsController extends AppController{
 	
 	public function admin_projectDetail($id = null){
 		$this->Project->id = $id;
+		$this->Project->recursive = 2;
 		$this->set('project',$this->Project->read());
 	}
 	
@@ -160,7 +162,7 @@ class ProjectsController extends AppController{
 				$this->Project->save($this->data);
 			
 				$this->request->data['ProjectsUser']['project_id'] = $this->Project->id;
-				$this->ProjectsUser->save($this->data);
+				//$this->ProjectsUser->save($this->data);
 				$this->redirect(array('action'=>'admin_index'));
 			} else {
 				$this->Session->setFlash('失敗したよ!!!');

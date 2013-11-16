@@ -142,15 +142,41 @@
 	<div id="comment_top_title">
 		<span>コメント</span>
 	</div><!-- comment_top_title -->
-<?php foreach($comments as $comment): ?>
+<?php foreach($comments as $num=>$comment): ?>
 	<div class="comment_view_area">
 		<span><?php echo $this->Html->image('common/project/comment_back_top.jpg'); ?></span>
 		<div class="comment_wrrap">
-			<p><?php echo h($comment['Comment']['comment_text']); ?></p>
+			<p>No.<?php echo h($num+1); ?></p>
+			<p><?php echo $comment['Comment']['comment_text']; ?></p>
 			<dl class="clearfix">
 				<dt></dt>
-				<dd></dd>
-				<dd><?php echo $this->Html->link('削除',array('controller'=>'comments','action'=>'delete',$comment['Comment']['id'])); ?></dd>
+				<dd>
+				<?php
+				if($comment['User']['id']==$producer['id']){
+					echo h('企画者 ');
+				}
+				if($userSession!=null){
+					echo pr($comment['User']['real_name']);
+				}else{
+					echo pr($comment['User']['user_name']);
+				}
+				?></dd>
+			</dl>
+			<dl class="clearfix">
+				<dt></dt>
+				<dd><?php
+				if($userSession!=null){
+					foreach($kikaku['projectUser'] as $producer){
+						if($userSession['id']==$producer['id']){
+							echo $this->Form->button('削除',array('onclick' => "/comments/delete/".$comment['Comment']['id']."/".$comment['Comment']['project_id']."'"));
+							break;
+						}else if($userSession['id']==$comment['Comment']['user_id']){
+							echo $this->Form->button('削除',array('onclick' => "/comments/delete/".$comment['Comment']['id']."/".$comment['Comment']['project_id']."'"));
+							break;
+						}
+					}
+				}
+				?></dd>
 			</dl>
 		</div><!-- comment_wrapp  -->
 		<span><?php echo $this->Html->image('common/project/comment_back_bottom.jpg'); ?></span>	

@@ -21,6 +21,8 @@ class Joiner extends AppModel {
 			)
 	);
 	
+	var $belongsTo = array('User');
+	
 	public $actsAs = array(
 			'SoftDelete'
 	);

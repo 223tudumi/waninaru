@@ -6,13 +6,11 @@ class CommentsController extends AppController{
 		$this->autoRender = false;
 	}
 	
-	public function delete($id = null){
+	public function delete($id = null,$project_id=null){
+		$this->autoRender = false;
 		$this->Comment->id = $id;
-		if($this->Comment->delete()){
-			$this->redirect($this->referer());
-		}else{
-			$this->Session->setFlash('失敗したよ!!!');
-		}
+		$this->Comment->delete();
+		$this->redirect('/projects/detail/'.$project_id);
 	}
 }
 ?>

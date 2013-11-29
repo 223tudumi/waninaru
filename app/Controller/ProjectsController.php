@@ -40,7 +40,6 @@ class ProjectsController extends AppController{
 	public function search(){
 	}
 	
-	/**
 	public function regist(){
 		$this->request->data['ProjectsUser']['user_id'] = $userSession['id'];
 		if(empty($this->request->data)){
@@ -75,7 +74,6 @@ class ProjectsController extends AppController{
 			}
 		}
 	}
-	*/
 	
 	public function join($project_id = null){
 		$userSession = $this->Auth->user();

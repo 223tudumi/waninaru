@@ -206,7 +206,7 @@ span.cog_top, span.cog_bottom {
 span.cog_wrapp {
   width: 200px;
   display: block;
-  background: transparent url(../images/common/cog_wrapp.png) repeat-y top left;
+  background: transparent url(../img/common/cog_wrapp.png) repeat-y top left;
 }
 
 span.cog_wrapp a:link, span.cog_wrapp a:visited {

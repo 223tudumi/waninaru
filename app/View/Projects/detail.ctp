@@ -1,5 +1,8 @@
 <!-- メインコンテンツはここから編集してください！！！！  -->
-<?php echo $this->Html->css(array('detail'), null, array('inline'=>false)); ?>
+<?php
+echo $this->Html->css(array('detail'), null, array('inline'=>false));
+echo $this->assign('title', 'Waninaru - '.$kikaku['Project']['project_name']);
+?>
 
 
 <div id="top_detail_container" class="clearfix">
@@ -39,7 +42,7 @@
 	<div id="left_container">
 
 		<div id="image_area">
-			<?php echo $this->Html->image('projects/'.$kikaku['Project']['image_file_name'],array('width'=>'350','height'=>'350'));?>
+			<?php echo $this->Html->image('projects/'.$kikaku['Project']['image_file_name'],array('height'=>'350'));?>
 		</div><!-- end image_area -->
 
 		<div id="join_container">
@@ -55,9 +58,11 @@
 			if($kikaku['Project']['people_maxnum']>count($kikaku['projectJoiner'])){
 				if($userSession!=null){
 					if($check == 0){
-						echo $this->Html->image('common/project/join_btn.jpg',array('url'=>array('controller'=>'projects','action'=>'join',$kikaku['Project']['id']),'alt'=>'参加する','width'=>'350'));
+						$msg = __('参加しますか？', true);
+						echo $this->Html->image('common/project/join_btn.jpg',array('url'=>array('controller'=>'projects','action'=>'join',$kikaku['Project']['id']),'alt'=>'参加する','width'=>'350','onClick'=>"return confirm('$msg')"));
 					}else{
-						echo $this->Html->image('common/project/join_out_btn.jpeg',array('url'=>array('controller'=>'projects','action'=>'out',$kikaku['Project']['id']),'alt'=>'参加をやめる','width'=>'350'));
+						$msg = __('参加やめますか？', true);
+						echo $this->Html->image('common/project/join_out_btn.jpeg',array('url'=>array('controller'=>'projects','action'=>'out',$kikaku['Project']['id']),'alt'=>'参加をやめる','width'=>'350','onClick'=>"return confirm('$msg')"));
 					}
 				}else{
 					echo $this->Html->image('common/project/join_btn.jpg',array('url'=>array('controller'=>'user_temps','action'=>'account_entry'),'alt'=>'参加する','width'=>'350'));
@@ -146,8 +151,8 @@
 	<div class="comment_view_area">
 		<span><?php echo $this->Html->image('common/project/comment_back_top.jpg'); ?></span>
 		<div class="comment_wrrap">
-			<p>No.<?php echo h($num+1); ?></p>
-			<p><?php echo $comment['Comment']['comment_text']; ?></p>
+			<p>No.<?php echo h($num+1); ?> <?php echo h($comment['Comment']['id']); ?></p>
+			<p><?php echo h($comment['Comment']['comment_text']); ?></p>
 			<dl class="clearfix">
 				<dt></dt>
 				<dd>
@@ -164,14 +169,15 @@
 			</dl>
 			<dl class="clearfix">
 				<dt></dt>
-				<dd><?php
+				<dd>
+				<?php
 				if($userSession!=null){
 					foreach($kikaku['projectUser'] as $producer){
 						if($userSession['id']==$producer['id']){
-							echo $this->Form->button('削除',array('onclick' => "/comments/delete/".$comment['Comment']['id']."/".$comment['Comment']['project_id']."'"));
+							echo $this->Form->button('削除',array('onclick' => "location.href = '" . $this->Html->url("/comments/delete/{$comment['Comment']['id']}/{$comment['Comment']['project_id']}") . "'"));
 							break;
 						}else if($userSession['id']==$comment['Comment']['user_id']){
-							echo $this->Form->button('削除',array('onclick' => "/comments/delete/".$comment['Comment']['id']."/".$comment['Comment']['project_id']."'"));
+							echo $this->Form->button('削除',array('onclick' => "location.href = '" . $this->Html->url("/comments/delete/{$comment['Comment']['id']}/{$comment['Comment']['project_id']}") . "'"));
 							break;
 						}
 					}

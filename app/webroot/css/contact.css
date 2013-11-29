@@ -85,6 +85,21 @@ div#form_btn_area {
 
 
 
+#submit_left {
+  width: 170px;
+  float: left;
+  display: block;
+}
+
+#submit_right {
+  width: 170px;
+  float: right;
+  display: block;
+}
+
+
+
+
 div#complete_area {
   width: 960px;
   padding: 30px 0 50px 0;

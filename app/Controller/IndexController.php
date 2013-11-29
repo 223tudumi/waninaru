@@ -9,10 +9,9 @@ class IndexController extends AppController{
 	}
 	
 	public function index(){
-		$today = date("y/m/d Ah:i");
 		$this->set('news',$this->Project->find('all' , array(
 				'order'=>'Project.created desc',
-				'conditions'=>array('Project.active_date >=' => $today),
+				'conditions'=>array('Project.recrouit_date >= curdate()'),
 				'limit'=>21,
 		)
 		)

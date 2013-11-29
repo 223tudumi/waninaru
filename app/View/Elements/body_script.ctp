@@ -1,7 +1,7 @@
 <script type="text/javascript">
 $(function() {
     jQuery('.list').jcarousel({
-    	wrap: 'circular'
+    	wrap: 'both' //ループの種類を指定
     });
 });
 </script>
@@ -43,5 +43,15 @@ $(document).ready(function() {
 $('form').formtips({ 
 class_name: 'tipped'
 });
+});
+</script>
+<script type="text/javascript">
+$('#image').change(function() {
+    var file = $(this).prop('files')[0];
+    var fr = new FileReader();
+    fr.onload = function() {
+        $('#preview').attr('src', fr.result);   // 読み込んだ画像データをsrcにセット
+    }
+    fr.readAsDataURL(file);  // 画像読み込み
 });
 </script>

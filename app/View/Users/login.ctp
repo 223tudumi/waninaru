@@ -1,4 +1,7 @@
-<?php echo $this->Html->css(array('kkk'), null, array('inline'=>false)); ?>
+<?php
+echo $this->Html->css(array('kkk'), null, array('inline'=>false));
+echo $this->assign('title', 'Waninaru - ログイン ');
+?>
 <div id="error_container">
 	<div id="error_text_container">
 		<h2><?php echo $this->Html->image('common/error_title.jpg',array('alt'=>'error!!'));?></h2>

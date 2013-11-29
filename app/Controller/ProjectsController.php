@@ -1,6 +1,6 @@
 <?php
 class ProjectsController extends AppController{
-	var $uses = array('Project','User','ProjectsUser','Comment','Tag','JoinersProject','Joiner');
+	var $uses = array('Project','User','ProjectsUser','Comment','Tag','JoinersProject','Joiner','Mail');
 	public $helpers = array('Html' , 'Form');
 	
 	public function beforeFilter(){
@@ -40,33 +40,42 @@ class ProjectsController extends AppController{
 	public function search(){
 	}
 	
+	/**
 	public function regist(){
-		/**
-		$this->request->data['ProjectsUser']['user_id'] = $this->Auth->user(['id']);
+		$this->request->data['ProjectsUser']['user_id'] = $userSession['id'];
 		if(empty($this->request->data)){
 		}else{
 			if($this->request->data['Project']['hidden']=='confirm'){
+				$this->request->data['Project']['detail_text'] = htmlspecialchars($this->request->data['Project']['detail_text']);
+				$this->request->data['Project']['detail_text'] = nl2br($this->request->data['Project']['detail_text']);
+				
+				$this->set('project',$this->request->data['Project']);
 				$this->render("regist_confirm");
 			}
 			else if($this->request->data['Project']['hidden']=='complete'){
+				
 				$tmpName = $this->request->data['Project']['image_file_name']['tmp_name'];
 				$this->request->data['Project']['image_file_name'] = "temp";
+				
 				if($this->Project->save($this->data)){
 					$imageName = $this->Project->id. '-' . date('YmdHis') . '.jpg';
 					$fileName = APP.'webroot/img/projects/'.$imageName;
 					move_uploaded_file($tmpName, $fileName);
+					
 					$this->request->data['Project']['image_file_name'] = $imageName;
 					$this->Project->save($this->data);
 					$this->request->data['ProjectsUser']['project_id'] = $this->Project->id;
-					$this->ProjectsUser->save($this->data);
+					$this->request->data['ProjectsUser']['user_id'] = $userSession['id'];
+					$this->ProjectsUser->save($this->request->data);
 					$this->render("regist_complete");
 				} else {
 					$this->Session->setFlash('失敗したよ!!!');
 				}
+				
 			}
 		}
-		*/
 	}
+	*/
 	
 	public function join($project_id = null){
 		$userSession = $this->Auth->user();
@@ -135,7 +144,7 @@ class ProjectsController extends AppController{
 				$this->Project->save($this->data);
 				
 				$this->request->data['ProjectsUser']['project_id'] = $this->Project->id;
-				//$this->ProjectsUser->save($this->data);
+				$this->ProjectsUser->save($this->data);
 				$this->redirect(array('action'=>'admin_index'));
 			} else {
 				$this->Session->setFlash('失敗したよ!!!');
@@ -160,9 +169,9 @@ class ProjectsController extends AppController{
 				move_uploaded_file($tmpName, $fileName);
 				$this->request->data['Project']['image_file_name'] = $imageName;
 				$this->Project->save($this->data);
-			
+				
 				$this->request->data['ProjectsUser']['project_id'] = $this->Project->id;
-				//$this->ProjectsUser->save($this->data);
+				$this->ProjectsUser->save($this->data);
 				$this->redirect(array('action'=>'admin_index'));
 			} else {
 				$this->Session->setFlash('失敗したよ!!!');

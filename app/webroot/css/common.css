@@ -145,28 +145,105 @@ div#header_logo {
 }
 
 div#header_navi_container {
-  width: 400px;
+  width: 390px;
+  padding: 10px 0 0 0;
   float: right;
 }
 
 div#header_navi_container ul {
-  width: 400px;
+  width: 248px;
   overflow: hidden;
-  margin: 0 -30px 0 0;
+  margin: 0 -25px 0 0;
   _zoom: 1;
   overflow: visible;
+  float: left;
 }
 
 div#header_navi_container ul li {
-  width: 50px;
-  margin: 0 30px 0 0;
+  width: 37px;
+  margin: 0 25px 0 0;
   float: left;
+}
+
+div#header_navi_container p {
+  width: 130px;
+  height: 33px;
+  float: right;
+  color: #ffffff;
+  background: transparent url(../img/common/header_user_off.png) no-repeat 0 5px;
+}
+
+div#header_navi_container p:hover {
+  width: 130px;
+  height: 33px;
+  float: right;
+  color: #ffffff;
+  font-weight: bold;
+  background: transparent url(../img/common/header_user_on.png) no-repeat 0 5px;
+}
+
+div#header_navi_container p span {
+  width: 105px;
+  margin: 0 0 0 25px;
+  padding: 10px 0 0 0;
+  display: block;
+}
+
+div#header_navi_container p a:link, div#header_navi_container p a:visited, div#header_navi_container p a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* -------------------
+  pulldown layout
+------------------- */
+
+span.cog_top, span.cog_bottom {
+  width: 200px;
+  display: block;
+}
+
+span.cog_wrapp {
+  width: 200px;
+  display: block;
+  background: transparent url(../images/common/cog_wrapp.png) repeat-y top left;
+}
+
+span.cog_wrapp a:link, span.cog_wrapp a:visited {
+  color: #bcbcbc;
+  text-decoration: none;
+}
+
+span.cog_wrapp a:hover {
+  color: #666666;
+  text-decoration: none;
+}
+
+div#header_navi_container ul li ul li {
+  width: 140px;
+  margin: 0 0 0 30px;
+  padding: 5px 0 0 0;
+  float: none;
+}
+
+div#header_navi_container ul li ul {
+  width: 200px;
+  margin: 0 0 0 -82px;
+  display: none;
+}
+
+div#header_navi_container ul li:hover ul {
+  width: 200px;
+  display: block;
+  position: absolute;
+  z-index: 100;
 }
 
 /* ========================
   modal style
 ======================== */
 
+/* 
 #showoverlay{
   padding: 0;
 }
@@ -197,11 +274,9 @@ div#header_navi_container ul li {
   font-weight: bold;
 }
 
-/*
 .padding_layout {
   padding: 20px 0 5px 0;
 }
-*/
 
 #close {
     position: absolute;
@@ -267,22 +342,28 @@ span.login_user_right {
   line-height: 30px;
 }
 
-.tipped {
-  color: #cccccc;
-}
-
 p.make_area {
   width: 289px;
   margin: 0 0 0 55px;
   padding: 20px 0 10px 0;
 }
+*/
 
 /* ========================
-  error style
+  login / error style
 ======================== */
 
-div#error_container {
+div#login_container_wrapp, div#error_container {
   width: 960px;
+}
+
+div#login_container_wrapp h2 {
+  width: 960px;
+  padding: 20px 0 50px 0;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  color: #94dd83;
 }
 
 div#error_text_container {
@@ -302,16 +383,27 @@ div#error_container h3 {
   font-size: 13px;
 }
 
-div#login_again_container {
+div#login_container, div#login_again_container {
   width: 500px;
   margin: 0 0 0 230px;
   padding: 50px 0;
   border: 1px #94dd83 solid;
 }
 
-div#login_again_inner {
+div#login_inner, div#login_again_inner {
   width: 400px;
   margin: 0 0 0 50px;
+}
+
+div#error_page_container {
+  width: 960px;
+  text-align: center;
+}
+
+div#error_page_container p {
+  width: 960px;
+  line-height: 3em;
+  font-size: 15px;
 }
 
 /* ========================
@@ -321,7 +413,7 @@ div#login_again_inner {
 
 div#footer_top_wrapp {
   padding: 80px 0 0 0;
-  margin: 0;
+  margin: 0 0 -10px 0;
   text-align: center;
   background: transparent url(../img/common/footer_back.jpg) repeat-x bottom center;
 }
@@ -433,6 +525,9 @@ div#copy_wrrap address {
   padding: 0 0 30px 0
 }
 
+.tipped {
+  color: #cccccc;
+}
 
 
 

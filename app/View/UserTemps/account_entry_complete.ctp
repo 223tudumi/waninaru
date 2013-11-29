@@ -1,4 +1,7 @@
-<?php echo $this->Html->css(array('account'), null, array('inline'=>false)); ?>
+<?php
+echo $this->Html->css(array('account'), null, array('inline'=>false));
+echo $this->assign('title', 'Waninaru - 学生同士がスキルを共有して、アイディアを実現できるサービス ');
+?>
 <div id="account_container">
 <?php $this->Form->create(array('inputDefaults'=>array('label'=>false,'div'=>false))) ?>
 <FORM METHOD="POST">
@@ -11,7 +14,7 @@
 
                 <div class="contents4">
 
-                        <p><?php echo $this->Form->button('Waninaruを<br />使ってみる' ,array('class'=>'btn green')); ?></p>
+                        <p><?php echo $this->Form->button('Waninaruを<br/>使ってみる',array('onclick' => "location.href = '" . $this->Html->url("/index") . "'",'class'=>'btn green')); ?></p>
 
                     <!--  <div class="btn_base"><a href="./index.html" class="btn green" name="top"  >Waninaruを<br />使ってみる</a></div>-->
                 </div><!-- end contents4 -->

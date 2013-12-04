@@ -21,7 +21,7 @@ class User extends AppModel {
 			)
 	);
 	
-	var $hasOne = array('Joiner');
+	var $hasOne = array('Joiner', 'Prof');
 	
 	var $hasMany = array(
 		'Comment' => array(

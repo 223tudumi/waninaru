@@ -4,7 +4,7 @@ class AdminsController extends AppController{
 	var $uses = array('Admin');
 	public $helpers = array('Html' , 'Form');
 	
-	public function beforeFilter(){
+	 public function beforeFilter(){
 		parent::beforeFilter();
 		$this->Auth->allow('admin_index','admin_regist');
 	}

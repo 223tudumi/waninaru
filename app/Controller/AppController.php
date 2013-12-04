@@ -72,6 +72,7 @@ class AppController extends Controller {
 			}
 		}
 		$this->set('userSession',$this->Auth->user());
+		$userSession = $this->Auth->user();
 	}
 	
 }

@@ -139,6 +139,24 @@ class AppSchema extends CakeSchema {
 			),
 			'tableParameters' => array('charset' => 'latin1', 'collate' => 'latin1_swedish_ci', 'engine' => 'InnoDB')
 	);
+	
+	public $profs = array(	//real_name_privateで本名公開/非公開設定。0で公開、1で非公開で統一したい。
+			'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'key' => 'primary'),
+			'user_id' => array('type' => 'string', 'null' => false, 'default' => null, 'length' => 10, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
+			'real_name_private' => array('type' => 'integer', 'null' => false, 'default' => null),	
+			'profimg_url' => array('type' => 'text', 'null' => false, 'default' => null, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
+			'addmail1' => array('type' => 'text', 'null' => false, 'default' => null, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
+			'addmail2' => array('type' => 'text', 'null' => false, 'default' => null, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
+			'use_address' => array('type' => 'integer', 'null' => false, 'default' => null),
+			'program' => array('type' => 'string', 'null' => false, 'default' => null, 'length' => 32, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
+			'prof_detail' => array('type' => 'text', 'null' => false, 'default' => null, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
+			'created' => array('type' => 'datetime', 'null' => true, 'default' => null),
+			'modified' => array('type' => 'datetime', 'null' => true, 'default' => null),
+			'indexes' => array(
+					'PRIMARY' => array('column' => 'id', 'unique' => 1)
+			),
+			'tableParameters' => array('charset' => 'latin1', 'collate' => 'latin1_swedish_ci', 'engine' => 'InnoDB')
+	);
 }
 
 	

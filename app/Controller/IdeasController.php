@@ -10,13 +10,13 @@ class IdeasController extends AppController{
 	public $helpers = array('Html' , 'Form');
 	
 	public function index(){
-		/*
+		
 		$this->set('idealists',$this->Idea->find('all',array(
 			'order'=>'idea_created desc',
 		)));
-		*/
+		
 	}
-	/*
+	
 	public function detail($id = null){
 		$this->set('ideain',$this->Idea->read());
 		$this->set('idcoms',$this->Icomment->find('all',array(
@@ -28,5 +28,4 @@ class IdeasController extends AppController{
 	public function postform(){
 		$this->set('idcoms',$this->Icomment->read());
 	}
-	*/
 }

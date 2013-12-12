@@ -7,6 +7,40 @@ class AppSchema extends CakeSchema {
 
 	public function after($event = array()) {
 	}
+	public $ideas = array(
+			'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'key' => 'primary'),
+			'idea_text' => array('type' => 'text', 'null' =>false, 'default'=>null, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
+			'created' => array('type' => 'datetime', 'null' => true, 'default' => null),
+			'deleted' => array('type' => 'integer', 'null' => true, 'default' => '0' , 'length' => 1),
+			'deleted_date' => array('type' => 'datetime', 'null' => true, 'default' => null),
+			'indexes' => array(
+					'PRIMARY' => array('column' => 'id', 'unique' => 1)
+			),
+			'tableParameters' => array('charset' => 'latin1', 'collate' => 'latin1_swedish_ci', 'engine' => 'InnoDB')
+	);
+	
+	public $icomments = array(
+			'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'key' => 'primary'),
+			'project_id' => array('type' => 'integer', 'null' => false, 'default' => null),
+			'user_id' => array('type' => 'integer', 'null' => false, 'default' => null),
+			'comment_text' => array('type' => 'text', 'null' => false, 'default' => null, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
+			'created' => array('type' => 'datetime', 'null' => true, 'default' => null),
+			'deleted' => array('type' => 'integer', 'null' => true, 'default' => '0' , 'length' => 1),
+			'deleted_date' => array('type' => 'datetime', 'null' => true, 'default' => null),
+	);
+	
+	public $ideas_users = array(
+			'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'key' => 'primary'),
+			'idea_id' => array('type' => 'integer', 'null' => false, 'default' => null),
+			'user_id' => array('type' => 'integer', 'null' => false, 'default' => null),
+			'created' => array('type' => 'datetime', 'null' => true, 'default' => null),
+			'deleted' => array('type' => 'integer', 'null' => true, 'default' => '0' , 'length' => 1),
+			'deleted_date' => array('type' => 'datetime', 'null' => true, 'default' => null),
+			'indexes' => array(
+					'PRIMARY' => array('column' => 'id', 'unique' => 1)
+			),
+			'tableParameters' => array('charset' => 'latin1', 'collate' => 'latin1_swedish_ci', 'engine' => 'InnoDB')
+	);
 	
 	public $admins = array(
 			'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'key' => 'primary'),

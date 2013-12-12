@@ -8,8 +8,16 @@ echo $this->assign('title', 'Waninaru - '.$kikaku['Project']['project_name']);
 <div id="top_detail_container" class="clearfix">
 	<ul id="number_area" class="clearfix">
 		<li class="clearfix">
-<!--				<span class="t_d_img"><?php echo $this->Html->image('common/project/top_bookmark.jpg',array()); ?></span>
-			<span class="t_d_number">ブックマーク数：<a href="#" title="ブックマーク数">10</a></span>　-->
+			<span class="t_d_img"><?php echo $this->Html->image('common/project/top_bookmark.jpg',array()); ?></span>
+			<span class="t_d_number">ブックマーク数：
+			<?php 
+			$num=0;
+			foreach($kikaku['ProjectsBookmark'] as $books){
+				$num++;
+			}
+			echo $num;
+			?>
+			</span>
 		</li>
 		<li class="clearfix">
 			<span class="t_d_img"><?php echo $this->Html->image('common/project/top_comment.jpg'); ?></span>
@@ -77,9 +85,17 @@ echo $this->assign('title', 'Waninaru - '.$kikaku['Project']['project_name']);
 		</div><!-- end join_container -->
 		<div id="bkm_good_contianer" class="clearfix">
 			<span id="bkm">
-			<a href="#" title="ブックマークする">
-			<?php echo $this->Html->image('common/project/bkm_btn.jpg',array('alt'=>'ブックマークする')); ?>
-			</a>
+			<?php 
+			$mode=0;
+			foreach($kikaku['ProjectsBookmark'] as $books){
+				if($books['user_id']==$userSession['id']){
+					$mode=1;
+				}
+			}
+			if($mode!=1){
+				echo $this->Html->image('common/project/bkm_btn.jpg',array('url'=>array('controller'=>'ProjectsBookmarks','action'=>'regist',$kikaku['Project']['id']),'alt'=>'ブックマークする'));
+			}
+			?>
 			</span>
 			<!-- <span id="good"><a href="#" title="いいね！"><?php echo $this->Html->image('common/project/good_btn.jpg',array('alt'=>'いいね！')); ?></a></span> -->
 		</div>

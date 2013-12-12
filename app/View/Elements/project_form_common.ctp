@@ -1,4 +1,4 @@
-<?php echo $this->Form->create('Project',array('inputDefaults' => array('label' => false,'div' => false))); ?>
+<?php echo $this->Form->create('Project',array('enctype' => 'multipart/form-data','inputDefaults' => array('label' => false,'div' => false))); ?>
       <ul>
         <li><dl class="clearfix">
           <dt><span>企画タイトル</span></dt>

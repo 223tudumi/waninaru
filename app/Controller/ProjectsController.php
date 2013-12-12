@@ -38,9 +38,44 @@ class ProjectsController extends AppController{
 	}
 	
 	public function search(){
+		$this->set('tagstr',$this->Tag->read());
+		$this->set('projectnum',$this->Project->find('count'));
+		
+		if($this->request->isPOST()){
+			if($this->Searchsystem->save($this->request->data)){
+				$this->redirect($this->referer());
+			} else {
+				$this->Session->setFlash('失敗したよ!!!');
+			}
+		}
+		if(!empty($_REQUEST['search_text'])){
+			$today = date("y/m/d Ah:i");
+			$start = date("y/m/d");
+			$end = null;
+			if(!empty($_REQUEST['start_date'])){
+				$start = $_REQUEST['start_date'];
+			}
+			if(!empty($_REQUEST['end_date'])){
+				$end = $_REQUEST['end_date'];
+			}
+			$this->set('searches',$this->Project->find('all',array(
+					'order' =>'Project.created desc',
+					'conditions'=>array(
+							//"active_date BETWEEN ? AND ?"=>array("$start","$end")
+							'Project.active_date >=' => $today,
+					))));
+		}else{
+			$today = date("y/m/d Ah:i");
+			$this->set('news',$this->Project->find('all',array(
+					'order' =>'Project.created desc',
+					'conditions'=>array(
+							'Project.active_date >=' => $today,
+					))));
+		}
 	}
 	
 	public function regist(){
+		$userSession = $this->Auth->user();
 		$this->request->data['ProjectsUser']['user_id'] = $userSession['id'];
 		if(empty($this->request->data)){
 		}else{
@@ -48,25 +83,27 @@ class ProjectsController extends AppController{
 				$this->request->data['Project']['detail_text'] = htmlspecialchars($this->request->data['Project']['detail_text']);
 				$this->request->data['Project']['detail_text'] = nl2br($this->request->data['Project']['detail_text']);
 				
+				$tmpName = $this->request->data['Project']['image_file_name']['tmp_name'];
+				$imageName = 'tmp-' . date('YmdHis') . '.jpg';
+				$fileName = APP.'webroot/img/tmps/'.$imageName;
+				move_uploaded_file($tmpName, $fileName);
+				$this->request->data['Project']['image_file_name'] = $imageName;
+				
 				$this->set('project',$this->request->data['Project']);
 				$this->render("regist_confirm");
 			}
 			else if($this->request->data['Project']['hidden']=='complete'){
-				
-				$tmpName = $this->request->data['Project']['image_file_name']['tmp_name'];
-				$this->request->data['Project']['image_file_name'] = "temp";
-				
-				if($this->Project->save($this->data)){
-					$imageName = $this->Project->id. '-' . date('YmdHis') . '.jpg';
-					$fileName = APP.'webroot/img/projects/'.$imageName;
-					move_uploaded_file($tmpName, $fileName);
+				if($this->Project->save($this->request->data)){
+					rename(APP.'webroot/img/tmps/'.$this->request->data['Project']['image_file_name'], APP.'webroot/img/projects/'.$this->Project->id.$this->request->data['Project']['image_file_name']);
+					$this->request->data['Project']['image_file_name'] = $this->Project->id.$this->request->data['Project']['image_file_name'];
+					$this->Project->save($this->request->data);
 					
-					$this->request->data['Project']['image_file_name'] = $imageName;
-					$this->Project->save($this->data);
 					$this->request->data['ProjectsUser']['project_id'] = $this->Project->id;
 					$this->request->data['ProjectsUser']['user_id'] = $userSession['id'];
-					$this->ProjectsUser->save($this->request->data);
-					$this->render("regist_complete");
+					if($this->ProjectsUser->save($this->request->data)){
+						$this->set('project',$this->Project->read());
+						$this->render("regist_complete");
+					}
 				} else {
 					$this->Session->setFlash('失敗したよ!!!');
 				}

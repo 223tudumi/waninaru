@@ -10,7 +10,7 @@
 			<li class="f_line">|</li>
 			<li><?php echo $this->Html->link('利用規約' , array('controller'=>'rules' , 'action'=>'index'),array('title'=>'利用規約') ) ?></li>
 			<li class="f_line">|</li>
-			<li><?php echo $this->Html->link('よくある質問' , array('controller'=>'questions' , 'action'=>'index'),array('title'=>'よくある質問') ) ?></a></li>
+			<li><?php echo $this->Html->link('よくある質問' , array('controller'=>'questions' , 'action'=>'index'),array('title'=>'よくある質問') ) ?></li>
     	</ul>
     	<ul class="clearfix">
     		<li><?php echo $this->Html->link('TOP' , array('controller'=>'index' , 'action'=>'index') ,array('title'=>'Waninaru')) ?></li>

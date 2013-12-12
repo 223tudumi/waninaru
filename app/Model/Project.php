@@ -34,6 +34,14 @@ class Project extends AppModel {
 		),
 	);
 	
+	var $hasMany = array(
+			'ProjectsBookmark' => array(
+					'className'     => 'ProjectBookmarks',
+					'foreignKey'    => 'project_id',
+					'dependent'     => true
+			)
+	);
+	
 	public $actsAs = array(
 			'SoftDelete'
 	);

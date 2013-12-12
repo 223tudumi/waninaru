@@ -26,6 +26,5 @@ class ProjectsBookmarksController extends AppController{
 	
 	public function delete($project_id=null){
 		$this->autoRender = false;
-	
 	}
 }

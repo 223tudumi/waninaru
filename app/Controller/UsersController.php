@@ -56,6 +56,7 @@ class UsersController extends AppController{
 			if ($this->Auth->login()) {
 				$this->redirect($this->Auth->redirect());
 			} else {
+				$this->Session->setFlash(print_r($this->request));
 			}
 		}
 	}

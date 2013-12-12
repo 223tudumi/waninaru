@@ -75,12 +75,15 @@ echo $this->assign('title', 'Waninaru - '.$kikaku['Project']['project_name']);
 			?><p>
 			<p id="j_date"><?php echo h($kikaku['Project']['recrouit_date']); ?>まで<br />全<?php echo h($kikaku['Project']['people_maxnum']); ?>席<p>
 		</div><!-- end join_container -->
-
-<!--			<div id="bkm_good_contianer" class="clearfix">
-			<span id="bkm"><a href="#" title="ブックマークする"><?php echo $this->Html->image('common/project/bkm_btn.jpg',array('alt'=>'ブックマークする')); ?></a></span>
-			<span id="good"><a href="#" title="いいね！"><?php echo $this->Html->image('common/project/good_btn.jpg',array('alt'=>'いいね！')); ?></a></span>
+		<div id="bkm_good_contianer" class="clearfix">
+			<span id="bkm">
+			<a href="#" title="ブックマークする">
+			<?php echo $this->Html->image('common/project/bkm_btn.jpg',array('alt'=>'ブックマークする')); ?>
+			</a>
+			</span>
+			<!-- <span id="good"><a href="#" title="いいね！"><?php echo $this->Html->image('common/project/good_btn.jpg',array('alt'=>'いいね！')); ?></a></span> -->
 		</div>
--->
+		<!-- 
 		<dl id="tag_container" class="clearfix">
 			<dt>タグ：</dt>
 			<?php $tagstr = $tags['Tag']['tag_text'];
@@ -90,7 +93,7 @@ echo $this->assign('title', 'Waninaru - '.$kikaku['Project']['project_name']);
 			<span><?php echo h($search);?></span>
 			<?php endforeach; ?></dd>
 		</dl>
-
+		 -->
 		<div id="planning_container">
 			
 			<p>企画者：

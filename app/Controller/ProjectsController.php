@@ -1,7 +1,7 @@
 <?php
 class ProjectsController extends AppController{
 	var $uses = array('Project','User','ProjectsUser','Comment','Tag','JoinersProject','Joiner','Mail');
-	public $helpers = array('Html' , 'Form');
+	public $helpers = array('Html' , 'Form' , 'Paginator');
 	
 	public function beforeFilter(){
 		parent::beforeFilter();
@@ -58,19 +58,21 @@ class ProjectsController extends AppController{
 			if(!empty($_REQUEST['end_date'])){
 				$end = $_REQUEST['end_date'];
 			}
-			$this->set('searches',$this->Project->find('all',array(
+			$date = $this->Project->find('all',array(
 					'order' =>'Project.created desc',
 					'conditions'=>array(
 							//"active_date BETWEEN ? AND ?"=>array("$start","$end")
 							'Project.active_date >=' => $today,
-					))));
+					)));
+			$this->set('searches',$date);
 		}else{
 			$today = date("y/m/d Ah:i");
-			$this->set('news',$this->Project->find('all',array(
+			$date = $this->Project->find('all',array(
 					'order' =>'Project.created desc',
 					'conditions'=>array(
 							'Project.active_date >=' => $today,
-					))));
+					)));
+			$this->set('news',$date);
 		}
 	}
 	

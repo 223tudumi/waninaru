@@ -144,6 +144,7 @@ echo $this->assign('title', 'Waninaru - 企画検索');
 			
 
 
+	
 <?php /**
 <div id="search_result_bottom" class="clearfix">
 	<ul class="clearfix">

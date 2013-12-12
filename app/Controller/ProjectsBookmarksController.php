@@ -8,7 +8,16 @@ class ProjectsBookmarksController extends AppController{
 	}
 	
 	public function index(){
-		$this->autoRender = false;
+		$userSession = $this->Auth->user();
+		$this->ProjectsBookmark->recursive=3;
+		$this->paginate = array(
+			'conditions' => array('user_id'=>$userSession['id']),
+			'limit' => 9,
+			'order' => array(
+					'Project.created' => 'asc'
+			)
+		);
+		$this->set('date',$this->paginate());
 	}
 	
 	public function regist($project_id=null){

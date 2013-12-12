@@ -86,7 +86,7 @@ class ProjectsController extends AppController{
 				$this->request->data['Project']['detail_text'] = nl2br($this->request->data['Project']['detail_text']);
 				
 				$tmpName = $this->request->data['Project']['image_file_name']['tmp_name'];
-				$imageName = 'tmp-' . date('YmdHis') . '.jpg';
+				$imageName = '-' . date('YmdHis') . '.jpg';
 				$fileName = APP.'webroot/img/tmps/'.$imageName;
 				move_uploaded_file($tmpName, $fileName);
 				$this->request->data['Project']['image_file_name'] = $imageName;

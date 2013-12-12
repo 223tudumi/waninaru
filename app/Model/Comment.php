@@ -3,7 +3,7 @@
 class Comment extends AppModel {
 	var $name = 'Comment';
 	
-	var $belongsTo = array('User');
+	var $belongsTo = array('User','Project');
 	
 	
 	public $actsAs = array(

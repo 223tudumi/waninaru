@@ -5,7 +5,7 @@ class ProjectsController extends AppController{
 	
 	public function beforeFilter(){
 		parent::beforeFilter();
-		$this->Auth->allow('index','search','detail');
+		$this->Auth->allow('index','search','detail','regist');
 	}
 	
 	public function index(){

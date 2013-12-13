@@ -29,13 +29,13 @@
 					</span>
 				</div>	
 			</div><!-- end clearfix -->
-				
+
 			<div id="radio_content" class="clearfix">
 				<div id="radio_content1" class="clearfix">
 					<input type="radio" class="radio1" name="radio_b" value="1" <?php if($userprofile['Prof']['real_name_private']==1){echo("checked");} ?> /><span class="radio1">非公開</span>
 				</div>
 				<div id="radio_content2" class="clearfix">
-					<input type="radio" class="radio2" name="radio_b" value="0 <?php if($userprofile['Prof']['real_name_private']==0){echo("checked");} ?> /><span class="radio2">公開</span>
+					<input type="radio" class="radio2" name="radio_b" value="0" <?php if($userprofile['Prof']['real_name_private']==0 || $userprofile['Prof']['real_name_private']==null){echo("checked");} ?> /><span class="radio2">公開</span>
 				</div>
 			</div>		
 			<span><br /><br />非公開設定にしていても企画投稿時には本名が公開されます。<br />
@@ -166,6 +166,7 @@
 				<ul>
 					<li id="right_btn">
 						<?php echo $this->Form->submit('my_prof/btn.jpg', array('type'=>'submit', 'name'=>'入力確認','width'=>'200')) ?>
+						<?php echo $this->Form->hidden('hidden',array('value'=>'confirm')); ?>
 					</li>
 				</ul>
 			</div>

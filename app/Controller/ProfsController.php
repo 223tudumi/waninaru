@@ -113,84 +113,89 @@ class profsController extends AppController{
 	public function my_prof($id = null) {
 		$userSession = $this->Auth->user();
 		$this->User->id = $id;
-		
 		$userdata2 = $this->Prof->find('first', array('conditions' => array('Prof.user_id' => $id)));
 		$id2 = $userdata2['Prof']['id'];
 		$this->Prof->id = $id2;
-
+		
 		$this->set('userinfo', $this->User->read());
 		$this->set('userprofile', $this->Prof->read());
 		
-		if($this->request->isPost()){
-			$real_name = $this->data["new_real_name"];
-			$user_name = $this->data["new_user_name"];
-			$real_name_private = $this->data["radio_b"];
-			$addmail1 = $this->data["add_mailaddress1"];
-			$addmail2 = $this->data["add_mailaddress2"];
-			$usemails = $this->data["use_mail1"] + $this->data["use_mail2"] + $this->data["use_mail3"];
-			$profdetail = $this->data["profile_detail"];
-			$program = $this->data["programs"];
-			$images;
+		if(empty($this->request->data)){
+		}else{
 			
-			$profdata = array($real_name, $user_name, $real_name_private, $addmail1, $addmail2, $usemails, $profdetail, $program, $images);		
-			if($real_name != null){
-				$this->redirect("my_prof_check/".$id."?profdata=".$profdata);
-			}
-		}
-	}
-	
-	public function my_prof_check($id = null) {
-		$userSession = $this->Auth->user();
-		$this->User->id = $id;
-		$this->set('userinfo', $this->User->read());
-		
-		if(isset($_GET['profdata'])) {$profdata = $_GET['profdata'];}
-		
-		print_r($profdata);
-		
-		if (!empty($this->data)) {
-			if(isset($this->params['data']['return'])) {
-				// 修正
-				$this->redirect("my_prof/".$id);
-			} else {
-				// 登録
-				$this->redirect("my_prof_check_ok/".$id);
-			}
-		}
-	}
-	
-	public function my_prof_check_ok($id = null) {
-		$userSession = $this->Auth->user();
-		$this->User->id = $id;
-		
-		$userdata2 = $this->Prof->find('first', array('conditions' => array('Prof.user_id' => $id)));
-		$id2 = $userdata2['Prof']['id'];
-		$this->Prof->id = $id2;
-		
-		$real_name = $this->data["new_real_name"];
-		$user_name = $this->data["new_user_name"];
-		$real_name_private = $this->data["radio_b"];
-		$addmail1 = $this->data["add_mailaddress1"];
-		$addmail2 = $this->data["add_mailaddress2"];
-		$usemails = $this->data["use_mail1"] + $this->data["use_mail2"] + $this->data["use_mail3"];
-		$profdetail = $this->data["profile_detail"];
-		$program = $this->data["programs"];
-		$images;
-		
-		if($real_name != null){
-			$user_savedatas = array('User' => array('id' => $id, 'real_name' => $real_name, 'user_name' => $user_name,));
-			$prof_savedatas = array('Prof' => array('id' => $id2, 'real_name_private' => $real_name_private, 'profimg_url' => '1', 'addmail1' => $addmail1, 'addmail2' => $addmail2,
-					'use_address' => $usemails, 'program' => $program, 'prof_detail' => $profdetail ));
-			if($this->User->save($user_savedatas, false)){
-				if($this->Prof->save($prof_savedatas, false)){
-					$this->Session->setFlash("プロフィールの保存が完了しました");
-					$this->redirect("index/".$id);
-				}else{
-					$this->Session->setFlash("データの保存に失敗しました。管理者にお問い合わせください。");
+			if($this->request->data['User']['hidden']=='confirm'){
+				$this->set('request',$this->request->data);
+				
+				$tmpName = $this->request->data['User']['profile_img_url']['tmp_name'];
+				$imageName = '-' . date('YmdHis') . '.jpg';
+				$fileName = APP.'webroot/img/tmps/'.$imageName;
+				move_uploaded_file($tmpName, $fileName);
+				$this->request->data['Project']['image_file_name'] = $imageName;
+				
+				if($this->data['new_real_name'] != null){
+					$this->render("my_prof_check");
 				}
-			}else{
-				$this->Session->setFlash("データの保存に失敗しました。管理者にお問い合わせください。");
+				
+			}
+			else if($this->request->data['User']['hidden']=='complete'){
+				rename(APP.'webroot/img/tmps/'.$this->request->data['User']['profile_img_url'], APP.'webroot/img/profiles/'.$this->Project->id.$this->request->data['User']['profile_img_url']);
+				$this->request->data['User']['profile_img_url'] = $this->User->id.$this->request->data['User']['profile_img_url'];
+				
+				if($this->data['User']['new_real_name'] != null){
+					$this->Session->setFlash(print_r($this->request->data));
+					$usemails = $this->data['User']['use_mail1'] + $this->data['User']['use_mail2'] + $this->data['User']['use_mail3'];
+							$user_savedatas = array('User' => array('id' => $id, 'real_name' => $this->data['User']['new_real_name'], 'user_name' => $this->data['User']['new_user_name']));
+							$prof_savedatas = array('Prof' => array('id' => $id2, 'real_name_private' => $this->data['User']['radio_b'], 'profimg_url' => '1', 'addmail1' => $this->data['User']['add_mailaddress1'], 'addmail2' => $this->data['User']['add_mailaddress2'],
+									'use_address' => $usemails, 'program' => $this->data['User']['programs'], 'prof_detail' => $this->data['User']['profile_detail'] ));
+							if($this->User->save($user_savedatas, false)){
+								if($this->Prof->save($prof_savedatas, false)){
+									$this->render("my_prof_check_ok");
+								}else{
+									$this->Session->setFlash("データの保存に失敗しました。管理者にお問い合わせください。");
+								}
+							}else{
+								$this->Session->setFlash("データの保存に失敗しました。管理者にお問い合わせください。");
+							}
+						}
+				
 			}
 		}
+		
+		/**
+			if($this->request->isPost()){	
+				if($this->request->data['Prof']['hidden']=='confirm'){				
+					if($real_name != null){
+						$this->Session->setFlash("aaa");
+						//$this->redirect("my_prof_check/".$id."?profdata=".$profdata);
+						$this->render("my_prof_check");
+					}
+				}
+				else if($this->request->data['Prof']['hidden']=='complete'){					
+					if (!empty($this->data)) {
+						if(isset($this->params['data']['return'])) {
+							// 修正
+							$this->redirect("my_prof/".$id);
+						} else {
+							// 登録
+							if($real_name != null){
+							$user_savedatas = array('User' => array('id' => $id, 'real_name' => $real_name, 'user_name' => $user_name,));
+							$prof_savedatas = array('Prof' => array('id' => $id2, 'real_name_private' => $real_name_private, 'profimg_url' => '1', 'addmail1' => $addmail1, 'addmail2' => $addmail2,
+													'use_address' => $usemails, 'program' => $program, 'prof_detail' => $profdetail ));
+							if($this->User->save($user_savedatas, false)){
+								if($this->Prof->save($prof_savedatas, false)){
+									$this->render("my_prof_check_ok");	
+								}else{
+									$this->Session->setFlash("データの保存に失敗しました。管理者にお問い合わせください。");
+								}
+							}else{
+								$this->Session->setFlash("データの保存に失敗しました。管理者にお問い合わせください。");
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		*/
 	}
 }

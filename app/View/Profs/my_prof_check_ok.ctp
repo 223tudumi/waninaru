@@ -10,7 +10,7 @@
 	<div class="row">
 		<div id="space">
 			<span class="comment">プロフィールの変更が完了致しました。<br />
-			<a href="./my_top.html">マイプロフィール</a>にお戻り下さい。
+			<a href="./index/<?php echo $userinfo['User']['id']; ?>">マイプロフィール</a>にお戻り下さい。
 			</span>
 		</div><!--end space -->
 	</div><!-- end row -->

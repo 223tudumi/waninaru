@@ -6,10 +6,9 @@
 
   <ul class="clearfix">
 
-<<<<<<< HEAD
-
 
   <ul class="clearfix">
+<?php echo print_r($idealists); ?>
 <?php foreach($idealists as $idealist): ?>
     <li><dl>
     <dd>
@@ -55,13 +54,11 @@
     <p>アイディアを投稿する</p>
 <?php echo $this->Form->create('Idea', array('inputDefaults' => array('label' => false,'div' => false))); ?>
         <textarea name="idea_post">
-        <?php $this->Form->input('Idea.idea_text'); ?>
+        <?php $this->Form->input('Idea.idea_text',array('class'=>'comment_width','wrap'=>'hard')); ?>
         </textarea>
     	<span>
-    	<?php echo $this->Form->submit($this->html->image('/idea/submit_btn.jpg'),array('name'=>'idea_submit_btn')); ?>
+    	<?php echo $this->Form->submit($this->html->image("/idea/submit_btn.jpg"),array('alt'=>'送信','name'=>'idea_submit_btn')); ?>
     	<span>
-    	<?php echo $this->Form->submit('/ideas/submit_btn.jpg',array('name'=>'idea_submit_btn')); ?>
-
     	<?php echo $this->Form->hidden('ideasUser.user_id'); ?>
     	</span>
 <?php echo $this->Form->end()?>

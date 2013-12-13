@@ -11,7 +11,7 @@ class IdeasController extends AppController{
 	
 	public function index(){
 		$this->set('idealists',$this->Idea->find('all',array(
-			'order'=>'idea_created desc',
+			'order'=>'created desc',
 		)));
 	}
 	

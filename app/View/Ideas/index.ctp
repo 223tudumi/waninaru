@@ -8,23 +8,23 @@
 
 
   <ul class="clearfix">
-<?php echo print_r($idealists); ?>
 <?php foreach($idealists as $idealist): ?>
     <li><dl>
     <dd>
       <?php echo h($idealist['Idea']['idea_text']); ?>
+      <?php //echo print_r($idealist); ?>
+      <?php echo print_r($idealist['ideaUser']) ?>
     </dd>
     <dt class="clearfix">
       <span class="idea_block_date">
         <?php echo h($idealist['Idea']['created']); ?>
       </span>
       <span class="idea_block_name">
-        <?php echo h($idealist['ideaUser']['user_name']); ?>
+        <?php echo h($idealist['user_name']); ?>
       </span>
       <hr />
       <span class="more_area">
         <?php echo $this->Html->link('詳しく見る','/ideas/'.$idealist['Idea']['id']); ?>
-        <a href="#" title="詳しく見る">&gt;&gt;詳しく見る</a>
       </span>
     </dt>
     </dl></li>
@@ -53,13 +53,11 @@
   <div id="idea_top_form_inner">
     <p>アイディアを投稿する</p>
 <?php echo $this->Form->create('Idea', array('inputDefaults' => array('label' => false,'div' => false))); ?>
-        <textarea name="idea_post">
-        <?php $this->Form->input('Idea.idea_text',array('class'=>'comment_width','wrap'=>'hard')); ?>
-        </textarea>
+        
+        <?php echo $this->Form->input('Idea.idea_text',array('class'=>'comment_width','wrap'=>'hard')); ?>
+    	<?php //echo $this->Form->hidden('ideasUser'); ?>
     	<span>
-    	<?php echo $this->Form->submit($this->html->image("/idea/submit_btn.jpg"),array('alt'=>'送信','name'=>'idea_submit_btn')); ?>
-    	<span>
-    	<?php echo $this->Form->hidden('ideasUser.user_id'); ?>
+    	<?php echo $this->Form->submit('送信'); ?>
     	</span>
 <?php echo $this->Form->end()?>
   </div><!-- end idea_top_form_inner -->

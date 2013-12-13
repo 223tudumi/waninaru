@@ -18,6 +18,20 @@ class User extends AppModel {
 					'finderQuery'            => '',
 					'deleteQuery'            => '',
 					'insertQuery'            => ''
+			),
+			'userIdea' => array(
+					'className' => 'Idea',
+					'joinTabel' => 'ideas_users',
+					'foreignKey' => 'user_id',
+					'unique'                 => true,
+					'conditions'             => '',
+					'fields'                 => '',
+					'order'                  => '',
+					'limit'                  => '',
+					'offset'                 => '',
+					'finderQuery'            => '',
+					'deleteQuery'            => '',
+					'insertQuery'            => ''
 			)
 	);
 	

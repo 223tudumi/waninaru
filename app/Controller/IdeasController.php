@@ -13,6 +13,18 @@ class IdeasController extends AppController{
 		$this->set('idealists',$this->Idea->find('all',array(
 			'order'=>'created desc',
 		)));
+		//アイデア投稿
+		if($this->request->isPOST()){
+			
+			$this->Idea->user_id = $userSession['id'];
+			$this->request->data['Idea']['user_id'] = $this->Idea->user_id;
+			
+			if($this->Idea->save($this->request->data)){
+				$this->redirect($this->referer());
+			} else {
+				$this->Session->setFlash('失敗したよ!!!');
+			}
+		}
 	}
 	
 	public function detail($id = null){

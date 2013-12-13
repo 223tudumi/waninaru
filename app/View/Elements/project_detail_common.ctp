@@ -11,7 +11,15 @@
           <dd>
             <span class="form_area pt_10"><?php
             echo $project['active_date']['year'].'年 '.$project['active_date']['month'].'月 '.$project['active_date']['day'].'日 '.$project['active_date']['hour'].': '.$project['active_date']['min'];
-            ?><?php echo $this->Form->hidden('active_date',array('value'=>$project['active_date'])); ?></span>
+            ?>
+            <?php
+            echo $this->Form->hidden('active_date][year',array('value'=>$project['active_date']['year']));
+            echo $this->Form->hidden('active_date][month',array('value'=>$project['active_date']['month']));
+            echo $this->Form->hidden('active_date][day',array('value'=>$project['active_date']['day']));
+            echo $this->Form->hidden('active_date][hour',array('value'=>$project['active_date']['hour']));
+            echo $this->Form->hidden('active_date][min',array('value'=>$project['active_date']['min']));
+            ?>
+            </span>
           </dd>
         </dl></li>
         <li><dl class="clearfix">
@@ -19,7 +27,15 @@
           <dd>
             <span class="form_area pt_10"><?php
             echo $project['recrouit_date']['year'].'年 '.$project['recrouit_date']['month'].'月 '.$project['recrouit_date']['day'].'日 '.$project['recrouit_date']['hour'].': '.$project['recrouit_date']['min'];
-            ?><?php echo $this->Form->hidden('recrouit_date',array('value'=>$project['recrouit_date'])); ?></span>
+            ?>
+            <?php
+            echo $this->Form->hidden('recrouit_date][year',array('value'=>$project['recrouit_date']['year']));
+            echo $this->Form->hidden('recrouit_date][month',array('value'=>$project['recrouit_date']['month']));
+            echo $this->Form->hidden('recrouit_date][day',array('value'=>$project['recrouit_date']['day']));
+            echo $this->Form->hidden('recrouit_date][hour',array('value'=>$project['recrouit_date']['hour']));
+            echo $this->Form->hidden('recrouit_date][min',array('value'=>$project['recrouit_date']['min']));
+            ?>
+            </span>
           </dd>
         </dl></li>
         <li><dl class="clearfix">
@@ -43,7 +59,7 @@
         <li><dl class="clearfix">
           <dt><span>イメージ画像</span></dt>
           <dd>
-            <span class="form_area pt_10"><?php echo $this->Html->image("projects/".$project['image_file_name'],array('alt' =>$project['image_file_name'],'width'=>'200','height'=>'200')); ?><?php echo $this->Form->hidden('image_file_name',array('value'=>$project['image_file_name'])); ?></span>
+            <span class="form_area pt_10"><?php echo $this->Html->image("tmps/".$project['image_file_name'],array('alt' =>$project['image_file_name'],'width'=>'200','height'=>'200')); ?><?php echo $this->Form->hidden('image_file_name',array('value'=>$project['image_file_name'])); ?></span>
           </dd>
         </dl></li>
       </ul>

@@ -5,7 +5,7 @@
 	<div id="header_navi_container" class="clearfix">
 		<ul class="clearfix">
 			<li><?php echo $this->Html->image('common/header_search_off.png',array('url'=>array('controller'=>'projects','action'=>'search'),'alt'=>'検索する','title'=>'検索する'));?></li>
-      		<li><?php echo $this->Html->image('common/header_act_off.png',array('url'=>array('controller'=>'actibities','action'=>'index'),'alt'=>'アクティビティ','title'=>'アクティビティ'));?></li>
+      		<li><?php echo $this->Html->image('common/header_act_off.png',array('url'=>array('controller'=>'activities','action'=>'index'),'alt'=>'アクティビティ','title'=>'アクティビティ'));?></li>
        		<li><?php echo $this->Html->image('common/header_post_off.png',array('url'=>array('controller'=>'projects','action'=>'regist'),'alt'=>'投稿する','title'=>'投稿する'));?></li>	
        		<li>
        			<a href="" title="設定"><?php echo $this->Html->image('common/header_cog_off.png',array('alt'=>'設定'));?></a>   

@@ -6,48 +6,48 @@
 
 	width:960px;
 
-}/*全て*/
+}/*蜈ｨ縺ｦ*/
 
 #container_wrap{
 
 	width:500px;
 	margin:0 0 0 230px;
 	
-}/*検索機能と検索ボタン*/
+}/*讀懃ｴ｢讖溯�縺ｨ讀懃ｴ｢繝懊ち繝ｳ*/
 
 #container {
 
 	width:440px;
 	float:left;
 
-}/* 検索ボタンを除く検索機能の部分 */
+}/* 讀懃ｴ｢繝懊ち繝ｳ繧帝勁縺乗､懃ｴ｢讖溯�縺ｮ驛ｨ蛻�*/
 
 #wrapper {
 	
 	width: 330px;
 	padding:0 0 10px 0;
 
-}/*タグかキーワードの選択とフリーワード入力*/
+}/*繧ｿ繧ｰ縺九く繝ｼ繝ｯ繝ｼ繝峨�驕ｸ謚槭→繝輔Μ繝ｼ繝ｯ繝ｼ繝牙�蜉�/
 
 #head{
 
 	width: 170px;
 	float: left;
 	
-}/*タグかキーワードの選択*/
+}/*繧ｿ繧ｰ縺九く繝ｼ繝ｯ繝ｼ繝峨�驕ｸ謚�/
 
 #division{
 
 	width: 160px;
 	float: right;
 	
-}/*フリーワードを入力*/
+}/*繝輔Μ繝ｼ繝ｯ繝ｼ繝峨ｒ蜈･蜉�/
 
 #contents{
 
 	width: 440px;
 	
-}/*カレンダー表示２つ*/
+}/*繧ｫ繝ｬ繝ｳ繝��陦ｨ遉ｺ�偵▽*/
 
 #sub {
 
@@ -55,7 +55,7 @@
 	float: right;
 	
 	
-}/* 検索ボタン */
+}/* 讀懃ｴ｢繝懊ち繝ｳ */
 
 
 #pulldown{
@@ -63,22 +63,22 @@
 	margin:0 30px;
 	padding:100px 0;
 
-}/*プルダウンボタン */
+}/*繝励Ν繝�え繝ｳ繝懊ち繝ｳ */
 
 span.margin_space {
 
 	margin:0 10px;
 
-}/*キーワードとタグの間のスペースとカレンダーとカレンダーの間のスペース「~」*/
+}/*繧ｭ繝ｼ繝ｯ繝ｼ繝峨→繧ｿ繧ｰ縺ｮ髢薙�繧ｹ繝壹�繧ｹ縺ｨ繧ｫ繝ｬ繝ｳ繝��縺ｨ繧ｫ繝ｬ繝ｳ繝��縺ｮ髢薙�繧ｹ繝壹�繧ｹ縲鯨縲�/
 
 
 
 /* ========================
-ラジオボタン
+繝ｩ繧ｸ繧ｪ繝懊ち繝ｳ
 ======================== */
 
 /* ========================
-検索結果画面CSS
+讀懃ｴ｢邨先棡逕ｻ髱｢CSS
 ======================== */
 
 div#search_result {
@@ -100,7 +100,7 @@ div#search_result ul li {
   overflow: hidden;
   float: left;
   position: relative;
-  background: transparent url(../images/common/list_back.png);
+  background: transparent url(../img/common/list_back.png);
 }
 
 div.background {

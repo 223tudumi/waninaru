@@ -42,6 +42,30 @@ class AppSchema extends CakeSchema {
 			'tableParameters' => array('charset' => 'latin1', 'collate' => 'latin1_swedish_ci', 'engine' => 'InnoDB')
 	);
 	
+	public $project_bookmarks = array(
+			'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'key' => 'primary'),
+			'user_id' => array('type' => 'integer', 'null' => true, 'default' => null),
+			'project_id' => array('type' => 'integer', 'null' => true, 'default' => null),
+			'created' => array('type' => 'datetime', 'null' => true, 'default' => null),
+			'modified' => array('type' => 'datetime', 'null' => true, 'default' => null),
+			'indexes' => array(
+					'PRIMARY' => array('column' => 'id', 'unique' => 1)
+			),
+			'tableParameters' => array('charset' => 'latin1', 'collate' => 'latin1_swedish_ci', 'engine' => 'InnoDB')
+	);
+	
+	public $idea_bookmarks = array(
+			'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'key' => 'primary'),
+			'user_id' => array('type' => 'integer', 'null' => true, 'default' => null),
+			'idea_id' => array('type' => 'integer', 'null' => true, 'default' => null),
+			'created' => array('type' => 'datetime', 'null' => true, 'default' => null),
+			'modified' => array('type' => 'datetime', 'null' => true, 'default' => null),
+			'indexes' => array(
+					'PRIMARY' => array('column' => 'id', 'unique' => 1)
+			),
+			'tableParameters' => array('charset' => 'latin1', 'collate' => 'latin1_swedish_ci', 'engine' => 'InnoDB')
+	);
+	
 	public $admins = array(
 			'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'key' => 'primary'),
 			'username' => array('type' => 'string', 'null' => false, 'default' => null, 'length' => 128, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),

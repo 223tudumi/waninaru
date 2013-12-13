@@ -1,4 +1,7 @@
-<?php echo $this->Html->css(array('contact'), null, array('inline'=>false)); ?>
+<?php
+echo $this->Html->css(array('contact'), null, array('inline'=>false));
+echo $this->assign('title', 'Waninaru - お問い合わせ ');
+?>
 <div id="contact_container">
 	<h2><span>送信確認</span></h2>
 	<div id="flow_image_area">
@@ -23,10 +26,9 @@
 				<dd><?php echo h($inquiry['body']); ?><?php echo $this->Form->hidden('body',array('value'=>$inquiry['body'])); ?></dd>
 			</dl></li>
 		</ul></div><!-- form_main_area -->
-		<div id="form_btn_area">
-			<?php echo $this->Html->image('inquiry/form02_back.jpg',array('width'=>'170','onClick'=>'history.go(-1)','alt'=>'修正')); ?>
-			&nbsp;&nbsp;
-			<?php echo $this->Form->submit('inquiry/form02_submit.jpg',array('type'=>'submit','width'=>'170','name'=>'mode')); ?>
+		<div id="form_btn_area" class="clearfix">
+			<span id="submit_left"><?php echo $this->Html->image('inquiry/form02_back.jpg',array('width'=>'170','onClick'=>'history.go(-1)','alt'=>'修正')); ?></span>
+			<span id="submit_right"><?php echo $this->Form->submit('inquiry/form02_submit.jpg',array('type'=>'submit','width'=>'170','name'=>'mode')); ?></span>
 			<?php echo $this->Form->hidden('hidden',array('value'=>'complete')); ?>
 		</div><!-- end form_btn_area -->
 	<?php echo $this->Form->end(); ?>

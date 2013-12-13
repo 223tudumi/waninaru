@@ -1,4 +1,7 @@
-<?php echo $this->Html->css(array('contact'), null, array('inline'=>false)); ?>
+<?php
+echo $this->Html->css(array('contact'), null, array('inline'=>false));
+echo $this->assign('title', 'Waninaru - お問い合わせ ');
+?>
 <div id="contact_container">
 	<h2><span>お問い合わせ</span></h2>
 	<div id="flow_image_area">

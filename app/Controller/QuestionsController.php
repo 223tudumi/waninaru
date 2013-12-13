@@ -1,12 +1,14 @@
 <?php
-class ActibitiesController extends AppController{
-	public $helpers = array('Html' , 'Form');
+
+class QuestionsController extends AppController{
+	var $uses = array();
 	
 	public function beforeFilter(){
 		parent::beforeFilter();
+		$this->Auth->allow('index');
 	}
 	
-	public function index(){
+	function index(){
 	}
 	
 	/**
@@ -16,4 +18,5 @@ class ActibitiesController extends AppController{
 		$this->redirect($this->Auth->logout());
 	}
 }
+
 ?>

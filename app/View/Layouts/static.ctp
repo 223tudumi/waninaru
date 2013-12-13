@@ -14,7 +14,7 @@
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
-	<title>Waninaru - 学生同士がスキルを共有して、アイディアを実現できるサービス</title>
+	<title><?php echo $this->fetch('title'); ?></title>
 </head>
 <body>
 <?php echo $this->element('body_script'); ?>

@@ -28,7 +28,12 @@ class User extends AppModel {
             'className'     => 'Comment',
             'foreignKey'    => 'user_id',
             'dependent'     => true
-        )
+        ),
+		'ProjectBookmarks' => array(
+			'className'     => 'ProjectsBookmark',
+			'foreignKey'    => 'user_id',
+			'dependent'     => true
+		)
 	);
 	
 	public $actsAs = array(

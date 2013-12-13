@@ -1,4 +1,7 @@
-<?php echo $this->Html->css(array('rule'), null, array('inline'=>false)); ?>
+<?php
+echo $this->Html->css(array('rule'), null, array('inline'=>false));
+echo $this->assign('title', 'Waninaru - 利用規約 ');
+?>
 <div id="rule_container">
 
 

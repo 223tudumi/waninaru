@@ -1,4 +1,7 @@
-<?php echo $this->Html->css('about', null, array('inline'=>false)); ?>
+<?php
+echo $this->Html->css('about', null, array('inline'=>false));
+echo $this->assign('title', 'Waninaru - Waninaruとは ');
+?>
 <div id="contents_container">
 	<div id="contents01_wrrap">			
 		<div id="contents01_inner">

@@ -1,1 +1,0 @@
-<span class='color:red'>※この機能は現在使用できていません。</span>

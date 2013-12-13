@@ -54,9 +54,10 @@ class UsersController extends AppController{
 	public function login() {
 		if ($this->request->isPost()) {
 			if ($this->Auth->login()) {
-				$this->redirect($this->Auth->redirect());
+				$this->redirect(array('controller'=>'index'));
 			} else {
 			}
+		} else {
 		}
 	}
 	

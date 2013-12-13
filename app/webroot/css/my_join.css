@@ -45,7 +45,11 @@ div#search_result ul li {
   overflow: hidden;
   float: left;
   position: relative;
+<<<<<<< HEAD
   background: transparent url(../images/common/list_back.png);
+=======
+  background: transparent url(../img/common/list_back.png);
+>>>>>>> refs/remotes/origin/waninaru201311
 }
 
 div.background {

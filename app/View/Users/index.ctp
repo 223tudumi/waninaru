@@ -1,5 +1,8 @@
 <html>
-<?php echo $this->Html->css(array('kkk'), null, array('inline'=>false)); ?>
+<?php
+echo $this->Html->css(array('kkk'), null, array('inline'=>false));
+echo $this->assign('title', 'Waninaru - 学生同士がスキルを共有して、アイディアを実現できるサービス ');
+?>
 <head>
 </head>
 <body>

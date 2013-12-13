@@ -1,4 +1,7 @@
-<?php echo $this->Html->css(array('top'), null, array('inline'=>false)); ?>
+<?php
+echo $this->Html->css(array('top'), null, array('inline'=>false));
+echo $this->assign('title', 'Waninaru - 学生同士がスキルを共有して、アイディアを実現できるサービス ');
+?>
 <div id="main_container">
 <!--
 	<h2><span>おすすめ企画</span></h2>

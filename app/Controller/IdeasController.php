@@ -10,14 +10,15 @@ class IdeasController extends AppController{
 	public $helpers = array('Html' , 'Form');
 	
 	public function index(){
+		$userSession = $this->Auth->user();
 		$this->set('idealists',$this->Idea->find('all',array(
-			'order'=>'created desc',
+			'order'=>'Idea.created desc',
 		)));
 		//アイデア投稿
 		if($this->request->isPOST()){
 			
-			$this->Idea->user_id = $userSession['id'];
-			$this->request->data['Idea']['user_id'] = $this->Idea->user_id;
+			$this->User->user_id = $userSession['id'];
+			$this->request->data['Idea']['user_id'] = $userSession['id'];
 			
 			if($this->Idea->save($this->request->data)){
 				$this->redirect($this->referer());
@@ -36,7 +37,7 @@ class IdeasController extends AppController{
 	}
 	
 	public function postform(){
-		$this->set('idcoms',$this->Icomment->read());
+		$this->set('idealists',$this->Icomment->read());
 	}
 }
 ?>

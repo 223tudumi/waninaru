@@ -12,15 +12,14 @@
     <li><dl>
     <dd>
       <?php echo h($idealist['Idea']['idea_text']); ?>
-      <?php //echo print_r($idealist); ?>
-      <?php echo print_r($idealist['ideaUser']) ?>
+      <?php //echo print_r($idealist['User']); ?>
     </dd>
     <dt class="clearfix">
       <span class="idea_block_date">
         <?php echo h($idealist['Idea']['created']); ?>
       </span>
       <span class="idea_block_name">
-        <?php echo h($idealist['user_name']); ?>
+        <?php echo h($idealist['User']['user_name']); ?>
       </span>
       <hr />
       <span class="more_area">
@@ -55,7 +54,7 @@
 <?php echo $this->Form->create('Idea', array('inputDefaults' => array('label' => false,'div' => false))); ?>
         
         <?php echo $this->Form->input('Idea.idea_text',array('class'=>'comment_width','wrap'=>'hard')); ?>
-    	<?php //echo $this->Form->hidden('ideasUser'); ?>
+    	<?php //echo $this->Form->hidden('User.user_id'); ?>
     	<span>
     	<?php echo $this->Form->submit('送信'); ?>
     	</span>

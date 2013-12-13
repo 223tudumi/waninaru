@@ -6,6 +6,7 @@
 
   <ul class="clearfix">
 
+<<<<<<< HEAD
 
 
   <ul class="clearfix">
@@ -29,6 +30,8 @@
     </dt>
     </dl></li>
 <?php endforeach; ?>
+
+
   <ul>
 
 </div><!-- end idea_top_container -->
@@ -56,6 +59,9 @@
         </textarea>
     	<span>
     	<?php echo $this->Form->submit($this->html->image('/idea/submit_btn.jpg'),array('name'=>'idea_submit_btn')); ?>
+    	<span>
+    	<?php echo $this->Form->submit('/ideas/submit_btn.jpg',array('name'=>'idea_submit_btn')); ?>
+
     	<?php echo $this->Form->hidden('ideasUser.user_id'); ?>
     	</span>
 <?php echo $this->Form->end()?>

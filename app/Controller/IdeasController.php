@@ -11,9 +11,8 @@ class IdeasController extends AppController{
 	
 	public function index(){
 		$this->set('idealists',$this->Idea->find('all',array(
-			'order'=>'created desc',
+			'order'=>'idea_created desc',
 		)));
-		
 	}
 	
 	public function detail($id = null){
@@ -28,3 +27,4 @@ class IdeasController extends AppController{
 		$this->set('idcoms',$this->Icomment->read());
 	}
 }
+?>

@@ -10,6 +10,26 @@ class IdeasController extends AppController{
 	public $helpers = array('Html' , 'Form');
 	
 	public function index(){
+<<< HEAD
+		
+		$this->set('idealists',$this->Idea->find('all',array(
+			'order'=>'idea_created desc',
+		)));
+		
+	}
+	
+	public function detail($id = null){
+		$this->set('ideain',$this->Idea->read());
+		$this->set('idcoms',$this->Icomment->find('all',array(
+			'order'=>'Icomment.id',
+			'conditions'=>array('Icomment.idea_id'=>$this->Idea->id)
+		)));
+	}
+	
+	public function postform(){
+		$this->set('idcoms',$this->Icomment->read());
+	}
+======
 		/*
 		$this->set('idealists',$this->Idea->find('all',array(
 			'order'=>'idea_created desc',
@@ -29,4 +49,4 @@ class IdeasController extends AppController{
 		$this->set('idcoms',$this->Icomment->read());
 	}
 	*/
-}
+>>>>>>> branch 'waninaru201311' of https://github.com/223tudumi/waninaru.git

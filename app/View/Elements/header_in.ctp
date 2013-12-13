@@ -6,7 +6,23 @@
         <ul class="clearfix">
         	<li><?php echo $this->Html->image('common/header_search_off.png',array('url'=>array('controller'=>'projects','action'=>'search'),'alt'=>'検索する','title'=>'検索する'));?></li>
         	<li><?php echo $this->Html->image('common/header_act_off.png',array('url'=>array('controller'=>'activities','action'=>'index'),'alt'=>'アクティビティ','title'=>'アクティビティ'));?></li>
-        	<li><?php echo $this->Html->image('common/header_post_off.png',array('url'=>array('controller'=>'projects','action'=>'regist'),'alt'=>'投稿する','title'=>'投稿する'));?></li>
+        	<li>
+            <!-- 設定のaタグにはリンクを張らないでください＞＜ -->
+           		<a href="#" title="投稿する"><?php echo $this->Html->image('common/header_post_off.png',array('alt'=>'投稿する'));?></a>
+            	<ul>
+              	<span class="cog_top">
+              		<?php echo $this->Html->image('common/cog_top.png',array());?>
+              	</span>
+              	<span class="cog_wrapp">	
+                	<li><?php echo $this->Html->link('企画を投稿する',array('controller' => 'projects', 'action' => 'regist', 'title' => '企画を投稿する')); ?></li>
+                	<li><?php echo $this->Html->link('アイデアを投稿する',array('controller' => 'ideas', 'action' => 'postform', 'title' => 'アイデアを投稿する')); ?></li>
+              	</span>
+              	<span class="cog_bottom">
+                	<?php echo $this->Html->image('common/cog_bottom.png',array());?>
+              	</span>
+            	</ul>
+          	</li>
+        	
         	<li>
             	<!-- 設定のaタグにはリンクを張らないでください＞＜ -->
             	<a href="" title="設定"><?php echo $this->Html->image('common/header_cog_off.png',array('alt'=>'設定'));?></a>            
@@ -15,9 +31,9 @@
             			<?php echo $this->Html->image('common/cog_top.png',array());?>
               		</span>
              		<span class="cog_wrapp">
-             			<li><?php echo $this->Html->link('● プロフィールを変更',array('controller' => '', 'action' => '', 'title' => 'プロフィールを変更')); ?></li>
-                		<li><?php echo $this->Html->link('● パスワードを変更',array('controller' => '', 'action' => '', 'title' => 'パスワードを変更')); ?></li>
-                		<li><?php echo $this->Html->link('● ログアウト',array('action' => 'logout', 'title' => 'ログアウト')); ?></li>
+             			<li><?php echo $this->Html->link('プロフィールを変更',array('controller' => '', 'action' => '', 'title' => 'プロフィールを変更')); ?></li>
+                		<li><?php echo $this->Html->link('パスワードを変更',array('controller' => '', 'action' => '', 'title' => 'パスワードを変更')); ?></li>
+                		<li><?php echo $this->Html->link('ログアウト',array('action' => 'logout', 'title' => 'ログアウト')); ?></li>
                 	</span>
                 	<span class="cog_bottom">
                 		<?php echo $this->Html->image('common/cog_bottom.png',array());?>

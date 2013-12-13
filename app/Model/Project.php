@@ -45,6 +45,13 @@ class Project extends AppModel {
 	public $actsAs = array(
 			'SoftDelete'
 	);
+	
+	public $validate = array(
+		'project_name' => array ( 'rule' => 'notEmpty' ),
+		'detail_text' => array ( 'required' => true ),
+		'active_date' => array ( 'rule' => 'date' ),
+		'recrouit_date' => array ( 'rule' => 'date' ),
+	);
 }
 
 ?>

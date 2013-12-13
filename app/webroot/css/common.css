@@ -38,6 +38,7 @@ div#main_inner {
 	width: 960px;
 	margin: 0 auto;
 	text-align: left;
+  position: relative;
 }
 
 a {
@@ -415,7 +416,9 @@ div#footer_top_wrapp {
   padding: 80px 0 0 0;
   margin: 0 0 -10px 0;
   text-align: center;
-  background: transparent url(../img/common/footer_back.jpg) repeat-x bottom center;
+  position: relative;
+  z-index: 10;
+  background: transparent url(../images/common/footer_back.png) repeat-x bottom center;
 }
 
 div#footer_top_inner {
@@ -433,7 +436,7 @@ div#footer_container_wrapp {
   padding: 0 0 35px 0;
   margin: 0;
   text-align: center;
-  background: transparent url(../img/common/footer_main_back.gif) repeat top left;
+  background: transparent url(../images/common/footer_main_back.gif) repeat top left;
 }
 
 div#footer_container {

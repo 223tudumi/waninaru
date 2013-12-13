@@ -21,12 +21,13 @@
   <hr class="comment_hr" />
 
   <h3>コメントする</h3>
-
+<?php foreach($idcoms as $idcom): ?>
   <div class="idea_detail_comment">
     <p><span>
-      <?php echo h($idcoms['Icomment']['detail_text']) ?>      
+      <?php echo h($idcom['Icomment']['detail_text']) ?>      
     </span></p>
   </div><!-- end idea_detail_comment -->
+ <?php endforeach; ?>
 
   <hr class="comment_hr" />
 

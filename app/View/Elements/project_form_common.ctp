@@ -29,7 +29,7 @@
           <dt><span>参加締切の日時</span></dt>
           <dd>
             <span class="form_area pt_10">
-            <?php echo $this->Form->input('Project.recrouit_date', array('separator' => array('年', '月', '日<br /><br />締め切り時間：'),'timeFormat' => '24','dateFormat' => 'YMD', 'maxYear' => date('Y')+2, 'minYear' => date('Y'), 'monthNames' => false,'label'=>'締め切り日： ')); ?>
+            <?php echo $this->Form->input('Project.recrouit_date', array('separator' => array('年', '月', '日<br /><br />締め切り時間：'),'timeFormat' => '24','dateFormat' => 'YMD', 'maxYear' => date('Y')+3, 'minYear' => date('Y'), 'monthNames' => false,'label'=>'締め切り日： ')); ?>
             </span>
             <span class="attention_area">
               <span class="attention_area_inner">

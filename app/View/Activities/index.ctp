@@ -13,7 +13,7 @@ echo $this->assign('title', 'Waninaru - アクティビティ');
 	<div class="wrap clearfix">
 		<div class="left">
 				<div class="img_wrap">
-					<img src="./images/my_top/sample01.jpg" alt="" width="100" height="100"  />
+					<?php echo $this->Html->link($this->Html->image($active['image_url'].$active['image'],array('height'=>'100')),$active['url'].$active['id'],array('escape'=>false)); ?>
 				</div><!-- /img_wrap -->
 		</div><!-- /left -->
 		<div class="right">

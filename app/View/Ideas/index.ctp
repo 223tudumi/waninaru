@@ -40,9 +40,9 @@ echo $this->Html->css(array('idea'), null, array('inline'=>false));
 
 <div id="idea_page_container">
     <ul class="clearfix">
-      <li><a href="#" title="前へ"><img src="./images/common/list_left.jpg" alt="前へ" height="30" /></a></li>
+<!--      <li><a href="#" title="前へ"><img src="./images/common/list_left.jpg" alt="前へ" height="30" /></a></li> -->
       <li class="middle"><?php echo $this->Paginator->numbers(); ?></li>
-      <li><a href="#" title="次へ"><img src="./images/common/list_right.jpg" alt="次へ" height="30" /></a></li>
+<!--      <li><a href="#" title="次へ"><img src="./images/common/list_right.jpg" alt="次へ" height="30" /></a></li> -->
     </ul>
 </div><!-- end idea_page_container -->
 

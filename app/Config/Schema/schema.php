@@ -10,7 +10,7 @@ class AppSchema extends CakeSchema {
 	public $ideas = array(
 			'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'key' => 'primary'),
 			'user_id' => array('type' => 'integer', 'null' => false, 'default' => null),
-			'idea_text' => array('type' => 'text', 'null' =>true, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
+			'idea_text' => array('type' => 'text', 'null' =>false, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
 			'created' => array('type' => 'datetime', 'null' => true, 'default' => null),
 			'deleted' => array('type' => 'integer', 'null' => true, 'default' => '0' , 'length' => 1),
 			'deleted_date' => array('type' => 'datetime', 'null' => true, 'default' => null),

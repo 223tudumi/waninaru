@@ -1,0 +1,177 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* ========================
+	top style
+======================== */
+
+div#main_container {
+  width: 1000px;
+  padding: 200px 0 0 0;
+}
+
+div#main_container h2 {
+  width: 1000px;
+  height: 42px;
+  padding: 0 0 20px 0;
+  font-size: 25px;
+  background: transparent url(../images/common/icon_flower.png) no-repeat top left;
+}
+
+div#main_container h2 span {
+  width: 945px;
+  padding: 13px 0 0 0;
+  margin: 0 0 0 55px;
+  display: block;
+}
+
+div.main_list_area {
+  width: 1000px;
+  position: relative;
+}
+
+div#vacant_seats01 {
+  width: 125px;
+  height: 63px;
+  background: transparent url(../images/common/orenge.png) no-repeat top right;
+  position: absolute;
+  top: 0;
+  left: 180px;
+  z-index: 100;
+}
+
+div#vacant_seats02 {
+  width: 125px;
+  height: 63px;
+  background: transparent url(../images/common/orenge.png) no-repeat top right;
+  position: absolute;
+  top: 0;
+  left: 480px;
+  z-index: 100;
+}
+
+div#vacant_seats03 {
+  width: 125px;
+  height: 63px;
+  background: transparent url(../images/common/orenge.png) no-repeat top right;
+  position: absolute;
+  top: 0;
+  left: 780px;
+  z-index: 100;
+}
+
+span.vacant {
+  width: 40px;
+  display: block;
+  font-size: 35px;
+  color: #ffffff;
+  position: absolute;
+  top: 13px;
+  left: 70px;
+}
+
+span.all {
+  width: 30px;
+  display: block;
+  font-size: 15px;
+  color: #ffffff;
+  position: absolute;
+  top: 30px;
+  left: 100px;
+}
+
+div#vacant_seats01 p, div#vacant_seats02 p, div#vacant_seats03 p {
+  font-size: 15px;
+  padding: 4px 0 0 0;
+}
+
+div.left_arrow_area {
+  width: 55px;
+  position: absolute;
+  top: 133px;
+  left: 0;
+}
+
+div.right_arrow_area {
+  width: 55px;
+  position: absolute;
+  top: 133px;
+  left: 945px;
+}
+
+div.main_list{
+  width: 890px;
+  margin: 0 0 0 55px;
+}
+
+div.main_list ul {
+  width: 900px;
+  margin: 0 -50px 0 0;
+  overflow: hidden;
+  _zoom: 1;
+}
+
+div.main_list ul li {
+  width: 250px;
+  height: 320px;
+  margin: 0 50px 0 0;
+  overflow: hidden;
+  float: left;
+  background: transparent url(../images/common/list_back.png);
+}
+
+div.main_list ul li dl {
+  width: 200px;
+  margin: 0 0 0 25px;
+}
+
+div.main_list ul li dl dt {
+  width: 200px;
+  height: 200px;
+  padding: 25px 0 0 0;
+  overflow: hidden;
+}
+
+div.main_list ul li dl dd {
+  width: 200px;
+  padding: 10px 0 0 0;
+}
+
+span.title {
+  width: 200px;
+  display: block;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+span.date {
+  width: 200px;
+  display: block;
+  padding: 10px 0 0 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

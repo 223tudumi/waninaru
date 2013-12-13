@@ -22,9 +22,9 @@ class AppSchema extends CakeSchema {
 	
 	public $icomments = array(
 			'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'key' => 'primary'),
-			'idea_id' => array('type' => 'integer', 'null' => true, 'default' => null),
-			'user_id' => array('type' => 'integer', 'null' => true, 'default' => null),
-			'comment_text' => array('type' => 'text', 'null' => true, 'default' => null, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
+			'idea_id' => array('type' => 'integer', 'null' => false, 'default' => null),
+			'user_id' => array('type' => 'integer', 'null' => false, 'default' => null),
+			'comment_text' => array('type' => 'text', 'null' => false, 'default' => null, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
 			'created' => array('type' => 'datetime', 'null' => true, 'default' => null),
 			'deleted' => array('type' => 'integer', 'null' => true, 'default' => '0' , 'length' => 1),
 			'deleted_date' => array('type' => 'datetime', 'null' => true, 'default' => null),

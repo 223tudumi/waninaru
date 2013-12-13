@@ -36,13 +36,10 @@ class IdeasController extends AppController{
 	}
 	
 	public function detail($id = null){
-		$this->set('ideain',$this->Idea->find('all',array(
-			'conditions' => array('Idea.id'=>$this->Idea->id,
-		))));
-		$this->set('idcoms',$this->Icomment->find('all',array(
-			'order'=>'Icomment.id',
-			'conditions'=>array('Icomment.idea_id'=>$this->Idea->id)
-		)));
+		$this->set('ideain',$this->Idea->read());
+		$this->set('ideacomments',$this->Icomment->find('all', array(
+				'order'=>'Icomment.id',
+				'conditions'=>array('Icomment.idea_id'=>$this->Idea->id))));
 		//コメント投稿
 		if($this->request->isPOST()){
 			$this->User->user_id = $userSession['id'];
@@ -58,7 +55,20 @@ class IdeasController extends AppController{
 	}
 	
 	public function postform(){
-		$this->set('idealists',$this->Icomment->read());
+		$this->set('idealists',$this->Idea->read());
+		
+		//アイデア投稿
+		if($this->request->isPOST()){
+				
+			$this->User->id = $userSession['id'];
+			$this->request->data['Idea']['user_id'] = $userSession['id'];
+			//$this->Session->setFlash(print_r($this->Idea->user_id));
+			if($this->Idea->save($this->request->data)){
+				$this->redirect(array('action'=>'index'));
+			} else {
+				$this->Session->setFlash('失敗したよ!!!');
+			}
+		}
 	}
 }
 ?>

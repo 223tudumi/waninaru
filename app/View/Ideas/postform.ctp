@@ -7,12 +7,13 @@ echo $this->Html->css(array('idea'), null, array('inline'=>false));
 <div id="idea_post_container">
 
   <div id="post_area">
-      <?php echo $this->Form->create('Icomment', array('inputDefaults' => array('label' => false,'div' => false))); ?>
-      <textarea name="idea_comment">
-      <?php echo $this->Form->input('Icomment.icomment_text',array('class'=>'comment_width','wrap'=>'hard')); ?>
-      <?php echo $this->Form->hidden('Icomment.idea_id'); ?></textarea>      
-      <span><?php echo $this->Form->submit('/ideas/submit_btn.jpg',array('name'=>'idea_comment_submit_btn')); ?></span>
-    <?php echo $this->Form->end() ?>
+<?php echo $this->Form->create('Idea', array('inputDefaults' => array('label' => false,'div' => false))); ?>
+        <?php echo $this->Form->input('Idea.idea_text',array('class'=>'comment_width','wrap'=>'hard')); ?>
+    	<?php //echo $this->Form->hidden('User.user_id'); ?>
+    	<span>
+    	<?php echo $this->Form->submit('送信'); ?>
+    	</span>
+<?php echo $this->Form->end()?>
   </div><!-- end post_area -->
 
 </div><!-- end idea_post_container -->

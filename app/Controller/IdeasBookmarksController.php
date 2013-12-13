@@ -23,14 +23,14 @@ class IdeasBookmarksController extends AppController{
 	public function regist($idea_id=null){
 		$this->autoRender = false;
 		$userSession = $this->Auth->user();
-		$this->request->data['IdeasBookmark']['idea_id'] = $project_id;
+		$this->request->data['IdeasBookmark']['idea_id'] = $idea_id;
 		$this->request->data['IdeasBookmark']['user_id'] = $userSession['id'];
 		
 		if(!$this->IdeasBookmark->save($this->request->data)){
 			$this->Session->setFlash('失敗したよ!!!');
 		}
 		//TODO ここのリダイレクト先がアイデアの場合どこが良いか解らないので江本氏の判断にまかせます
-		$this->redirect(array('controller'=>'ideas','action'=>'detail',$project_id));
+		$this->redirect(array('controller'=>'ideas','action'=>'detail',$idea_id));
 		
 	}
 	

@@ -5,169 +5,26 @@
 
 
   <ul class="clearfix">
-
+<?php foreach($idealists as $idealist): ?>
     <li><dl>
     <dd>
-      テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテステストテストテストテストテストテストテストテスト
+      <?php echo h($idealist['Idea']['idea_text']); ?>
     </dd>
     <dt class="clearfix">
       <span class="idea_block_date">
-        2013/12/04 13:00
+        <?php echo h($idealist['Idea']['created']); ?>
       </span>
       <span class="idea_block_name">
-        テストユーザー
+        <?php echo h($idealist['ideaUser']['user_name']); ?>
       </span>
       <hr />
       <span class="more_area">
+        <?php echo $this->Html->link('詳しく見る','/ideas/'.$idealist['Idea']['id']); ?>
         <a href="#" title="詳しく見る">&gt;&gt;詳しく見る</a>
       </span>
     </dt>
     </dl></li>
-
-    <li><dl>
-    <dd>
-      テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテステストテストテストテストテストテストテストテスト
-    </dd>
-    <dt class="clearfix">
-      <span class="idea_block_date">
-        2013/12/04 13:00
-      </span>
-      <span class="idea_block_name">
-        テストユーザー
-      </span>
-      <hr />
-      <span class="more_area">
-        <a href="#" title="詳しく見る">&gt;&gt;詳しく見る</a>
-      </span>
-    </dt>
-    </dl></li>
-
-    <li><dl>
-    <dd>
-      テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテステストテストテストテストテストテストテストテスト
-    </dd>
-    <dt class="clearfix">
-      <span class="idea_block_date">
-        2013/12/04 13:00
-      </span>
-      <span class="idea_block_name">
-        テストユーザー
-      </span>
-      <hr />
-      <span class="more_area">
-        <a href="#" title="詳しく見る">&gt;&gt;詳しく見る</a>
-      </span>
-    </dt>
-    </dl></li>
-
-    <li><dl>
-    <dd>
-      テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテステストテストテストテストテストテストテストテスト
-    </dd>
-    <dt class="clearfix">
-      <span class="idea_block_date">
-        2013/12/04 13:00
-      </span>
-      <span class="idea_block_name">
-        テストユーザー
-      </span>
-      <hr />
-      <span class="more_area">
-        <a href="#" title="詳しく見る">&gt;&gt;詳しく見る</a>
-      </span>
-    </dt>
-    </dl></li>
-
-    <li><dl>
-    <dd>
-      テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテステストテストテストテストテストテストテストテスト
-    </dd>
-    <dt class="clearfix">
-      <span class="idea_block_date">
-        2013/12/04 13:00
-      </span>
-      <span class="idea_block_name">
-        テストユーザー
-      </span>
-      <hr />
-      <span class="more_area">
-        <a href="#" title="詳しく見る">&gt;&gt;詳しく見る</a>
-      </span>
-    </dt>
-    </dl></li>
-
-    <li><dl>
-    <dd>
-      テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテステストテストテストテストテストテストテストテスト
-    </dd>
-    <dt class="clearfix">
-      <span class="idea_block_date">
-        2013/12/04 13:00
-      </span>
-      <span class="idea_block_name">
-        テストユーザー
-      </span>
-      <hr />
-      <span class="more_area">
-        <a href="#" title="詳しく見る">&gt;&gt;詳しく見る</a>
-      </span>
-    </dt>
-    </dl></li>
-
-    <li><dl>
-    <dd>
-      テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテステストテストテストテストテストテストテストテスト
-    </dd>
-    <dt class="clearfix">
-      <span class="idea_block_date">
-        2013/12/04 13:00
-      </span>
-      <span class="idea_block_name">
-        テストユーザー
-      </span>
-      <hr />
-      <span class="more_area">
-        <a href="#" title="詳しく見る">&gt;&gt;詳しく見る</a>
-      </span>
-    </dt>
-    </dl></li>
-
-    <li><dl>
-    <dd>
-      テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテステストテストテストテストテストテストテストテスト
-    </dd>
-    <dt class="clearfix">
-      <span class="idea_block_date">
-        2013/12/04 13:00
-      </span>
-      <span class="idea_block_name">
-        テストユーザー
-      </span>
-      <hr />
-      <span class="more_area">
-        <a href="#" title="詳しく見る">&gt;&gt;詳しく見る</a>
-      </span>
-    </dt>
-    </dl></li>
-
-    <li><dl>
-    <dd>
-      テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテステストテストテストテストテストテストテストテスト
-    </dd>
-    <dt class="clearfix">
-      <span class="idea_block_date">
-        2013/12/04 13:00
-      </span>
-      <span class="idea_block_name">
-        テストユーザー
-      </span>
-      <hr />
-      <span class="more_area">
-        <a href="#" title="詳しく見る">&gt;&gt;詳しく見る</a>
-      </span>
-    </dt>
-    </dl></li>
-
+<?php endforeach; ?>
   <ul>
 
 </div><!-- end idea_top_container -->
@@ -191,7 +48,7 @@
     <p>アイディアを投稿する</p>
 <?php echo $this->Form->create('Idea', array('inputDefaults' => array('label' => false,'div' => false))); ?>
         <textarea name="idea_post">
-        <?php $this->Form->input('Icomment.comment_text'); ?>
+        <?php $this->Form->input('Idea.idea_text'); ?>
         </textarea>
     	<span>
     	<?php echo $this->Form->submit('/ideas/submit_btn.jpg',array('name'=>'idea_submit_btn')); ?>

@@ -1,3 +1,7 @@
+<?php
+echo $this->Html->css(array('idea'), null, array('inline'=>false));
+?>
+
 <h2 id="idea_top_title"><span>アイデア</span></h2>
 
 
@@ -23,7 +27,7 @@
       </span>
       <hr />
       <span class="more_area">
-        <?php echo $this->Html->link('詳しく見る','/ideas/'.$idealist['Idea']['id']); ?>
+        <?php echo $this->Html->link('詳しく見る','/ideas/detail/'.$idealist['Idea']['id']); ?>
       </span>
     </dt>
     </dl></li>
@@ -37,9 +41,7 @@
 <div id="idea_page_container">
     <ul class="clearfix">
       <li><a href="#" title="前へ"><img src="./images/common/list_left.jpg" alt="前へ" height="30" /></a></li>
-      <li class="middle"><span>1</span></li>
-      <li class="middle"><a href="#" title="">2</a></li>
-      <li class="middle"><a href="#" title="">3</a></li>
+      <li class="middle"><?php echo $this->Paginator->numbers(); ?></li>
       <li><a href="#" title="次へ"><img src="./images/common/list_right.jpg" alt="次へ" height="30" /></a></li>
     </ul>
 </div><!-- end idea_page_container -->
@@ -52,7 +54,6 @@
   <div id="idea_top_form_inner">
     <p>アイディアを投稿する</p>
 <?php echo $this->Form->create('Idea', array('inputDefaults' => array('label' => false,'div' => false))); ?>
-        
         <?php echo $this->Form->input('Idea.idea_text',array('class'=>'comment_width','wrap'=>'hard')); ?>
     	<?php //echo $this->Form->hidden('User.user_id'); ?>
     	<span>

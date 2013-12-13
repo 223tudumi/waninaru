@@ -1,3 +1,7 @@
+<?php
+echo $this->Html->css(array('idea'), null, array('inline'=>false));
+?>
+
 <h2 id="idea_top_title"><span>アイデアを投稿する</span></h2>
 
 <div id="idea_post_container">

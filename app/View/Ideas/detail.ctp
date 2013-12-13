@@ -1,4 +1,7 @@
 <!-- ここから編集してください！！！！  -->
+<?php
+echo $this->Html->css(array('idea'), null, array('inline'=>false));
+?>
 
 <div id="idea_detail_container">
 
@@ -6,7 +9,7 @@
     <div id="idea_detail_main"><p>
       <?php echo h($ideain['Idea']['idea_text']); ?>
       <span id="idea_post_date">
-      <?php echo h($ideain['Idea']['idea_created']); ?>
+      <?php echo h($ideain['Idea']['created']); ?>
       </span>
     </p></div><!-- end idea_detail_main -->
 
@@ -33,10 +36,10 @@
 
   <div id="post_comment_container">
     <?php echo $this->Form->create('Icomment', array('inputDefaults' => array('label' => false,'div' => false))); ?>
-      <textarea name="idea_comment">
-      <?php echo $this->Form->input('Icomment.icomment_text',array('class'=>'comment_width','wrap'=>'hard')); ?>
-      <?php echo $this->Form->hidden('Icomment.idea_id'); ?></textarea>      
-      <span><?php echo $this->Form->submit('/ideas/submit_btn.jpg',array('name'=>'idea_comment_submit_btn')); ?></span>
+      
+      <?php echo $this->Form->input('Icomment.icomment_text',array('style'=>'width:660px;height:200px','class'=>'comment_width','wrap'=>'hard')); ?>
+      <?php echo $this->Form->hidden('Icomment.idea_id'); ?>    
+      <span><?php echo $this->Form->submit('送信'); ?></span>
     <?php echo $this->Form->end() ?>
   </div><!-- end post_comment_container -->
 </div><!-- end idea_detail_container -->

@@ -23,45 +23,44 @@ class IdeasController extends AppController{
 		
 		//アイデア投稿
 		if($this->request->isPOST()){
-			
+
 			$this->User->user_id = $userSession['id'];
 			$this->request->data['Idea']['user_id'] = $userSession['id'];
 			
 			if($this->Idea->save($this->request->data)){
 				$this->redirect($this->referer());
 			} else {
-				$this->Session->setFlash('失敗したよ!!!');
-			}
-		}
+					$this->Session->setFlash('失敗したよ!!!');
+				}
 	}
-	
+	}
 	public function detail($id = null){
+		$this->Idea->id = $id;
 		$this->set('ideain',$this->Idea->read());
 		$this->set('ideacomments',$this->Icomment->find('all', array(
 				'order'=>'Icomment.id',
 				'conditions'=>array('Icomment.idea_id'=>$this->Idea->id))));
 		//コメント投稿
-		if($this->request->isPOST()){
+	if($this->request->isPOST()){
 			$this->User->user_id = $userSession['id'];
-			$this->request->data['Idea']['user_id'] = $userSession['id'];
-			$this->request->data['idea']['id'] = $this->Idea->id;
-			
+ 			$this->request->data['Icomments']['user_id'] = $userSession['id'];
+ 			$this->request->data['Icomments']['idea_id'] = $this->Idea->id;
+		
 			if($this->Icomment->save($this->request->data)){
 				$this->redirect($this->referer());
 			} else {
 				$this->Session->setFlash('失敗したよ!!!');
 			}
-		}
 	}
+}
 	
 	public function postform(){
 		$this->set('idealists',$this->Idea->read());
 		
 		//アイデア投稿
-		if($this->request->isPOST()){
-				
-			$this->User->id = $userSession['id'];
-			$this->request->data['Idea']['user_id'] = $userSession['id'];
+		if($this->request->isPOST()){		
+		$this->User->user_id = $userSession['id'];
+			$this->request->data['Ideas']['user_id'] = $userSession['id'];
 			//$this->Session->setFlash(print_r($this->Idea->user_id));
 			if($this->Idea->save($this->request->data)){
 				$this->redirect(array('action'=>'index'));

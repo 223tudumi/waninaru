@@ -1,5 +1,5 @@
 /* =======================
-    画像
+    逕ｻ蜒�
 ======================== */
 li#left_image{
 	float:left;
@@ -57,24 +57,24 @@ span.radio2{
 }
 
 /* ========================
- CSS 囲み
+ CSS 蝗ｲ縺ｿ
 ======================== */
 #main_content{
 	width:960px;
 	
-}/*全てを囲っている*/
+}/*蜈ｨ縺ｦ繧貞峇縺｣縺ｦ縺�ｋ*/
 
 #tab_content{
 	width:860px;
 	margin:0 50px;
-}/*green_text以外を囲っている*/
+}/*green_text莉･螟悶ｒ蝗ｲ縺｣縺ｦ縺�ｋ*/
 
 #my_prof_container{
 	width:860px;
-}/*my_prof_check_ok　全てを囲ってる*/
+}/*my_prof_check_ok縲�蜈ｨ縺ｦ繧貞峇縺｣縺ｦ繧�*/
 
 /* ========================
- 題名
+ 鬘悟錐
 ======================== */
 
 #green_text01{
@@ -85,27 +85,27 @@ span.radio2{
   color: #509f3f;
   line-height: 1.5em;
   text-align: left;  
-}/*　プロフィール変更_文字色　*/
+}/*縲�繝励Ο繝輔ぅ繝ｼ繝ｫ螟画峩_譁�ｭ苓牡縲�*/
 
 /* ========================
- スペース
+ 繧ｹ繝壹�繧ｹ
 ======================== */
 .row {
 	width:760px;
 	border-bottom: 1px dotted #999999;
 	margin: 0 50px;
-}/*線*/
+}/*邱�*/
 
 .row_last {
 	width:760px;
 	margin: 0 50px;
-}/*最後の線*/
+}/*譛�蠕後�邱�*/
 
 #space{
 	width:660px;
 	padding:30px 0;
 	margin:0 50px;
-}/*rowとspaceの間*/
+}/*row縺ｨspace縺ｮ髢�*/
 
 span.comment{
 	font-size:18px;
@@ -114,7 +114,7 @@ span.comment{
 
 
 /* ========================
- 左右　配置
+ 蟾ｦ蜿ｳ縲�驟咲ｽｮ
 ======================== */
 
 p.name_area{
@@ -122,7 +122,7 @@ p.name_area{
 	float:left;
 	font-size:22px;
 	margin-top:7px;
-}/*左文字*/
+}/*蟾ｦ譁�ｭ�*/
 
 p#name_area_textarea{
 	width:300px;
@@ -130,7 +130,7 @@ p#name_area_textarea{
 	font-size:22px;
 	margin-top:7px;
 	padding-bottom:20px;
-}/*左文字*/
+}/*蟾ｦ譁�ｭ�*/
 
 .text_box{
 
@@ -191,27 +191,27 @@ select.text_box{
 	float:right;
 	height:25px;
 	text-align:left;
-}/*一行の文章*/
+}/*荳�陦後�譁�ｫ�*/
 
 span.text_box{
 	width:300px;
 	float:right;
 	height:25px;
 	text-align:;
-}/*一行の文章*/
+}/*荳�陦後�譁�ｫ�*/
 
 span.text_box_{
 	width:300px;
 	float:right;
 	text-align:left;
-}/*プロフィール文章の文章*/
+}/*繝励Ο繝輔ぅ繝ｼ繝ｫ譁�ｫ�縺ｮ譁�ｫ�*/
 
 form#number{
 	width:200px;
 	font-size:16px;
 	float:right;
 	margin:0 100px;
-}/*学籍番号　form*/
+}/*蟄ｦ邀咲分蜿ｷ縲�form*/
 
 form#expose{
 	font-size:18px;
@@ -222,12 +222,12 @@ form#expose{
 
 textarea{
 	width:660px;
-}/*プロフィール文章*/
+}/*繝励Ο繝輔ぅ繝ｼ繝ｫ譁�ｫ�*/
 
 #sending{
 	margin:0 180px;
 	
-}/*入力確認*/
+}/*蜈･蜉帷｢ｺ隱�*/
 
 #mail_wrap_content{
 	width:230px;
@@ -242,7 +242,7 @@ span.big_bag{
 }
 
 /* ========================
- 魔法の言葉　
+ 鬲疲ｳ輔�險�闡峨��
 ======================== */
 
 .clearfix:after {  
@@ -251,7 +251,7 @@ span.big_bag{
   height: 0;   
   clear: both;   
   visibility: hidden;  
-}/*魔法の言葉*/
+}/*鬲疲ｳ輔�險�闡�*/
 
 
 

@@ -122,15 +122,18 @@ class profsController extends AppController{
 		
 		if(empty($this->request->data)){
 		}else{
-			
 			if($this->request->data['User']['hidden']=='confirm'){
-				$this->set('request',$this->request->data);
-				
-				$tmpName = $this->request->data['User']['profile_img_url']['tmp_name'];
+				//print_r($this->request->data);
+				$tmpName = $this->request->data['User']['profile_img_url']['temp_name'];
 				$imageName = '-' . date('YmdHis') . '.jpg';
 				$fileName = APP.'webroot/img/tmps/'.$imageName;
 				move_uploaded_file($tmpName, $fileName);
-				$this->request->data['Project']['image_file_name'] = $imageName;
+				$this->request->data['User']['profile_img_url'] = $imageName;
+				
+				//echo($imageName);
+				//$this->Session->setFlash($this->request->data['User']['profile_img_url']);
+				
+				$this->set('request',$this->request->data);
 				
 				if($this->data['new_real_name'] != null){
 					$this->render("my_prof_check");
@@ -145,8 +148,9 @@ class profsController extends AppController{
 					$this->Session->setFlash(print_r($this->request->data));
 					$usemails = $this->data['User']['use_mail1'] + $this->data['User']['use_mail2'] + $this->data['User']['use_mail3'];
 							$user_savedatas = array('User' => array('id' => $id, 'real_name' => $this->data['User']['new_real_name'], 'user_name' => $this->data['User']['new_user_name']));
-							$prof_savedatas = array('Prof' => array('id' => $id2, 'real_name_private' => $this->data['User']['radio_b'], 'profimg_url' => '1', 'addmail1' => $this->data['User']['add_mailaddress1'], 'addmail2' => $this->data['User']['add_mailaddress2'],
-									'use_address' => $usemails, 'program' => $this->data['User']['programs'], 'prof_detail' => $this->data['User']['profile_detail'] ));
+							$prof_savedatas = array('Prof' => array('id' => $id2, 'real_name_private' => $this->data['User']['radio_b'], 'profimg_url' => $this->data['User']['profile_img_url'], 
+									'addmail1' => $this->data['User']['add_mailaddress1'], 'addmail2' => $this->data['User']['add_mailaddress2'], 'use_address' => $usemails,
+									'program' => $this->data['User']['programs'], 'prof_detail' => $this->data['User']['profile_detail'] ));
 							if($this->User->save($user_savedatas, false)){
 								if($this->Prof->save($prof_savedatas, false)){
 									$this->render("my_prof_check_ok");

@@ -98,7 +98,7 @@
 		<div id="space">
 			<div class="clearfix">
 				<p class="name_area">プロフィール画像</p>
-				<input name="prrofile_img_url" class="img" type="file"></input>
+				<?php echo $this->Html->image("tmps/".$request['profile_img_url'],array('class'=>'img', 'alt' =>$request['profile_img_url'],'width'=>'300','height'=>'300')); ?><?php echo $this->Form->hidden('profile_img_url',array('value'=>$request['profile_img_url'])); ?>
 			</div><!-- end clearfix -->
 		</div><!--end space -->
 	</div><!-- end row -->

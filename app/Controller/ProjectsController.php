@@ -85,6 +85,7 @@ class ProjectsController extends AppController{
 				$this->request->data['Project']['detail_text'] = htmlspecialchars($this->request->data['Project']['detail_text']);
 				$this->request->data['Project']['detail_text'] = nl2br($this->request->data['Project']['detail_text']);
 				
+				print_r($this->request->data);
 				$tmpName = $this->request->data['Project']['image_file_name']['tmp_name'];
 				$imageName = '-' . date('YmdHis') . '.jpg';
 				$fileName = APP.'webroot/img/tmps/'.$imageName;

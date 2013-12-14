@@ -153,6 +153,7 @@
 						
 					<div id="wrap" class="clearfix">
 						<input class="img" type="file" name="profile_img_url" />
+						<?php echo $this->Form->input('User.profile_img_url', array('type' => 'file','id'=>'image','class'=>'img', 'enctype'=>'multipart/form-data')); ?>
 					</div>
 				</div><!-- end clearfix -->
 			</div><!--end space-->

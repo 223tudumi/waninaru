@@ -23,16 +23,18 @@ class IdeasController extends AppController{
 		
 		//アイデア投稿
 		if($this->request->isPOST()){
+			if(!empty($this->request->data['Idea']['idea_text'])){
 
 			$this->User->user_id = $userSession['id'];
 			$this->request->data['Idea']['user_id'] = $userSession['id'];
 			
-			if($this->Idea->save($this->request->data)){
-				$this->redirect($this->referer());
-			} else {
+				if($this->Idea->save($this->request->data)){
+					$this->redirect($this->referer());
+				} else {
 					$this->Session->setFlash('失敗したよ!!!');
 				}
-	}
+			}
+		}
 	}
 	public function detail($id = null){
 		$userSession = $this->Auth->user();

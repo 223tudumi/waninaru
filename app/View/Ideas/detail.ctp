@@ -17,13 +17,21 @@ echo $this->Html->css(array('idea'), null, array('inline'=>false));
       <div id="idea_fav">
         <p><span>：<?php 
 			$num=0;
-			echo print_r($ideain);
-			foreach($ideain['IdeasBookmark'] as $books){
+			//echo print_r($ideain['IdeasBookmark']);
+			foreach($ideain['IdeasBookmark'] as $bookmarks){
 				$num++;
 			}
 			echo $num;
 			?></span></p>
-        <span><?php echo $this->Html->image('idea/fav_icon.jpg',array('alt'=>'ブックマーク')); ?></span>
+        <span><?php $mode=0;
+			foreach($ideain['IdeasBookmark'] as $books){
+				if($books['user_id']==$userSession['id']){
+					$mode=1;
+				}
+			}
+			if($mode!=1){
+        		echo $this->Html->image('idea/idea_bkm_btn.jpg',array('url'=>array('controller'=>'IdeasBookmarks','action'=>'regist',$ideain['Idea']['id']),'alt'=>'ブックマークする')); 
+			}?></span>
       </div><!-- end idea_fav -->
     </div><!-- end idea_detail_status -->
   </div><!-- end clearfix -->

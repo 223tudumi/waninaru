@@ -45,6 +45,7 @@ class IdeasController extends AppController{
 				'conditions'=>array('Icomment.idea_id'=>$this->Idea->id))));
 		//コメント投稿
 	if($this->request->isPOST()){
+		if(!empty($this->request->data['Icomment']['comment_text'])){
 			$this->User->user_id = $userSession['id'];
  			$this->request->data['Icomment']['user_id'] = $userSession['id'];
  			$this->request->data['Icomment']['idea_id'] = $this->Idea->id;
@@ -54,6 +55,7 @@ class IdeasController extends AppController{
 			} else {
 				$this->Session->setFlash('失敗したよ!!!');
 			}
+		}
 	}
 }
 	

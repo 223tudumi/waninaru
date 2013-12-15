@@ -1,6 +1,6 @@
 <?php
 class IdeasController extends AppController{
-	var $uses = array('Idea','User','Icomment');
+	var $uses = array('Idea','User','Icomment','IdeasBookmark');
 //	var $paginate = array(
 //			'limit' => 20,
 //			'order' => array(
@@ -35,6 +35,7 @@ class IdeasController extends AppController{
 	}
 	}
 	public function detail($id = null){
+		$userSession = $this->Auth->user();
 		$this->Idea->id = $id;
 		$this->set('ideain',$this->Idea->read());
 		$this->set('ideacomments',$this->Icomment->find('all', array(
@@ -43,8 +44,8 @@ class IdeasController extends AppController{
 		//コメント投稿
 	if($this->request->isPOST()){
 			$this->User->user_id = $userSession['id'];
- 			$this->request->data['Icomments']['user_id'] = $userSession['id'];
- 			$this->request->data['Icomments']['idea_id'] = $this->Idea->id;
+ 			$this->request->data['Icomment']['user_id'] = $userSession['id'];
+ 			$this->request->data['Icomment']['idea_id'] = $this->Idea->id;
 		
 			if($this->Icomment->save($this->request->data)){
 				$this->redirect($this->referer());
@@ -55,13 +56,13 @@ class IdeasController extends AppController{
 }
 	
 	public function postform(){
+		$userSession = $this->Auth->user();
 		$this->set('idealists',$this->Idea->read());
 		
 		//アイデア投稿
 		if($this->request->isPOST()){		
 		$this->User->user_id = $userSession['id'];
-			$this->request->data['Ideas']['user_id'] = $userSession['id'];
-			//$this->Session->setFlash(print_r($this->Idea->user_id));
+			$this->request->data['Idea']['user_id'] = $userSession['id'];
 			if($this->Idea->save($this->request->data)){
 				$this->redirect(array('action'=>'index'));
 			} else {

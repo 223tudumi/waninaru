@@ -15,8 +15,15 @@ echo $this->Html->css(array('idea'), null, array('inline'=>false));
 
     <div id="idea_detail_status">
       <div id="idea_fav">
-        <p><span>：7</span></p><?php //ブクマ数。カウント内容未定ー。 ?>
-        <span><a href="#" title="ブックマーク"><?php echo $this->Html->image('idea/fav_icon.jpg',array('alt'=>'ブックマーク')); ?></a></span>
+        <p><span>：<?php 
+			$num=0;
+			echo print_r($ideain);
+			foreach($ideain['IdeasBookmark'] as $books){
+				$num++;
+			}
+			echo $num;
+			?></span></p>
+        <span><?php echo $this->Html->image('idea/fav_icon.jpg',array('alt'=>'ブックマーク')); ?></span>
       </div><!-- end idea_fav -->
     </div><!-- end idea_detail_status -->
   </div><!-- end clearfix -->
@@ -27,7 +34,7 @@ echo $this->Html->css(array('idea'), null, array('inline'=>false));
 <?php foreach($ideacomments as $ideacomment): ?>
   <div class="idea_detail_comment">
     <p><span>
-      <?php echo print_r($ideacomment); ?>      
+      <?php echo h($ideacomment['Icomment']['comment_text']); ?>      
     </span></p>
   </div><!-- end idea_detail_comment -->
  <?php endforeach; ?>

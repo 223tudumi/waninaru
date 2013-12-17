@@ -123,15 +123,12 @@ class profsController extends AppController{
 		if(empty($this->request->data)){
 		}else{
 			if($this->request->data['User']['hidden']=='confirm'){
-				//print_r($this->request->data);
+
 				$tmpName = $this->request->data['User']['profile_img_url']['temp_name'];
 				$imageName = '-' . date('YmdHis') . '.jpg';
 				$fileName = APP.'webroot/img/tmps/'.$imageName;
 				move_uploaded_file($tmpName, $fileName);
 				$this->request->data['User']['profile_img_url'] = $imageName;
-				
-				//echo($imageName);
-				//$this->Session->setFlash($this->request->data['User']['profile_img_url']);
 				
 				$this->set('request',$this->request->data);
 				
@@ -164,42 +161,6 @@ class profsController extends AppController{
 				
 			}
 		}
-		
-		/**
-			if($this->request->isPost()){	
-				if($this->request->data['Prof']['hidden']=='confirm'){				
-					if($real_name != null){
-						$this->Session->setFlash("aaa");
-						//$this->redirect("my_prof_check/".$id."?profdata=".$profdata);
-						$this->render("my_prof_check");
-					}
-				}
-				else if($this->request->data['Prof']['hidden']=='complete'){					
-					if (!empty($this->data)) {
-						if(isset($this->params['data']['return'])) {
-							// 修正
-							$this->redirect("my_prof/".$id);
-						} else {
-							// 登録
-							if($real_name != null){
-							$user_savedatas = array('User' => array('id' => $id, 'real_name' => $real_name, 'user_name' => $user_name,));
-							$prof_savedatas = array('Prof' => array('id' => $id2, 'real_name_private' => $real_name_private, 'profimg_url' => '1', 'addmail1' => $addmail1, 'addmail2' => $addmail2,
-													'use_address' => $usemails, 'program' => $program, 'prof_detail' => $profdetail ));
-							if($this->User->save($user_savedatas, false)){
-								if($this->Prof->save($prof_savedatas, false)){
-									$this->render("my_prof_check_ok");	
-								}else{
-									$this->Session->setFlash("データの保存に失敗しました。管理者にお問い合わせください。");
-								}
-							}else{
-								$this->Session->setFlash("データの保存に失敗しました。管理者にお問い合わせください。");
-							}
-						}
-					}
-				}
-			}
-		}
-		
-		*/
+	
 	}
 }

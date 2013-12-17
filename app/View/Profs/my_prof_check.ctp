@@ -120,7 +120,7 @@
 </div><!-- end tab_content -->
 
 </form>	
-<?php echo $this->Form->end() ?>
+
 
 <?php else: ?>
 	<?php echo("ログインして再度お試しください"); ?>

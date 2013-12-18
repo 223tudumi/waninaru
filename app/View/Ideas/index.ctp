@@ -57,7 +57,7 @@ echo $this->Html->css(array('idea'), null, array('inline'=>false));
         <?php echo $this->Form->input('Idea.idea_text',array('class'=>'comment_width','wrap'=>'hard')); ?>
     	<?php //echo $this->Form->hidden('User.user_id'); ?>
     	<span>
-    	<?php echo $this->Form->submit('送信'); ?>
+    	<?php echo $this->Form->submit('idea/submit_btn.jpg',array("div"=>false,"escape"=>false,'type'=>'submit')); ?>
     	</span>
 <?php echo $this->Form->end()?>
   </div><!-- end idea_top_form_inner -->
@@ -65,4 +65,3 @@ echo $this->Html->css(array('idea'), null, array('inline'=>false));
 
 
 <!-- 編集ここまで  -->
-

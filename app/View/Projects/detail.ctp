@@ -213,7 +213,7 @@ echo $this->assign('title', 'Waninaru - '.$kikaku['Project']['project_name']);
 			<?php echo $this->Form->input('Comment.comment_text',array('class'=>'comment_width','wrap'=>'hard')); ?>
 			<?php echo $this->Form->hidden('Comment.project_id'); ?>
 			<?php echo $this->Form->hidden('Comment.user_id'); ?>
-			<span id="submit_btn"><?php echo $this->Form->submit('送信') ?></span>
+			<span id="submit_btn"><?php echo $this->Form->submit('idea/submit_btn.jpg',array("div"=>false,"escape"=>false,'type'=>'submit')); ?></span>
 		<?php echo $this->Form->end() ?>
 	</div><!-- end comment_contribute_container -->
 

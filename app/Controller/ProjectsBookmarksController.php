@@ -35,5 +35,6 @@ class ProjectsBookmarksController extends AppController{
 	
 	public function delete($project_id=null){
 		$this->autoRender = false;
+		//projectbookmarksのユーザーIDを引っ張ってきてログイン中のIDと比較、一致ならprojectscontroller参照
 	}
 }

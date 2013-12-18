@@ -10,21 +10,21 @@
 
 #container_wrap{
 
-	width:500px;
-	margin:0 0 0 230px;
+	width:300px;
+	margin:0 0 0 330px;
 	
 }/*讀懃ｴ｢讖溯�縺ｨ讀懃ｴ｢繝懊ち繝ｳ*/
 
 #container {
 
-	width:440px;
+	width:140px;
 	float:left;
 
 }/* 讀懃ｴ｢繝懊ち繝ｳ繧帝勁縺乗､懃ｴ｢讖溯�縺ｮ驛ｨ蛻�*/
 
 #wrapper {
 	
-	width: 330px;
+	width: 140px;
 	padding:0 0 10px 0;
 
 }/*繧ｿ繧ｰ縺九く繝ｼ繝ｯ繝ｼ繝峨�驕ｸ謚槭→繝輔Μ繝ｼ繝ｯ繝ｼ繝牙�蜉�/
@@ -61,7 +61,7 @@
 #pulldown{
 
 	margin:0 30px;
-	padding:100px 0;
+	padding:60px 0;
 
 }/*繝励Ν繝�え繝ｳ繝懊ち繝ｳ */
 

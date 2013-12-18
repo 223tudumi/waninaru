@@ -64,13 +64,15 @@ class IdeasController extends AppController{
 		$this->set('idealists',$this->Idea->read());
 		
 		//アイデア投稿
-		if($this->request->isPOST()){		
-		$this->User->user_id = $userSession['id'];
-			$this->request->data['Idea']['user_id'] = $userSession['id'];
-			if($this->Idea->save($this->request->data)){
-				$this->redirect(array('action'=>'index'));
-			} else {
-				$this->Session->setFlash('失敗したよ!!!');
+		if($this->request->isPOST()){
+			if(!empty($this->request->data['Icomment']['comment_text'])){	
+				$this->User->user_id = $userSession['id'];
+				$this->request->data['Idea']['user_id'] = $userSession['id'];
+				if($this->Idea->save($this->request->data)){
+					$this->redirect(array('action'=>'index'));
+				} else {
+					$this->Session->setFlash('失敗したよ!!!');
+				}
 			}
 		}
 	}

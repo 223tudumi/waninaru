@@ -7,15 +7,15 @@
 		<li><a href="./my_join.html">参加中</a></li>
 		<li><a href="#">ブックマーク</a>
 			<ul>
-				<li><a href="#" title="ブックマークアイディア">アイディア</a></li>
-				<li><a href="#" title="ブックマーク企画">　　　企画</a></li>
-				<li><a href="#" title="ブックマークユーザ">　　ユーザ</a></li>
+				<li><?php echo $this->Html->link('アイデア', array('controller' => 'IdeasBookmarks', 'action' => 'index',)); ?></li>
+				<li><?php echo $this->Html->link('　　企画', array('controller' => 'ProjectsBookmarks', 'action' => 'index',)); ?></a></li>
+				<li><a href="#" title="ブックマークユーザ"><s>　ユーザ</s></a></li>
 			</ul>
 		</li>
 		<li><a href="#">投稿</a>
 			<ul>
-				<li><a href="#" title="投稿アイディア">アイディア</a></li>
-				<li><a href="#" title="投稿企画">　　　企画</a></li>
+				<li><a href="#" title="投稿アイディア">アイデア</a></li>
+				<li><?php echo $this->Html->link('　　企画', array('controller' => 'Plans', 'action' => 'index', $userinfo['User']['id'])); ?></li>
 			</ul>
 		</li>
 	</ul><!--end menu-->

@@ -25,25 +25,30 @@ class IdeasBookmarksController extends AppController{
 		$userSession = $this->Auth->user();
 		$this->request->data['IdeasBookmark']['idea_id'] = $idea_id;
 		$this->request->data['IdeasBookmark']['user_id'] = $userSession['id'];
-		
+
 		if(!$this->IdeasBookmark->save($this->request->data)){
-			$this->Session->setFlash('失敗したよ!!!');
+			$this->Session->setFlash('失敗したよ!!!');	
 		}
 		//TODO ここのリダイレクト先がアイデアの場合どこが良いか解らないので江本氏の判断にまかせます
 		$this->redirect(array('controller'=>'ideas','action'=>'detail',$idea_id));
 		
 	}
 	
-	public function delete($project_id=null){
+	public function delete($idea_id=null){
 		$this->autoRender = false;
 		$this->set('idea',$this->Idea->read());
 		//projectbookmarksのユーザーIDを引っ張ってきてログイン中のIDと比較、一致ならprojectscontroller参照
+		$this->request->data['IdeasBookmark']['idea_id'] = $idea_id;
 		$this->request->data['IdeasBookmark']['user_id'] = $user_id;
-		$this->Idea->user_id = $id;//ここおかしいよー　ブクマしてる人のidもってこい
-		if($user_id == $id){
-			$this->Idea->delete($this->request->data($this->Idea->id),true);
-			$this->redirect(array('controller'=>'ideasBookmarks','action'=>'index'));//'/detail/'.$idea['Idea']['id']));
+		$this->Idea->id = $id;
+
+			//	if($this->request->isPost()){
+					if($this->request->isPost){
+						$this->Idea->delete($this->request->data($this->Idea->id),true);
+						$this->redirect(array('controller'=>'ideas','action'=>'detail',$idea_id));
+						//$this->Idea->delete($this->request->data($this->Idea->id),true);
+						//$this->redirect(array('controller'=>'ideas','action'=>'detail',$idea['Idea']['id']));//'/detail/'.$idea['Idea']['id']));
+			//}
 		}
-		
 	}
 }

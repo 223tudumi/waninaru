@@ -29,10 +29,11 @@ echo $this->Html->css(array('idea'), null, array('inline'=>false));
 					$mode=1;
 				}
 			}
+			
 			if($mode!=1){
         		echo $this->Html->image('idea/idea_bkm_btn.jpg',array('url'=>array('controller'=>'IdeasBookmarks','action'=>'regist',$ideain['Idea']['id']),'alt'=>'ブックマークする')); 
 			}else{
-				echo $this->Html->image('idea/idea_bkm_d_btn.jpg',array('url'=>array('controller'=>'IdeasBookmarks','action'=>'delete',$ideain['Idea']['id']),'alt'=>'ブックマークを外す'));
+				echo $this->Html->image('idea/idea_bkm_d_btn.jpg',array('action'=>'delete',$ideain['Idea']['id'],'alt'=>'ブックマークを外す','url'=>array('controller'=>'IdeasBookmarks')));//,'action'=>'delete',$ideain['Idea']['id']),'alt'=>'ブックマークを外す'));
 			}
 			?></span>
       </div><!-- end idea_fav -->

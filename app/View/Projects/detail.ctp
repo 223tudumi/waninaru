@@ -94,6 +94,8 @@ echo $this->assign('title', 'Waninaru - '.$kikaku['Project']['project_name']);
 			}
 			if($mode!=1){
 				echo $this->Html->image('common/project/bkm_btn.jpg',array('url'=>array('controller'=>'ProjectsBookmarks','action'=>'regist',$kikaku['Project']['id']),'alt'=>'ブックマークする'));
+			}else{
+				echo $this->Html->image('common/project/bkm_btn_delete.jpg',array('url'=>array('controller'=>'ProjectsBookmarks','action'=>'delete',$kikaku['Project']['id']),'alt'=>'ブックマークを外す'));
 			}
 			?>
 			</span>

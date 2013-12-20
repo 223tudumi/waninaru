@@ -31,7 +31,10 @@ echo $this->Html->css(array('idea'), null, array('inline'=>false));
 			}
 			if($mode!=1){
         		echo $this->Html->image('idea/idea_bkm_btn.jpg',array('url'=>array('controller'=>'IdeasBookmarks','action'=>'regist',$ideain['Idea']['id']),'alt'=>'ブックマークする')); 
-			}?></span>
+			}else{
+				echo $this->Html->image('idea/idea_bkm_d_btn.jpg',array('url'=>array('controller'=>'IdeasBookmarks','action'=>'delete',$ideain['Idea']['id']),'alt'=>'ブックマークを外す'));
+			}
+			?></span>
       </div><!-- end idea_fav -->
     </div><!-- end idea_detail_status -->
   </div><!-- end clearfix -->

@@ -1,7 +1,7 @@
 <?php
 class IdeasBookmarksController extends AppController{
 	public $helpers = array('Html' , 'Form');
-	var $uses = array('IdeasBookmark');
+	var $uses = array('IdeasBookmark','Idea');
 	
 	public function beforeFilter(){
 		parent::beforeFilter();
@@ -11,7 +11,7 @@ class IdeasBookmarksController extends AppController{
 		$userSession = $this->Auth->user();
 		$this->IdeasBookmark->recursive=3;
 		$this->paginate = array(
-			'conditions' => array('user_id'=>$userSession['id']),
+			'conditions' => array('IdeasBookmark.user_id'=>$userSession['id']),
 			'limit' => 9,
 			'order' => array(
 					'Idea.created' => 'asc'
@@ -36,5 +36,14 @@ class IdeasBookmarksController extends AppController{
 	
 	public function delete($project_id=null){
 		$this->autoRender = false;
+		$this->set('idea',$this->Idea->read());
+		//projectbookmarksのユーザーIDを引っ張ってきてログイン中のIDと比較、一致ならprojectscontroller参照
+		$this->request->data['IdeasBookmark']['user_id'] = $user_id;
+		$this->Idea->user_id = $id;//ここおかしいよー　ブクマしてる人のidもってこい
+		if($user_id == $id){
+			$this->Idea->delete($this->request->data($this->Idea->id),true);
+			$this->redirect(array('controller'=>'ideasBookmarks','action'=>'index'));//'/detail/'.$idea['Idea']['id']));
+		}
+		
 	}
 }

@@ -2,6 +2,41 @@
 echo $this->Html->css(array('idea'), null, array('inline'=>false));
 ?>
 
+<script type="text/javascript">
+jQuery(function($) {
+    $('.textOverflowTest3').each(function() {
+        var $target = $(this);
+ 
+        // オリジナルの文章を取得する
+        var html = $target.html();
+ 
+        // 対象の要素を、高さにautoを指定し非表示で複製する
+        var $clone = $target.clone();
+        $clone
+            .css({
+                display: 'none',
+                position : 'absolute',
+                overflow : 'visible'
+            })
+            .width($target.width())
+            .height('auto');
+ 
+        // DOMを一旦追加
+        $target.after($clone);
+ 
+        // 指定した高さになるまで、1文字ずつ消去していく
+        while((html.length > 0) && ($clone.height() > $target.height())) {
+            html = html.substr(0, html.length - 1);
+            $clone.html(html + '...');
+        }
+ 
+        // 文章を入れ替えて、複製した要素を削除する
+        $target.html($clone.html());
+        $clone.remove();
+    });
+});
+</script>
+
 <h2 id="idea_top_title"><span>アイデア</span></h2>
 
 
@@ -14,7 +49,7 @@ echo $this->Html->css(array('idea'), null, array('inline'=>false));
   <ul class="clearfix">
 <?php foreach($idealists as $idealist): ?>
     <li><dl>
-    <dd>
+    <dd class="textOverflowTest3" >
       <?php echo h($idealist['Idea']['idea_text']); ?>
       <?php //echo print_r($idealist['User']); ?>
     </dd>

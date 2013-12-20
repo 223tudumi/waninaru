@@ -46,14 +46,16 @@ div#idea_top_container ul li {
 
 div#idea_top_container ul li dl {
   width: 300px;
+  padding: 15px 0 0 0;
   border: 1px #dedede solid;
 }
 
 div#idea_top_container ul li dl dd {
   width: 270px;
+  height: 80px;
   margin: 0 0 0 15px;
-  padding: 15px 0 0 0;
   font-size: 14px;
+  overflow: hidden;
 }
 
 div#idea_top_container ul li dl dt {
@@ -65,16 +67,17 @@ div#idea_top_container ul li dl dt {
 
 span.idea_block_date {
   width: 130px;
+  padding: 0 0 10px 0;
   float: left;
   display: block;
-  padding: 0 0 10px 0;
 }
 
 span.idea_block_name {
   width: 100px;
+  padding: 0 0 10px 0;
   float: right;
   display: block;
-  padding: 0 0 10px 0;
+  text-align: right;
 }
 
 div#idea_top_container hr {
@@ -128,16 +131,17 @@ div#idea_top_form {
   width: 320px;
   height: 217px;
   position: absolute;
+  /* top: 1035px; */
   bottom: -85px;
   left: 450px;
   background: transparent url(../img/idea/index_form_back.jpg) no-repeat top left;
-  }
+}
 
 div#idea_top_form_inner {
   width: 280px;
   padding: 20px 0 0 0;
   margin: 0 0 0 20px;
-  }
+}
 
 div#idea_top_form_inner p {
   width: 280px;

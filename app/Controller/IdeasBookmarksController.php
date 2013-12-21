@@ -36,19 +36,40 @@ class IdeasBookmarksController extends AppController{
 	
 	public function delete($idea_id=null){
 		$this->autoRender = false;
+		
+		$userSession = $this->Auth->user();
 		$this->set('idea',$this->Idea->read());
 		//projectbookmarksのユーザーIDを引っ張ってきてログイン中のIDと比較、一致ならprojectscontroller参照
 		$this->request->data['IdeasBookmark']['idea_id'] = $idea_id;
 		$this->request->data['IdeasBookmark']['user_id'] = $user_id;
-		$this->Idea->id = $id;
-
-			//	if($this->request->isPost()){
-					if($this->request->isPost){
-						$this->Idea->delete($this->request->data($this->Idea->id),true);
-						$this->redirect(array('controller'=>'ideas','action'=>'detail',$idea_id));
-						//$this->Idea->delete($this->request->data($this->Idea->id),true);
-						//$this->redirect(array('controller'=>'ideas','action'=>'detail',$idea['Idea']['id']));//'/detail/'.$idea['Idea']['id']));
-			//}
-		}
+		
+		$num = $this->IdeasBookmark->find('first',array('conditions'=>array('idea_id'=>$idea_id,'IdeasBookmark.user_id'=>$userSession['id'])));
+		$this->IdeasBookmark->idea_id = $num['IdeasBookmark']['id'];
+		$this->request->data['IdeasBookmark']['id'] = $num['IdeasBookmark']['id'];
+		$this->IdeasBookmark->id = $num['IdeasBookmark']['id'];
+		//$this->Session->setFlash(print_r($num['IdeasBookmark']['id']));
+		
+		
+		$this->IdeasBookmark->delete($this->request->data($this->IdeasBookmark->id),true);
+		$this->redirect(array('controller'=>'ideas','action'=>'detail',$idea_id));
+		
+	}
+	public function listdelete($idea_id=null){
+		$this->autoRender = false;
+		
+		$userSession = $this->Auth->user();
+		$this->set('idea',$this->Idea->read());
+		//projectbookmarksのユーザーIDを引っ張ってきてログイン中のIDと比較、一致ならprojectscontroller参照
+		$this->request->data['IdeasBookmark']['idea_id'] = $idea_id;
+		$this->request->data['IdeasBookmark']['user_id'] = $user_id;
+		
+		$num = $this->IdeasBookmark->find('first',array('conditions'=>array('idea_id'=>$idea_id,'IdeasBookmark.user_id'=>$userSession['id'])));
+		$this->IdeasBookmark->idea_id = $num['IdeasBookmark']['id'];
+		$this->request->data['IdeasBookmark']['id'] = $num['IdeasBookmark']['id'];
+		$this->IdeasBookmark->id = $num['IdeasBookmark']['id'];
+		//$this->Session->setFlash(print_r($num['IdeasBookmark']['id']));
+		
+		$this->IdeasBookmark->delete($this->request->data($this->IdeasBookmark->id),true);
+		$this->redirect(array('controller'=>'ideasBookmarks','action'=>'index'));
 	}
 }

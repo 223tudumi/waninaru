@@ -26,7 +26,7 @@ echo $this->assign('title', 'Waninaru - ブックマーク（アイデア）');
 	<div id="green_text01">
 		<p>ブックマークしたアイデア<p>
 	</div><!-- /green text01 -->
-
+<?php $number = 1; ?>
 <?php foreach($date as $idea):?>
 <div class ="wrap clearfix">
 
@@ -34,7 +34,8 @@ echo $this->assign('title', 'Waninaru - ブックマーク（アイデア）');
 	<div class="content1 clearfix">
 		<div class="content_wrap clearfix">
 			<div class="number">
-				<p>1 .</p>
+				<p><?php echo h($number);
+				$number++; ?></p>
 			</div><!-- /number -->
 			
 			<div class="yourname">
@@ -62,7 +63,8 @@ echo $this->assign('title', 'Waninaru - ブックマーク（アイデア）');
 
 
 	<div class="delete">
-		<img src = "images/bkmr_idea/idea_bkm_d_btn.jpg" width = "170" height = "50" alt = "">
+		<?php //<img src = "images/bkmr_idea/idea_bkm_d_btn.jpg" width = "170" height = "50" alt = ""> ?>
+		<?php echo $this->Html->image('idea/idea_bkm_d_btn.jpg',array('url'=>array('controller'=>'IdeasBookmarks','action'=>'listdelete',$idea['Idea']['id']),'alt'=>'ブックマークを外す')); ?>
 	</div><!-- /delete -->
 	
 </div><!-- /wrap clearfix -->

@@ -1,7 +1,7 @@
 <?php
 class ProjectsBookmarksController extends AppController{
 	public $helpers = array('Html' , 'Form');
-	var $uses = array('ProjectsBookmark');
+	var $uses = array('ProjectsBookmark','Project');
 	
 	public function beforeFilter(){
 		parent::beforeFilter();
